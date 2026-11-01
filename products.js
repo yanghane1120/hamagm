@@ -9,8 +9,9 @@ const marketProducts = [
     title: "AULA F75 Pro 75% Wireless Mechanical Keyboard",
     searchTerms: "aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound",
     amazonUrl: "https://link.amazon/B0ewgi8NJ",
-    videoId: null,
-    videoTitle: ""
+    videoId: "UD3FO4SysaE",
+    videoTitle: "Even my cat plays better with this keyboard...",
+    isPublic: true // 若影片尚未公開，改成 false 即可隱藏按鈕
   },
   {
     id: "gloves",
@@ -20,7 +21,8 @@ const marketProducts = [
     searchTerms: "2 pairs winter gloves for women touch screen elastic thermal knit lining warm gloves",
     amazonUrl: "https://link.amazon/B0bdUBXIo",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "hair-mask",
@@ -30,7 +32,8 @@ const marketProducts = [
     searchTerms: "loreal paris sulfate free glossing lamination hair mask 5 minute rinse off treatment",
     amazonUrl: "https://link.amazon/B0eojpQ1t",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "petkit",
@@ -39,8 +42,9 @@ const marketProducts = [
     title: "PETKIT 3L WiFi Automatic Pet Feeder with Triple Fresh-Lock",
     searchTerms: "petkit automatic cat feeder 2.4g wifi app control pet food dispenser triple fresh lock",
     amazonUrl: "https://link.amazon/B0fC3FIFz",
-    videoId: null,
-    videoTitle: ""
+    videoId: "mMMl6ke_Jes",
+    videoTitle: "My Cat Opened A Free Buffet For Strays...",
+    isPublic: true // 若影片尚未公開，改成 false 即可隱藏按鈕
   },
   {
     id: "sony-ch720n",
@@ -50,7 +54,8 @@ const marketProducts = [
     searchTerms: "sony wh ch720n wireless noise cancelling over ear headphones black comfortable",
     amazonUrl: "https://link.amazon/B0fOtnGwN",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "echo-spot",
@@ -60,7 +65,8 @@ const marketProducts = [
     searchTerms: "amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa",
     amazonUrl: "https://link.amazon/B0dCFtTYG",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "moving-bags",
@@ -70,7 +76,8 @@ const marketProducts = [
     searchTerms: "light gray moving bags 200lb heavy duty 6 pack storage bags extra large summitflare",
     amazonUrl: "https://link.amazon/B03lm3MEk",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "heater",
@@ -80,7 +87,8 @@ const marketProducts = [
     searchTerms: "space heater winhl portable electric heaters indoor use 70 oscillation thermostat",
     amazonUrl: "https://link.amazon/B0ivEANQG",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "flosser",
@@ -90,7 +98,8 @@ const marketProducts = [
     searchTerms: "coslus ada accepted c20 water dental flosser pick professional set pink oral irrigator",
     amazonUrl: "https://link.amazon/B03kheoWk",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "stickers",
@@ -99,8 +108,9 @@ const marketProducts = [
     title: "300 PCS Halloween Pumpkin Waterproof Vinyl Stickers",
     searchTerms: "300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers",
     amazonUrl: "https://link.amazon/B09494Vtp",
-    videoId: null,
-    videoTitle: ""
+    videoId: "Dgd7WXq1Nxg",
+    videoTitle: "The Most Savage Revenge in Cat History...",
+    isPublic: true // 若影片尚未公開，改成 false 即可隱藏按鈕
   },
   {
     id: "hersheys",
@@ -110,7 +120,8 @@ const marketProducts = [
     searchTerms: "hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside",
     amazonUrl: "https://link.amazon/B0i8ZJnSE",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "candy-mix",
@@ -120,7 +131,8 @@ const marketProducts = [
     searchTerms: "bulk assorted party candy mix 5lb sweetside halloween",
     amazonUrl: "https://link.amazon/B0jlfLH63",
     videoId: null,
-    videoTitle: ""
+    videoTitle: "",
+    isPublic: false
   },
   {
     id: "fountain",
@@ -130,7 +142,8 @@ const marketProducts = [
     searchTerms: "stainless steel cat water fountain pet oasis ultra silent",
     amazonUrl: "https://link.amazon/B0bpXw7EQ",
     videoId: "O2khHlRJL5s",
-    videoTitle: "Cat Mom Found THIS in the Middle of..."
+    videoTitle: "Cat Mom Found THIS in the Middle of...",
+    isPublic: true
   }
 ];
 
