@@ -59,6 +59,8 @@
       margin-top: 8px;
       line-height: 1.6;
     }
+
+    /* 頂部：小比兔專區 (XiaoBi Official Corner) */
     .xiaobi-corner {
       width: 100%;
       max-width: 940px;
@@ -101,6 +103,8 @@
       font-size: 13.5px;
       color: var(--text-sub);
     }
+
+    /* 影片區塊 */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -135,11 +139,15 @@
       font-weight: 700;
       color: var(--text-main);
     }
+
+    /* 小比兔出版品清單 (標準 6 本配置) */
     .books-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 16px;
     }
+
+    /* 分隔標題：日常市集 */
     .section-divider {
       width: 100%;
       max-width: 940px;
@@ -162,6 +170,8 @@
       background: #e2e8f0;
       max-width: 120px;
     }
+
+    /* 搜尋與分類 */
     .search-box {
       width: 100%;
       max-width: 540px;
@@ -211,6 +221,8 @@
       color: #ffffff;
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
     }
+
+    /* 市集商品網格 */
     .market-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -218,6 +230,8 @@
       width: 100%;
       max-width: 940px;
     }
+
+    /* 卡片共用樣式 */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -348,7 +362,7 @@
       </div>
     </div>
 
-    <!-- 小比兔系列出版品 (英文2本、日文2本、法文1本、德文1本，共6本) -->
+    <!-- 小比兔系列出版品 (標準 6 本精選) -->
     <div class="books-grid">
       <!-- 英文版 1 (原創版) -->
       <div class="card">
@@ -430,12 +444,12 @@
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, heaters, stickers & treats...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, storage bags, heaters, stickers & treats...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
-    <button class="tab" onclick="filterItems('home', this)">🏠 Home & Warmth</button>
+    <button class="tab" onclick="filterItems('home', this)">🏠 Home & Storage</button>
     <button class="tab" onclick="filterItems('care', this)">🦷 Personal Care</button>
     <button class="tab" onclick="filterItems('holiday', this)">🎃 Holiday & Fun</button>
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
@@ -443,9 +457,18 @@
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
   </div>
 
-  <!-- 選品市集卡片區 -->
+  <!-- 選品市集卡片區 (共 8 個精選品項) -->
   <div class="market-grid" id="productGrid">
-    <!-- 居家保暖選品：WINHL 1500W 便攜式電暖器 -->
+    <!-- 居家收納爆款：SummitFlare 200LB 重型搬家收納袋 6入裝 -->
+    <div class="card" data-category="home" data-title="light gray moving bags 200lb heavy duty 6 pack storage bags extra large 15x13x28in summitflare waterproof collapsible">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Heavy Duty Storage</span>
+        <h3 class="card-title">SummitFlare 200LB Heavy Duty Moving Storage Bags (6 Pack / XL)</h3>
+      </div>
+      <a href="https://link.amazon/B03lm3MEk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 居家保暖選品：WINHL 1500W 便攜式陶瓷電暖器 -->
     <div class="card" data-category="home" data-title="space heater winhl portable electric heaters indoor use 70 oscillation thermostat remote control 12h timer 1500w ptc ceramic fast safety heat office bedroom">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Fast Heating</span>
