@@ -190,17 +190,27 @@
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search gear or books by keyword...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search gear, treats, or books by keyword...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
     <button class="tab" onclick="filterItems('books', this)">📚 Books</button>
+    <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
     <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
   </div>
 
   <div class="grid" id="productGrid">
+    <!-- 新增商品：5磅派對綜合散裝糖果 -->
+    <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
+      <div class="card-content" style="padding-top: 20px;">
+        <span class="card-tag">Party Treats</span>
+        <h3 class="card-title">Classic Bulk Assorted Party Candy Mix (5 lbs Mega Bag)</h3>
+      </div>
+      <a href="https://link.amazon/B0jlfLH63" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
     <!-- 書籍 1：英文版 -->
     <div class="card" data-category="books" data-title="the little white rabbit's useless notebook english edition xiaobi">
       <div class="card-book-cover">
