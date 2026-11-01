@@ -100,20 +100,19 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 16px;
       width: 100%;
-      max-width: 860px;
+      max-width: 900px;
     }
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 20px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 160px;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     }
     .card:hover {
@@ -121,10 +120,27 @@
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
       border-color: rgba(56, 189, 248, 0.6);
     }
+    .card-book-cover {
+      width: 100%;
+      height: 240px;
+      background: #2563eb15;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+    .card-book-cover img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
     .card-content {
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      margin-bottom: 16px;
+      flex-grow: 1;
     }
     .card-tag {
       font-size: 11px;
@@ -132,24 +148,25 @@
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--primary);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .card-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #fff;
       line-height: 1.4;
+      margin-bottom: 12px;
     }
     .card-btn {
       display: block;
-      width: 100%;
+      margin: 0 16px 16px 16px;
       text-align: center;
       background: var(--btn-bg);
       color: #0f172a;
       text-decoration: none;
       font-weight: 800;
       font-size: 14px;
-      padding: 12px 16px;
+      padding: 10px 16px;
       border-radius: 10px;
       transition: background 0.2s;
     }
@@ -169,23 +186,72 @@
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
-    <p class="bio">🐾 Smart animals solving human chaos. Curated viral gear & gadgets tested by our animal squad. 👇</p>
+    <p class="bio">🐾 Smart animals solving human chaos. Curated viral gear, books & gadgets tested by our animal squad. 👇</p>
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search gear by keyword...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search gear or books by keyword...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
+    <button class="tab" onclick="filterItems('books', this)">📚 Books</button>
     <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
   </div>
 
   <div class="grid" id="productGrid">
+    <!-- 書籍 1：英文版（含封面） -->
+    <div class="card" data-category="books" data-title="the little white rabbit's useless notebook english edition xiaobi">
+      <div class="card-book-cover">
+        <img src="book_en.png" alt="Little Rabbit's Notes English Edition" onerror="this.parentElement.style.display='none';">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">Paperback Book</span>
+        <h3 class="card-title">The Little White Rabbit's Useless Notebook (English)</h3>
+      </div>
+      <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
+    </div>
+
+    <!-- 書籍 2：日文版（含封面） -->
+    <div class="card" data-category="books" data-title="小比うさぎのダメダメノート japanese edition xiaobi book">
+      <div class="card-book-cover">
+        <img src="book_jp.png" alt="小比うさぎのダメダメノート" onerror="this.parentElement.style.display='none';">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">ペーパーバック</span>
+        <h3 class="card-title">小比うさぎのダメダメノート (日本語版)</h3>
+      </div>
+      <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
+    </div>
+
+    <!-- 書籍 3：法文版（若上傳 book_fr.png 會自動顯示） -->
+    <div class="card" data-category="books" data-title="le carnet inutile du petit lapin blanc french edition xiaobi">
+      <div class="card-book-cover">
+        <img src="book_fr.png" alt="Le carnet du petit lapin blanc" onerror="this.parentElement.style.display='none';">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">Livre Broché</span>
+        <h3 class="card-title">Le carnet du petit lapin blanc (Édition Française)</h3>
+      </div>
+      <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
+    </div>
+
+    <!-- 書籍 4：德文版（若上傳 book_de.png 會自動顯示） -->
+    <div class="card" data-category="books" data-title="der nutzlose notizblock des kleinen weissen hasen german edition xiaobi">
+      <div class="card-book-cover">
+        <img src="book_de.png" alt="Der Notizblock des kleinen weißen Hasen" onerror="this.parentElement.style.display='none';">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">Taschenbuch</span>
+        <h3 class="card-title">Der Notizblock des kleinen weißen Hasen (Deutsch)</h3>
+      </div>
+      <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
+    </div>
+
     <!-- 商品 1：貓咪飲水機 -->
     <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis">
-      <div class="card-content">
+      <div class="card-content" style="padding-top: 20px;">
         <span class="card-tag">Cat Hydration</span>
         <h3 class="card-title">Ultra-Silent Stainless Steel Cat Fountain (Desert Oasis)</h3>
       </div>
@@ -194,7 +260,7 @@
 
     <!-- 商品 2：AULA F75 鍵盤 -->
     <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard">
-      <div class="card-content">
+      <div class="card-content" style="padding-top: 20px;">
         <span class="card-tag">Gaming Gear</span>
         <h3 class="card-title">AULA F75 Pro 75% Wireless Mechanical Keyboard</h3>
       </div>
