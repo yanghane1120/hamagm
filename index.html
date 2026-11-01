@@ -448,11 +448,12 @@
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, pet feeders, hair care, headphones...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, gloves, hair care, headphones...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
+    <button class="tab" onclick="filterItems('winter', this)">🧤 Winter Gear</button>
     <button class="tab" onclick="filterItems('care', this)">🦷 Personal Care</button>
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
     <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
@@ -461,10 +462,10 @@
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
   </div>
 
-  <!-- 選品市集卡片區 (共 12 款精選) -->
+  <!-- 選品市集卡片區 (共 13 款精選) -->
   <div class="market-grid" id="productGrid">
     
-    <!-- 1. 3C科技主力款：AULA F75 鍵盤 (已調至首位) -->
+    <!-- 1. 3C科技主力款：AULA F75 鍵盤 -->
     <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Gaming Gear</span>
@@ -473,7 +474,16 @@
       <a href="https://link.amazon/B0ewgi8NJ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 2. 個人護理爆款：巴黎萊雅 5分鐘水光護髮膜 (最新加入) -->
+    <!-- 2. 秋冬保暖爆款：女性觸控保暖針織手套 (最新加入) -->
+    <div class="card" data-category="winter" data-title="2 pairs winter gloves for women touch screen elastic thermal knit lining warm gloves for cold weather apparel hands">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Winter Gear</span>
+        <h3 class="card-title">2 Pairs Women's Touch Screen Thermal Knit Winter Gloves</h3>
+      </div>
+      <a href="https://link.amazon/B0bdUBXIo" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 3. 個人護理爆款：巴黎萊雅 5分鐘水光護髮膜 -->
     <div class="card" data-category="care" data-title="loreal paris sulfate free glossing lamination hair mask 5 minute rinse off treatment glycolic acid glass shine smoothness color caring everpure hair care">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Hair Treatment</span>
@@ -482,7 +492,7 @@
       <a href="https://link.amazon/B0eojpQ1t" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 3. 寵物科技：PETKIT 3L 智慧自動餵食器 -->
+    <!-- 4. 寵物科技：PETKIT 3L 智慧自動餵食器 -->
     <div class="card" data-category="cat" data-title="petkit automatic cat feeder 2.4g wifi app control pet food dispenser triple fresh lock system 3l schedule dual power pet care">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Smart Feeding</span>
@@ -491,7 +501,7 @@
       <a href="https://link.amazon/B0fC3FIFz" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 4. 3C音訊：Sony WH-CH720N 無線降噪耳機 -->
+    <!-- 5. 3C音訊：Sony WH-CH720N 無線降噪耳機 -->
     <div class="card" data-category="tech" data-title="sony wh ch720n wireless noise cancelling over ear headphones black comfortable lightweight design dual noise sensor 35 hrs battery multipoint connection audio gaming">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Active Noise Cancelling</span>
@@ -500,7 +510,7 @@
       <a href="https://link.amazon/B0fOtnGwN" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 5. 3C智慧家居：Amazon Echo Spot 智慧鬧鐘音響 -->
+    <!-- 6. 3C智慧家居：Amazon Echo Spot 智慧鬧鐘音響 -->
     <div class="card" data-category="tech" data-title="amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa black audio display">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Smart Home</span>
@@ -509,7 +519,7 @@
       <a href="https://link.amazon/B0dCFtTYG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 6. 居家收納：SummitFlare 200LB 重型搬家收納袋 6入裝 -->
+    <!-- 7. 居家收納：SummitFlare 200LB 重型搬家收納袋 6入裝 -->
     <div class="card" data-category="home" data-title="light gray moving bags 200lb heavy duty 6 pack storage bags extra large 15x13x28in summitflare waterproof collapsible">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Heavy Duty Storage</span>
@@ -518,7 +528,7 @@
       <a href="https://link.amazon/B03lm3MEk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 7. 居家保暖：WINHL 1500W 便攜式陶瓷電暖器 -->
+    <!-- 8. 居家保暖：WINHL 1500W 便攜式陶瓷電暖器 -->
     <div class="card" data-category="home" data-title="space heater winhl portable electric heaters indoor use 70 oscillation thermostat remote control 12h timer 1500w ptc ceramic fast safety heat office bedroom">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Fast Heating</span>
@@ -527,7 +537,7 @@
       <a href="https://link.amazon/B0ivEANQG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 8. 個人護理：COSLUS C20 沖牙機 -->
+    <!-- 9. 個人護理：COSLUS C20 沖牙機 -->
     <div class="card" data-category="care" data-title="coslus ada accepted c20 water dental flosser pick professional set pink 300ml rechargeable oral irrigator cordless travel">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Oral Hygiene</span>
@@ -536,7 +546,7 @@
       <a href="https://link.amazon/B03kheoWk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 9. 節日選品：300入萬聖節南瓜貼紙包 -->
+    <!-- 10. 節日選品：300入萬聖節南瓜貼紙包 -->
     <div class="card" data-category="holiday" data-title="300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers anhstks">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Holiday Fun</span>
@@ -545,7 +555,7 @@
       <a href="https://link.amazon/B09494Vtp" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 10. 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
+    <!-- 11. 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
     <div class="card" data-category="snacks" data-title="hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Sweet Treats</span>
@@ -554,7 +564,7 @@
       <a href="https://link.amazon/B0i8ZJnSE" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 11. 零食商品：5磅綜合派對糖果 -->
+    <!-- 12. 零食商品：5磅綜合派對糖果 -->
     <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Party Treats</span>
@@ -563,7 +573,7 @@
       <a href="https://link.amazon/B0jlfLH63" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 12. 寵物用品：超靜音不鏽鋼貓咪飲水機 -->
+    <!-- 13. 寵物用品：超靜音不鏽鋼貓咪飲水機 -->
     <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis ultra silent">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Cat Hydration</span>
