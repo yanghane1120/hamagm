@@ -121,17 +121,18 @@
     }
     .card-img-wrap {
       width: 100%;
-      height: 180px;
-      background: #fff;
+      height: 190px;
+      background: #0b1120;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px;
+      padding: 10px;
     }
     .card-img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain;
+      border-radius: 8px;
+      object-fit: cover;
     }
     .card-content {
       padding: 16px;
@@ -182,8 +183,8 @@
 <body>
 
   <div class="header">
-    <!-- 自動匹配上傳的 HAMAGM.jfif 圖片 -->
-<img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80" alt="Cat Fountain" class="card-img">
+    <!-- 藍帽貓咪頭像（支援你上傳的 HAMAGM.jfif 與雲端備援） -->
+    <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
     <p class="bio">🐾 Smart animals solving human chaos. Curated viral gear & gadgets tested by our animal squad. 👇</p>
   </div>
@@ -202,7 +203,7 @@
     <!-- 商品 1：貓咪飲水機 -->
     <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis">
       <div class="card-img-wrap">
-<img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="AULA F75 Keyboard" class="card-img">
+        <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80" alt="Cat Fountain" class="card-img">
       </div>
       <div class="card-content">
         <span class="card-tag">Cat Hydration</span>
@@ -214,7 +215,7 @@
     <!-- 商品 2：AULA F75 鍵盤 -->
     <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard">
       <div class="card-img-wrap">
-      <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="AULA F75 Keyboard" class="card-img">
+        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="AULA F75 Keyboard" class="card-img">
       </div>
       <div class="card-content">
         <span class="card-tag">Gaming Gear</span>
