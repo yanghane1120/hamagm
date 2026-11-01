@@ -604,11 +604,12 @@
       const pageItems = activeFilteredList.slice(start, end);
 
       pageItems.forEach(item => {
-        const storyBtnHtml = item.videoId ? `
-          <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${item.videoTitle.replace(/'/g, "\\'")}')">
-            🎬 Watch Cat Story
-          </button>
-        ` : '';
+// 只有填了 videoId 且 isPublic 為 true 時，才在網站顯示「觀看故事」按鈕
+const storyBtnHtml = (item.videoId && item.isPublic) ? `
+  <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${item.videoTitle.replace(/'/g, "\\'")}')">
+    🎬 Watch Cat Story
+  </button>
+` : '';
 
         const cardHtml = `
           <div class="card" data-category="${item.category}">
