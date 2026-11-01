@@ -14,12 +14,13 @@
       --card-border: #e2e8f0;   /* 細緻邊框 */
       --primary: #0284c7;       /* 品牌天藍色 */
       --primary-light: #e0f2fe; /* 淺天藍標籤底色 */
-      --text-main: #0f172a;     /* 深深藍黑文字（高易讀性） */
+      --text-main: #0f172a;     /* 深藍黑文字 */
       --text-sub: #64748b;      /* 柔和次要說明文字 */
-      --btn-bg: #f59e0b;        /* 亞馬遜經典暖橘黃按鈕 */
+      --btn-bg: #f59e0b;        /* 亞馬遜暖橘黃按鈕 */
       --btn-hover: #d97706;
       --tag-book: #ecfdf5;
       --tag-book-text: #059669;
+      --xiaobi-accent: #38bdf8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -35,7 +36,7 @@
     .header {
       text-align: center;
       max-width: 620px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .avatar {
       width: 104px;
@@ -59,6 +60,119 @@
       margin-top: 8px;
       line-height: 1.6;
     }
+
+    /* 頂部：小比兔專區 (XiaoBi Rabbit Corner) */
+    .xiaobi-corner {
+      width: 100%;
+      max-width: 940px;
+      background: #ffffff;
+      border: 2px solid #bae6fd;
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
+      position: relative;
+    }
+    .corner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .corner-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      gap: 8px;
+    }
+    .corner-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .corner-sub {
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+
+    /* 影片區塊 */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .video-box {
+      background: #0f172a;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .video-iframe-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    }
+    .video-iframe-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-caption {
+      padding: 10px 14px;
+      background: #f8fafc;
+      border-top: 1px solid var(--card-border);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* 小比兔出版品清單 */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    /* 分隔標題：日常市集 */
+    .section-divider {
+      width: 100%;
+      max-width: 940px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .section-title::before, .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e2e8f0;
+      max-width: 120px;
+    }
+
+    /* 搜尋與分類 */
     .search-box {
       width: 100%;
       max-width: 540px;
@@ -108,13 +222,17 @@
       color: #ffffff;
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
     }
-    .grid {
+
+    /* 一般市集商品網格 */
+    .market-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 20px;
       width: 100%;
-      max-width: 920px;
+      max-width: 940px;
     }
+
+    /* 卡片共用樣式 */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -133,22 +251,22 @@
     }
     .card-book-cover {
       width: 100%;
-      height: 250px;
+      height: 200px;
       background: #f1f5f9;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 14px;
+      padding: 12px;
     }
     .card-book-cover img {
       max-height: 100%;
       max-width: 100%;
       object-fit: contain;
-      border-radius: 6px;
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+      border-radius: 5px;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
     }
     .card-content {
-      padding: 18px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -164,36 +282,36 @@
       background: var(--primary-light);
       padding: 3px 8px;
       border-radius: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .card-tag.book-tag {
       color: var(--tag-book-text);
       background: var(--tag-book);
     }
     .card-title {
-      font-size: 15.5px;
+      font-size: 14.5px;
       font-weight: 700;
       color: var(--text-main);
-      line-height: 1.45;
-      margin-bottom: 14px;
+      line-height: 1.4;
+      margin-bottom: 12px;
     }
     .card-btn {
       display: block;
-      margin: 0 18px 18px 18px;
+      margin: 0 16px 16px 16px;
       text-align: center;
       background: var(--btn-bg);
       color: #111827;
       text-decoration: none;
       font-weight: 800;
-      font-size: 14px;
-      padding: 11px 16px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(245, 158, 11, 0.25);
+      font-size: 13.5px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(245, 158, 11, 0.2);
       transition: background 0.2s, box-shadow 0.2s;
     }
     .card-btn:hover {
       background: var(--btn-hover);
-      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
     }
     .footer {
       margin-top: 50px;
@@ -208,70 +326,113 @@
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
-    <p class="bio">🐾 Smart animals solving human chaos. Curated viral gear, books & gadgets tested by our animal squad. 👇</p>
+    <p class="bio">🐾 Smart animals solving human chaos. Official IP creations & animal-tested viral gear. 👇</p>
+  </div>
+
+  <!-- 頂部獨立專區：小比兔官方旗艦專區 (XiaoBi Official Corner) -->
+  <section class="xiaobi-corner">
+    <span class="corner-badge">⭐ Official IP Corner</span>
+    <div class="corner-header">
+      <h2 class="corner-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
+      <span class="corner-sub">Official Flipbook, Short Skits & Multi-Language Amazon Notebooks</span>
+    </div>
+
+    <!-- 宣傳影片 -->
+    <div class="video-grid">
+      <div class="video-box">
+        <div class="video-iframe-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/clPbsZ7oYuI" 
+            title="Little Rabbit's Notes - Inside Flipbook" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">✨ Inside The Notebook: Animation & Flipbook</div>
+      </div>
+      <div class="video-box">
+        <div class="video-iframe-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/XNe5VDClOfg" 
+            title="Little Rabbit's Notes - Owl Delivery & Figure" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">📦 Owl Delivery & Xiaobi Figure Unboxing</div>
+      </div>
+    </div>
+
+    <!-- 小比兔系列出版品 -->
+    <div class="books-grid">
+      <!-- 英文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_en.png" alt="English Edition" onerror="this.onerror=null; this.src='image_439ef6.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Paperback</span>
+          <h3 class="card-title">Little Rabbit's Notes (English)</h3>
+        </div>
+        <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 日文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_jp.png" alt="日本語版" onerror="this.onerror=null; this.src='image_439ec1.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">ペーパーバック</span>
+          <h3 class="card-title">小比うさぎのダメダメノート (日本語)</h3>
+        </div>
+        <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 法文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_fr.jpg" alt="Français" onerror="this.onerror=null; this.src='FRE.jpg';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Livre Broché</span>
+          <h3 class="card-title">Le carnet inutile du petit lapin (Français)</h3>
+        </div>
+        <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 德文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_de.jpg" alt="Deutsch" onerror="this.onerror=null; this.src='der.jpg';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Taschenbuch</span>
+          <h3 class="card-title">Der Notizblock des kleinen Hasen (Deutsch)</h3>
+        </div>
+        <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔區：通用選品市集 -->
+  <div class="section-divider">
+    <h3 class="section-title">🐾 HAMAGM Curated Market</h3>
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search gear, treats, or books by keyword...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear & treats by keyword...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
-    <button class="tab" onclick="filterItems('books', this)">📚 Books</button>
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
     <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
   </div>
 
-  <div class="grid" id="productGrid">
-    <!-- 書籍 1：英文版 -->
-    <div class="card" data-category="books" data-title="the little white rabbit's useless notebook english edition xiaobi">
-      <div class="card-book-cover">
-        <img src="book_en.png" alt="Little Rabbit's Notes English Edition" onerror="this.onerror=null; this.src='image_439ef6.png';">
-      </div>
-      <div class="card-content">
-        <span class="card-tag book-tag">Paperback Book</span>
-        <h3 class="card-title">The Little White Rabbit's Useless Notebook (English)</h3>
-      </div>
-      <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
-    </div>
-
-    <!-- 書籍 2：日文版 -->
-    <div class="card" data-category="books" data-title="小比うさぎのダメダメノート japanese edition xiaobi book">
-      <div class="card-book-cover">
-        <img src="book_jp.png" alt="小比うさぎのダメダメノート" onerror="this.onerror=null; this.src='image_439ec1.png';">
-      </div>
-      <div class="card-content">
-        <span class="card-tag book-tag">ペーパーバック</span>
-        <h3 class="card-title">小比うさぎのダメダメノート (日本語版)</h3>
-      </div>
-      <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
-    </div>
-
-    <!-- 書籍 3：法文版 -->
-    <div class="card" data-category="books" data-title="le carnet inutile du petit lapin blanc french edition xiaobi">
-      <div class="card-book-cover">
-        <img src="book_fr.jpg" alt="Le carnet inutile du petit lapin blanc" onerror="this.onerror=null; this.src='FRE.jpg';">
-      </div>
-      <div class="card-content">
-        <span class="card-tag book-tag">Livre Broché</span>
-        <h3 class="card-title">Le carnet inutile du petit lapin blanc (Français)</h3>
-      </div>
-      <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
-    </div>
-
-    <!-- 書籍 4：德文版 -->
-    <div class="card" data-category="books" data-title="der nutzlose notizblock des kleinen weissen hasen german edition xiaobi">
-      <div class="card-book-cover">
-        <img src="book_de.jpg" alt="Der nutzlose Notizblock des kleinen weißen Hasen" onerror="this.onerror=null; this.src='der.jpg';">
-      </div>
-      <div class="card-content">
-        <span class="card-tag book-tag">Taschenbuch</span>
-        <h3 class="card-title">Der nutzlose Notizblock des kleinen weißen Hasen (Deutsch)</h3>
-      </div>
-      <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
-    </div>
-
+  <!-- 選品市集卡片區 -->
+  <div class="market-grid" id="productGrid">
     <!-- 零食商品：5磅綜合派對糖果 -->
     <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
       <div class="card-content" style="padding-top: 24px;">
@@ -308,7 +469,7 @@
     function filterItems(category, el) {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
-      const cards = document.querySelectorAll('.card');
+      const cards = document.querySelectorAll('#productGrid .card');
       cards.forEach(card => {
         if (category === 'all' || card.dataset.category === category) {
           card.style.display = 'flex';
@@ -320,7 +481,7 @@
 
     document.getElementById('searchInput').addEventListener('input', function(e) {
       const query = e.target.value.toLowerCase().trim();
-      const cards = document.querySelectorAll('.card');
+      const cards = document.querySelectorAll('#productGrid .card');
       cards.forEach(card => {
         const title = card.dataset.title.toLowerCase();
         card.style.display = title.includes(query) ? 'flex' : 'none';
