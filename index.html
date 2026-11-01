@@ -75,10 +75,10 @@
       line-height: 1.6;
     }
 
-    /* 頂部影片展示區塊 */
+    /* 頂部影片展示區塊 (單支精選影片) */
     .showcase-corner {
       width: 100%;
-      max-width: 940px;
+      max-width: 680px;
       background: #ffffff;
       border: 1.5px solid #bae6fd;
       border-radius: 20px;
@@ -88,8 +88,7 @@
     }
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
+      grid-template-columns: 1fr;
       margin-bottom: 12px;
     }
     .video-box {
@@ -113,12 +112,13 @@
       border: 0;
     }
     .video-caption {
-      padding: 8px 12px;
+      padding: 10px 14px;
       background: #f8fafc;
       border-top: 1px solid var(--card-border);
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--text-main);
+      text-align: center;
     }
     .scroll-hint {
       text-align: center;
@@ -465,7 +465,7 @@
     }
     .story-video-wrap {
       position: relative;
-      padding-bottom: 177.78%;
+      padding-bottom: 177.78%; /* 9:16 直式比例 */
       height: 0;
     }
     .story-video-wrap iframe {
@@ -486,7 +486,7 @@
     <p class="bio">🐾 "Ha! Making animals great, and the age a little better." From witty animal IP & author originals to viral life-solving gear. 👇</p>
   </div>
 
-  <!-- 頂部：影片展示區塊 -->
+  <!-- 頂部：影片展示區塊 (單支精選翻頁影片展示) -->
   <section class="showcase-corner">
     <div class="video-grid">
       <div class="video-box">
@@ -499,17 +499,6 @@
           </iframe>
         </div>
         <div class="video-caption">✨ Inside The Notebook: Animation & Flipbook</div>
-      </div>
-      <div class="video-box">
-        <div class="video-iframe-wrap">
-          <iframe 
-            src="https://www.youtube.com/embed/XNe5VDClOfg" 
-            title="Little Rabbit's Notes - Owl Delivery & Figure" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-caption">📦 Owl Delivery & Xiaobi Figure Unboxing</div>
       </div>
     </div>
     <p class="scroll-hint">
@@ -580,8 +569,8 @@
     </div>
   </div>
 
-  <!-- 加入版本號 ?v=2 強制瀏覽器捨棄舊快取，保證抓到最新 products.js -->
-  <script src="products.js?v=2"></script>
+  <!-- 引入獨立資料庫 (強制重新加載快取版本) -->
+  <script src="products.js?v=3"></script>
 
   <!-- 頁面邏輯腳本 -->
   <script>
@@ -591,7 +580,6 @@
     let currentSearchQuery = '';
     let activeFilteredList = [];
 
-    // 嚴格判定：只要 videoId 存在且非空字串，100% 渲染按鈕
     function renderMarketCards(reset = false) {
       const container = document.getElementById('productGrid');
       if (reset) {
