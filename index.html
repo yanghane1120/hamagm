@@ -20,7 +20,6 @@
       --btn-hover: #d97706;
       --tag-book: #ecfdf5;
       --tag-book-text: #059669;
-      --xiaobi-accent: #38bdf8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -61,7 +60,7 @@
       line-height: 1.6;
     }
 
-    /* 頂部：小比兔專區 (XiaoBi Rabbit Corner) */
+    /* 頂部：小比兔專區 (XiaoBi Official Corner) */
     .xiaobi-corner {
       width: 100%;
       max-width: 940px;
@@ -421,11 +420,12 @@
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear & treats by keyword...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, stickers & treats by keyword...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
+    <button class="tab" onclick="filterItems('holiday', this)">🎃 Holiday & Fun</button>
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
     <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
@@ -433,7 +433,16 @@
 
   <!-- 選品市集卡片區 -->
   <div class="market-grid" id="productGrid">
-    <!-- 零食商品：5磅綜合派對糖果 --><!-- 零食商品：HERSHEY'S SPECIAL DARK 黑巧克力棒 (36入) -->
+    <!-- 節日選品：300入萬聖節南瓜防水貼紙包 -->
+    <div class="card" data-category="holiday" data-title="300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers anhstks">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Holiday Fun</span>
+        <h3 class="card-title">300 PCS Halloween Pumpkin Waterproof Vinyl Stickers</h3>
+      </div>
+      <a href="https://link.amazon/B09494Vtp" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
     <div class="card" data-category="snacks" data-title="hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Sweet Treats</span>
@@ -441,6 +450,8 @@
       </div>
       <a href="https://link.amazon/B0i8ZJnSE" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
+
+    <!-- 零食商品：5磅綜合派對糖果 -->
     <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Party Treats</span>
