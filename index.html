@@ -234,4 +234,301 @@
     /* 卡片共用樣式 */
     .card {
       background: var(--card-bg);
-      border
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+    .card-book-cover {
+      width: 100%;
+      height: 200px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+    .card-book-cover img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 5px;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+    }
+    .card-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .card-tag.book-tag {
+      color: var(--tag-book-text);
+      background: var(--tag-book);
+    }
+    .card-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .card-btn {
+      display: block;
+      margin: 0 16px 16px 16px;
+      text-align: center;
+      background: var(--btn-bg);
+      color: #111827;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(245, 158, 11, 0.2);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .card-btn:hover {
+      background: var(--btn-hover);
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+    }
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
+    <h1 class="title">HAMAGM</h1>
+    <p class="bio">🐾 Smart animals solving human chaos. Official IP creations & animal-tested viral gear. 👇</p>
+  </div>
+
+  <!-- 頂部獨立專區：小比兔官方旗艦專區 (XiaoBi Official Corner) -->
+  <section class="xiaobi-corner">
+    <span class="corner-badge">⭐ Official IP Corner</span>
+    <div class="corner-header">
+      <h2 class="corner-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
+      <span class="corner-sub">Official Flipbook, Short Skits & Multi-Language Amazon Notebooks</span>
+    </div>
+
+    <!-- 宣傳影片 -->
+    <div class="video-grid">
+      <div class="video-box">
+        <div class="video-iframe-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/clPbsZ7oYuI" 
+            title="Little Rabbit's Notes - Inside Flipbook" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">✨ Inside The Notebook: Animation & Flipbook</div>
+      </div>
+      <div class="video-box">
+        <div class="video-iframe-wrap">
+          <iframe 
+            src="https://www.youtube.com/embed/XNe5VDClOfg" 
+            title="Little Rabbit's Notes - Owl Delivery & Figure" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">📦 Owl Delivery & Xiaobi Figure Unboxing</div>
+      </div>
+    </div>
+
+    <!-- 小比兔系列出版品 (共 6 本多語系與特別款) -->
+    <div class="books-grid">
+      <!-- 英文版特別款：I held up the national flag -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_en.png" alt="English Edition - I held up the national flag" onerror="this.onerror=null; this.src='image_439ef6.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Paperback</span>
+          <h3 class="card-title">Little Rabbit's Notes: I Held Up the National Flag (English)</h3>
+        </div>
+        <a href="https://link.amazon/B072n2eaF" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 日文版特別款：小比うさぎのダメダメノート -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_jp.png" alt="小比うさぎのダメダメノート 特別版" onerror="this.onerror=null; this.src='image_439ec1.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">ペーパーバック</span>
+          <h3 class="card-title">小比うさぎのダメダメノート (Japanese Edition)</h3>
+        </div>
+        <a href="https://link.amazon/B09tO7Zg4" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 英文版原創款 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_en.png" alt="English Edition" onerror="this.onerror=null; this.src='image_439ef6.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Paperback</span>
+          <h3 class="card-title">Little Rabbit's Notes (English Edition)</h3>
+        </div>
+        <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 日文版原創款 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_jp.png" alt="日本語版" onerror="this.onerror=null; this.src='image_439ec1.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">ペーパーバック</span>
+          <h3 class="card-title">小比うさぎのダメダメノート (日本語版)</h3>
+        </div>
+        <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 法文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_fr.jpg" alt="Français" onerror="this.onerror=null; this.src='FRE.jpg';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Livre Broché</span>
+          <h3 class="card-title">Le carnet inutile du petit lapin (Français)</h3>
+        </div>
+        <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 德文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_de.jpg" alt="Deutsch" onerror="this.onerror=null; this.src='der.jpg';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Taschenbuch</span>
+          <h3 class="card-title">Der Notizblock des kleinen Hasen (Deutsch)</h3>
+        </div>
+        <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔區：通用選品市集 -->
+  <div class="section-divider">
+    <h3 class="section-title">🐾 HAMAGM Curated Market</h3>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, stickers & treats by keyword...">
+  </div>
+
+  <div class="filter-tabs">
+    <button class="tab active" onclick="filterItems('all', this)">All</button>
+    <button class="tab" onclick="filterItems('holiday', this)">🎃 Holiday & Fun</button>
+    <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
+    <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
+    <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
+  </div>
+
+  <!-- 選品市集卡片區 -->
+  <div class="market-grid" id="productGrid">
+    <!-- 節日選品：300入萬聖節南瓜防水貼紙包 -->
+    <div class="card" data-category="holiday" data-title="300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers anhstks">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Holiday Fun</span>
+        <h3 class="card-title">300 PCS Halloween Pumpkin Waterproof Vinyl Stickers</h3>
+      </div>
+      <a href="https://link.amazon/B09494Vtp" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
+    <div class="card" data-category="snacks" data-title="hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Sweet Treats</span>
+        <h3 class="card-title">HERSHEY'S SPECIAL DARK Mildly Sweet Chocolate Bars (36 Count)</h3>
+      </div>
+      <a href="https://link.amazon/B0i8ZJnSE" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 零食商品：5磅綜合派對糖果 -->
+    <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Party Treats</span>
+        <h3 class="card-title">Classic Bulk Assorted Party Candy Mix (5 lbs Mega Bag)</h3>
+      </div>
+      <a href="https://link.amazon/B0jlfLH63" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 寵物用品：貓咪飲水機 -->
+    <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Cat Hydration</span>
+        <h3 class="card-title">Ultra-Silent Stainless Steel Cat Fountain (Desert Oasis)</h3>
+      </div>
+      <a href="https://link.amazon/B0bpXw7EQ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 3C科技：AULA F75 鍵盤 -->
+    <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Gaming Gear</span>
+        <h3 class="card-title">AULA F75 Pro 75% Wireless Mechanical Keyboard</h3>
+      </div>
+      <a href="https://link.amazon/B0ewgi8NJ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>As an Amazon Associate, HAMAGM earns from qualifying purchases.</p>
+  </div>
+
+  <script>
+    function filterItems(category, el) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      const cards = document.querySelectorAll('#productGrid .card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('#productGrid .card');
+      cards.forEach(card => {
+        const title = card.dataset.title.toLowerCase();
+        card.style.display = title.includes(query) ? 'flex' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
