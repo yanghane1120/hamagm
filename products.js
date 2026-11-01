@@ -1,6 +1,6 @@
 // products.js - HAMAGM 獨立資料庫
 
-// 1. 日常精選市集商品清單 (已更新最新商品與 Shorts 配對)
+// 1. 日常精選市集商品清單 (全數完成 Shorts 綁定)
 const marketProducts = [
   {
     id: "f75",
@@ -49,8 +49,8 @@ const marketProducts = [
     title: "Sony WH-CH720N Wireless Noise Cancelling Over-Ear Headphones",
     searchTerms: "sony wh ch720n wireless noise cancelling over ear headphones black comfortable",
     amazonUrl: "https://link.amazon/B0fOtnGwN",
-    videoId: null,
-    videoTitle: ""
+    videoId: "twG6BkAoNN0",
+    videoTitle: "Focus Mode: Noise Cancelling On"
   },
   {
     id: "echo-spot",
@@ -59,8 +59,8 @@ const marketProducts = [
     title: "Amazon Echo Spot Smart Alarm Clock with Alexa+ (Black)",
     searchTerms: "amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa",
     amazonUrl: "https://link.amazon/B0dCFtTYG",
-    videoId: null,
-    videoTitle: ""
+    videoId: "XTRpvGpgI2Y",
+    videoTitle: "Waking Up The Smart Way"
   },
   {
     id: "moving-bags",
@@ -69,8 +69,8 @@ const marketProducts = [
     title: "SummitFlare 200LB Heavy Duty Moving Storage Bags (6 Pack / XL)",
     searchTerms: "light gray moving bags 200lb heavy duty 6 pack storage bags extra large summitflare",
     amazonUrl: "https://link.amazon/B03lm3MEk",
-    videoId: null,
-    videoTitle: ""
+    videoId: "WcmlxQ1OhfQ",
+    videoTitle: "Heavy Duty Moving & Storage Solution"
   },
   {
     id: "heater",
@@ -79,8 +79,8 @@ const marketProducts = [
     title: "WINHL 1500W Portable PTC Ceramic Space Heater (70° Oscillation / Remote)",
     searchTerms: "space heater winhl portable electric heaters indoor use 70 oscillation thermostat",
     amazonUrl: "https://link.amazon/B0ivEANQG",
-    videoId: null,
-    videoTitle: ""
+    videoId: "I4AHXe0Hq3k",
+    videoTitle: "Cozy Warmth In Cold Winter"
   },
   {
     id: "flosser",
@@ -89,8 +89,8 @@ const marketProducts = [
     title: "COSLUS C20 Cordless Portable Water Dental Flosser (300ML / Pink)",
     searchTerms: "coslus ada accepted c20 water dental flosser pick professional set pink oral irrigator",
     amazonUrl: "https://link.amazon/B03kheoWk",
-    videoId: null,
-    videoTitle: ""
+    videoId: "4llyR06ur0g",
+    videoTitle: "Clean & Fresh Daily Dental Routine"
   },
   {
     id: "stickers",
@@ -109,8 +109,8 @@ const marketProducts = [
     title: "HERSHEY'S SPECIAL DARK Mildly Sweet Chocolate Bars (36 Count)",
     searchTerms: "hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside",
     amazonUrl: "https://link.amazon/B0i8ZJnSE",
-    videoId: null,
-    videoTitle: ""
+    videoId: "8dCRthWkjJQ",
+    videoTitle: "Sweet Delight & Dark Chocolate Moments"
   },
   {
     id: "candy-mix",
@@ -119,8 +119,8 @@ const marketProducts = [
     title: "Classic Bulk Assorted Party Candy Mix (5 lbs Mega Bag)",
     searchTerms: "bulk assorted party candy mix 5lb sweetside halloween",
     amazonUrl: "https://link.amazon/B0jlfLH63",
-    videoId: null,
-    videoTitle: ""
+    videoId: "hLE1yC90Egk",
+    videoTitle: "Ultimate Sweet Treats Party Mix"
   },
   {
     id: "fountain",
@@ -131,66 +131,6 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0bpXw7EQ",
     videoId: "O2khHlRJL5s",
     videoTitle: "Cat Mom Found THIS in the Middle of..."
-  },
-  {
-    id: "gear-castle",
-    category: "home",
-    tag: "Featured Gear",
-    title: "Premium Home Comfort & Lifestyle Essential",
-    searchTerms: "castle premium home comfort essential",
-    amazonUrl: "https://link.amazon/B05tSTHBF",
-    videoId: "hLE1yC90Egk",
-    videoTitle: "Cat Adventure Story Episode"
-  },
-  {
-    id: "gear-iog",
-    category: "cat",
-    tag: "Viral Gear",
-    title: "Smart Pet Solution & Daily Life-Solving Gear",
-    searchTerms: "smart pet life solving viral gear",
-    amazonUrl: "https://link.amazon/B0iogHZUJ",
-    videoId: "twG6BkAoNN0",
-    videoTitle: "The Ultimate Life-Solving Prop"
-  },
-  {
-    id: "gear-fac",
-    category: "tech",
-    tag: "Smart Tech",
-    title: "Innovative Portable Electronics & Gadget",
-    searchTerms: "innovative portable electronics gadget tech",
-    amazonUrl: "https://link.amazon/B0fAc98GN",
-    videoId: "XTRpvGpgI2Y",
-    videoTitle: "When Tech Meets Playful Animals"
-  },
-  {
-    id: "gear-1qs",
-    category: "cat",
-    tag: "Cat Care",
-    title: "Essential Cozy Pet Living & Activity Gear",
-    searchTerms: "cozy pet living activity cat gear",
-    amazonUrl: "https://link.amazon/B01qs0yRe",
-    videoId: "4llyR06ur0g",
-    videoTitle: "The Daily Cat Chronicles"
-  },
-  {
-    id: "gear-b93",
-    category: "home",
-    tag: "Home Favorite",
-    title: "Comfort & Joy Animal Household Selection",
-    searchTerms: "comfort joy animal household home",
-    amazonUrl: "https://link.amazon/B0b93hL7r",
-    videoId: "I4AHXe0Hq3k",
-    videoTitle: "A Cozy Afternoon Encounter"
-  },
-  {
-    id: "gear-74u",
-    category: "holiday",
-    tag: "Fun & Party",
-    title: "Celebration & Everyday Surprise Collection",
-    searchTerms: "celebration surprise collection holiday fun",
-    amazonUrl: "https://link.amazon/B074uNMJa",
-    videoId: "8dCRthWkjJQ",
-    videoTitle: "Unexpected Cat Moment"
   }
 ];
 
