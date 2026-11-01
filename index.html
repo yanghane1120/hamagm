@@ -59,8 +59,6 @@
       margin-top: 8px;
       line-height: 1.6;
     }
-
-    /* 頂部：小比兔專區 (XiaoBi Official Corner) */
     .xiaobi-corner {
       width: 100%;
       max-width: 940px;
@@ -103,8 +101,6 @@
       font-size: 13.5px;
       color: var(--text-sub);
     }
-
-    /* 影片區塊 */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -139,15 +135,11 @@
       font-weight: 700;
       color: var(--text-main);
     }
-
-    /* 小比兔出版品清單 (標準 6 本精選) */
     .books-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 16px;
     }
-
-    /* 分隔標題：日常市集 */
     .section-divider {
       width: 100%;
       max-width: 940px;
@@ -170,8 +162,6 @@
       background: #e2e8f0;
       max-width: 120px;
     }
-
-    /* 搜尋與分類 */
     .search-box {
       width: 100%;
       max-width: 540px;
@@ -221,8 +211,6 @@
       color: #ffffff;
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
     }
-
-    /* 市集商品網格 */
     .market-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -230,8 +218,6 @@
       width: 100%;
       max-width: 940px;
     }
-
-    /* 卡片共用樣式 */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -444,7 +430,7 @@
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, smart clocks, heaters, treats...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, headphones, smart clocks, heaters...">
   </div>
 
   <div class="filter-tabs">
@@ -457,8 +443,17 @@
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
   </div>
 
-  <!-- 選品市集卡片區 (共 9 個精選品項) -->
+  <!-- 選品市集卡片區 (共 10 個精選爆款) -->
   <div class="market-grid" id="productGrid">
+    <!-- 3C音訊選品：Sony WH-CH720N 無線降噪耳機 -->
+    <div class="card" data-category="tech" data-title="sony wh ch720n wireless noise cancelling over ear headphones black comfortable lightweight design dual noise sensor 35 hrs battery multipoint connection audio gaming">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Active Noise Cancelling</span>
+        <h3 class="card-title">Sony WH-CH720N Wireless Noise Cancelling Over-Ear Headphones</h3>
+      </div>
+      <a href="https://link.amazon/B0fOtnGwN" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
     <!-- 3C智慧家居：Amazon Echo Spot 智慧鬧鐘音響 -->
     <div class="card" data-category="tech" data-title="amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa black audio display">
       <div class="card-content" style="padding-top: 24px;">
