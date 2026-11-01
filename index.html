@@ -35,13 +35,14 @@
       margin-bottom: 24px;
     }
     .avatar {
-      width: 96px;
-      height: 96px;
+      width: 104px;
+      height: 104px;
       border-radius: 50%;
-      border: 3px solid var(--primary);
-      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+      border: 3.5px solid var(--primary);
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
       object-fit: cover;
       margin-bottom: 12px;
+      background-color: #1e293b;
     }
     .title {
       font-size: 26px;
@@ -181,7 +182,8 @@
 <body>
 
   <div class="header">
-    <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=200&q=80" alt="HAMAGM" class="avatar">
+    <!-- 自動匹配上傳的 HAMAGM.jfif 圖片 -->
+    <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='HAMAGM.jpg';">
     <h1 class="title">HAMAGM</h1>
     <p class="bio">🐾 Smart animals solving human chaos. Curated viral gear & gadgets tested by our animal squad. 👇</p>
   </div>
