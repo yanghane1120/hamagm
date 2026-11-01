@@ -25,6 +25,8 @@
       --btn-hover: #d97706;
       --tag-book: #ecfdf5;
       --tag-book-text: #059669;
+      --tag-novel: #eff6ff;
+      --tag-novel-text: #1d4ed8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -65,7 +67,7 @@
       line-height: 1.6;
     }
 
-    /* 頂部：小比兔專區 (XiaoBi Official Corner) */
+    /* 頂部：官方創作專區 */
     .xiaobi-corner {
       width: 100%;
       max-width: 940px;
@@ -145,11 +147,24 @@
       color: var(--text-main);
     }
 
-    /* 小比兔出版品清單 */
+    /* 書籍與小說網格 */
     .books-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 16px;
+    }
+
+    /* 小說次標題區隔 */
+    .novel-subheading {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 28px 0 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 20px;
     }
 
     /* 分隔標題：日常市集 */
@@ -292,6 +307,10 @@
       color: var(--tag-book-text);
       background: var(--tag-book);
     }
+    .card-tag.novel-tag {
+      color: var(--tag-novel-text);
+      background: var(--tag-novel);
+    }
     .card-title {
       font-size: 14.5px;
       font-weight: 700;
@@ -335,15 +354,15 @@
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
-    <p class="bio">🐾 Smart animals solving human chaos. Official IP creations & animal-tested viral gear. 👇</p>
+    <p class="bio">🐾 Smart animals solving human chaos. Official IP creations, original novels & tested viral gear. 👇</p>
   </div>
 
-  <!-- 頂部獨立專區：小比兔官方旗艦專區 (XiaoBi Official Corner) -->
+  <!-- 頂部獨立專區：官方原創出版品與筆記本專區 -->
   <section class="xiaobi-corner">
-    <span class="corner-badge">⭐ Official IP Corner</span>
+    <span class="corner-badge">⭐ Official Author & IP Corner</span>
     <div class="corner-header">
-      <h2 class="corner-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
-      <span class="corner-sub">Official Flipbook, Short Skits & Multi-Language Amazon Notebooks</span>
+      <h2 class="corner-title">🐰 XiaoBi Rabbit & Author Originals</h2>
+      <span class="corner-sub">Official Flipbook, Multi-Language Notebooks & Novels by Han Yang</span>
     </div>
 
     <!-- 宣傳影片 -->
@@ -440,6 +459,60 @@
         <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
       </div>
     </div>
+
+    <!-- 原創小說與文學著作 (Author's Original Novels) -->
+    <div class="novel-subheading">
+      <span>📖 Original Novels & Philosophy E-Books</span>
+    </div>
+    <div class="books-grid">
+      <!-- 1. Abejundio -->
+      <div class="card">
+        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
+          <span>🇪🇸</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag novel-tag">Kindle Edition</span>
+          <h3 class="card-title">The non-existent Spanish philosopher Abejundio</h3>
+        </div>
+        <a href="https://link.amazon/B0eFr2u8i" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+      </div>
+
+      <!-- 2. Liebesleid -->
+      <div class="card">
+        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
+          <span>🎻</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag novel-tag">Kindle Edition</span>
+          <h3 class="card-title">Liebesleid: A Symphony for the Broken</h3>
+        </div>
+        <a href="https://link.amazon/B0gJg1Q4R" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+      </div>
+
+      <!-- 3. The Recipe for a Second Chance -->
+      <div class="card">
+        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
+          <span>🍜</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag novel-tag">Kindle Edition</span>
+          <h3 class="card-title">The Recipe for a Second Chance: Beef Noodle & Memory</h3>
+        </div>
+        <a href="https://link.amazon/B0hjzbFOV" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+      </div>
+
+      <!-- 4. Papa’s Kitchen -->
+      <div class="card">
+        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
+          <span>🍲</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag novel-tag">Kindle Edition</span>
+          <h3 class="card-title">Papa’s Kitchen</h3>
+        </div>
+        <a href="https://link.amazon/B00B19Hu5" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+      </div>
+    </div>
   </section>
 
   <!-- 分隔區：通用選品市集 -->
@@ -448,11 +521,12 @@
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, gloves, hair care, headphones...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search novels, beef noodle, gear, gloves, hair care...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
+    <button class="tab" onclick="filterItems('novels', this)">📚 Novels & Books</button>
     <button class="tab" onclick="filterItems('winter', this)">🧤 Winter Gear</button>
     <button class="tab" onclick="filterItems('care', this)">🦷 Personal Care</button>
     <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
@@ -462,10 +536,46 @@
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
   </div>
 
-  <!-- 選品市集卡片區 (共 13 款精選) -->
+  <!-- 選品市集卡片區 -->
   <div class="market-grid" id="productGrid">
+
+    <!-- 原創小說 1 -->
+    <div class="card" data-category="novels" data-title="the non existent spanish philosopher abejundio letter from the philosopher abejundio rodriguez sanchez book 1 kindle ebook novel han yang">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag novel-tag">Kindle eBook</span>
+        <h3 class="card-title">The non-existent Spanish philosopher Abejundio</h3>
+      </div>
+      <a href="https://link.amazon/B0eFr2u8i" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+    </div>
+
+    <!-- 原創小說 2 -->
+    <div class="card" data-category="novels" data-title="liebesleid a symphony for the broken a novel of grief second chances and the heart that never forgot to beat kindle ebook novel han yang">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag novel-tag">Kindle eBook</span>
+        <h3 class="card-title">Liebesleid: A Symphony for the Broken</h3>
+      </div>
+      <a href="https://link.amazon/B0gJg1Q4R" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+    </div>
+
+    <!-- 原創小說 3 -->
+    <div class="card" data-category="novels" data-title="the recipe for a second chance a novel of beef noodle memory and regret poignant journey through grief reconciliation steaming bowl soup kindle ebook novel han yang">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag novel-tag">Kindle eBook</span>
+        <h3 class="card-title">The Recipe for a Second Chance: Beef Noodle Novel</h3>
+      </div>
+      <a href="https://link.amazon/B0hjzbFOV" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+    </div>
+
+    <!-- 原創小說 4 -->
+    <div class="card" data-category="novels" data-title="papas kitchen papa kitchen kindle ebook novel food warmth grief han yang">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag novel-tag">Kindle eBook</span>
+        <h3 class="card-title">Papa’s Kitchen</h3>
+      </div>
+      <a href="https://link.amazon/B00B19Hu5" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+    </div>
     
-    <!-- 1. 3C科技主力款：AULA F75 鍵盤 -->
+    <!-- 3C科技主力款：AULA F75 鍵盤 -->
     <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Gaming Gear</span>
@@ -474,7 +584,7 @@
       <a href="https://link.amazon/B0ewgi8NJ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 2. 秋冬保暖爆款：女性觸控保暖針織手套 (最新加入) -->
+    <!-- 秋冬保暖爆款：女性觸控保暖針織手套 -->
     <div class="card" data-category="winter" data-title="2 pairs winter gloves for women touch screen elastic thermal knit lining warm gloves for cold weather apparel hands">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Winter Gear</span>
@@ -483,7 +593,7 @@
       <a href="https://link.amazon/B0bdUBXIo" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 3. 個人護理爆款：巴黎萊雅 5分鐘水光護髮膜 -->
+    <!-- 個人護理爆款：巴黎萊雅 5分鐘水光護髮膜 -->
     <div class="card" data-category="care" data-title="loreal paris sulfate free glossing lamination hair mask 5 minute rinse off treatment glycolic acid glass shine smoothness color caring everpure hair care">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Hair Treatment</span>
@@ -492,7 +602,7 @@
       <a href="https://link.amazon/B0eojpQ1t" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 4. 寵物科技：PETKIT 3L 智慧自動餵食器 -->
+    <!-- 寵物科技：PETKIT 3L 智慧自動餵食器 -->
     <div class="card" data-category="cat" data-title="petkit automatic cat feeder 2.4g wifi app control pet food dispenser triple fresh lock system 3l schedule dual power pet care">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Smart Feeding</span>
@@ -501,7 +611,7 @@
       <a href="https://link.amazon/B0fC3FIFz" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 5. 3C音訊：Sony WH-CH720N 無線降噪耳機 -->
+    <!-- 3C音訊：Sony WH-CH720N 無線降噪耳機 -->
     <div class="card" data-category="tech" data-title="sony wh ch720n wireless noise cancelling over ear headphones black comfortable lightweight design dual noise sensor 35 hrs battery multipoint connection audio gaming">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Active Noise Cancelling</span>
@@ -510,7 +620,7 @@
       <a href="https://link.amazon/B0fOtnGwN" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 6. 3C智慧家居：Amazon Echo Spot 智慧鬧鐘音響 -->
+    <!-- 3C智慧家居：Amazon Echo Spot 智慧鬧鐘音響 -->
     <div class="card" data-category="tech" data-title="amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa black audio display">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Smart Home</span>
@@ -519,7 +629,7 @@
       <a href="https://link.amazon/B0dCFtTYG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 7. 居家收納：SummitFlare 200LB 重型搬家收納袋 6入裝 -->
+    <!-- 居家收納：SummitFlare 200LB 重型搬家收納袋 6入裝 -->
     <div class="card" data-category="home" data-title="light gray moving bags 200lb heavy duty 6 pack storage bags extra large 15x13x28in summitflare waterproof collapsible">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Heavy Duty Storage</span>
@@ -528,7 +638,7 @@
       <a href="https://link.amazon/B03lm3MEk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 8. 居家保暖：WINHL 1500W 便攜式陶瓷電暖器 -->
+    <!-- 居家保暖：WINHL 1500W 便攜式陶瓷電暖器 -->
     <div class="card" data-category="home" data-title="space heater winhl portable electric heaters indoor use 70 oscillation thermostat remote control 12h timer 1500w ptc ceramic fast safety heat office bedroom">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Fast Heating</span>
@@ -537,7 +647,7 @@
       <a href="https://link.amazon/B0ivEANQG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 9. 個人護理：COSLUS C20 沖牙機 -->
+    <!-- 個人護理：COSLUS C20 沖牙機 -->
     <div class="card" data-category="care" data-title="coslus ada accepted c20 water dental flosser pick professional set pink 300ml rechargeable oral irrigator cordless travel">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Oral Hygiene</span>
@@ -546,7 +656,7 @@
       <a href="https://link.amazon/B03kheoWk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 10. 節日選品：300入萬聖節南瓜貼紙包 -->
+    <!-- 節日選品：300入萬聖節南瓜貼紙包 -->
     <div class="card" data-category="holiday" data-title="300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers anhstks">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Holiday Fun</span>
@@ -555,7 +665,7 @@
       <a href="https://link.amazon/B09494Vtp" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 11. 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
+    <!-- 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
     <div class="card" data-category="snacks" data-title="hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Sweet Treats</span>
@@ -564,7 +674,7 @@
       <a href="https://link.amazon/B0i8ZJnSE" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 12. 零食商品：5磅綜合派對糖果 -->
+    <!-- 零食商品：5磅綜合派對糖果 -->
     <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Party Treats</span>
@@ -573,7 +683,7 @@
       <a href="https://link.amazon/B0jlfLH63" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <!-- 13. 寵物用品：超靜音不鏽鋼貓咪飲水機 -->
+    <!-- 寵物用品：超靜音不鏽鋼貓咪飲水機 -->
     <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis ultra silent">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Cat Hydration</span>
