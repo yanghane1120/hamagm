@@ -67,62 +67,28 @@
       line-height: 1.6;
     }
 
-    /* 頂部：小比兔官方專區 */
-    .xiaobi-corner {
+    /* 頂部精簡影片展示區塊 */
+    .showcase-corner {
       width: 100%;
       max-width: 940px;
       background: #ffffff;
-      border: 2px solid #bae6fd;
-      border-radius: 24px;
-      padding: 24px;
-      margin-bottom: 40px;
-      box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08);
-      position: relative;
+      border: 1.5px solid #bae6fd;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px -4px rgba(2, 132, 199, 0.06);
     }
-    .corner-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #0284c7;
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 800;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .corner-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-      gap: 8px;
-    }
-    .corner-title {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-    .corner-sub {
-      font-size: 13.5px;
-      color: var(--text-sub);
-    }
-
-    /* 影片區塊 */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
     }
     .video-box {
       background: #0f172a;
-      border-radius: 14px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
     .video-iframe-wrap {
       position: relative;
@@ -139,22 +105,30 @@
       border: 0;
     }
     .video-caption {
-      padding: 10px 14px;
+      padding: 8px 12px;
       background: #f8fafc;
       border-top: 1px solid var(--card-border);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--text-main);
     }
-
-    /* 小比兔出版品清單 */
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
+    .scroll-hint {
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 8px;
+    }
+    .scroll-hint a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--primary);
+    }
+    .scroll-hint a:hover {
+      opacity: 0.8;
     }
 
-    /* 分隔標題：日常市集與底部專區 */
+    /* 分隔標題 */
     .section-divider {
       width: 100%;
       max-width: 940px;
@@ -236,6 +210,13 @@
       gap: 20px;
       width: 100%;
       max-width: 940px;
+    }
+
+    /* 書籍與筆記本專用網格 */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
     }
 
     /* 卡片共用樣式 */
@@ -324,11 +305,40 @@
       box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
     }
 
-    /* 網頁底部：原創電子書與小說專區 */
-    .author-bookshelf {
+    /* 網頁底部：小比兔筆記本專區 */
+    .bottom-section {
       width: 100%;
       max-width: 940px;
       margin-top: 50px;
+      background: #ffffff;
+      border: 2px solid #bae6fd;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.05);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      gap: 8px;
+    }
+    .section-heading-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .section-sub {
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+
+    /* 網頁底部：原創小說專區 (在小比兔下方) */
+    .author-bookshelf {
+      width: 100%;
+      max-width: 940px;
+      margin-top: 30px;
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 24px;
@@ -354,18 +364,11 @@
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
-    <p class="bio">🐾 Smart animals solving human chaos. Official IP creations & animal-tested viral gear. 👇</p>
+    <p class="bio">🐾 Smart animals solving human chaos. Tested viral gear, original IP & author creations. 👇</p>
   </div>
 
-  <!-- 頂部獨立專區：小比兔官方旗艦專區 (純粹展示 IP 與筆記本) -->
-  <section class="xiaobi-corner">
-    <span class="corner-badge">⭐ Official IP Corner</span>
-    <div class="corner-header">
-      <h2 class="corner-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
-      <span class="corner-sub">Official Flipbook, Short Skits & Multi-Language Amazon Notebooks</span>
-    </div>
-
-    <!-- 宣傳影片 -->
+  <!-- 頂部：影片展示區塊 (附帶前往底部購買小字) -->
+  <section class="showcase-corner">
     <div class="video-grid">
       <div class="video-box">
         <div class="video-iframe-wrap">
@@ -390,78 +393,13 @@
         <div class="video-caption">📦 Owl Delivery & Xiaobi Figure Unboxing</div>
       </div>
     </div>
-
-    <!-- 小比兔系列筆記本 (6 本精選) -->
-    <div class="books-grid">
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_en.png" alt="English Edition 1" onerror="this.onerror=null; this.src='image_439ef6.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Paperback</span>
-          <h3 class="card-title">Little Rabbit's Notes (English Edition 1)</h3>
-        </div>
-        <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="XBR3A.jpg" alt="English Edition 2" onerror="this.onerror=null; this.src='book_en.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Paperback</span>
-          <h3 class="card-title">Little Rabbit's Notes: I Held Up the National Flag</h3>
-        </div>
-        <a href="https://link.amazon/B072n2eaF" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_jp.png" alt="日本語版 1" onerror="this.onerror=null; this.src='image_439ec1.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">ペーパーバック</span>
-          <h3 class="card-title">小比うさぎのダメダメノート (日本語版 1)</h3>
-        </div>
-        <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="XBR3j.jpg" alt="日本語版 2" onerror="this.onerror=null; this.src='book_jp.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">ペーパーバック</span>
-          <h3 class="card-title">小比うさぎのダメダメノート (日本語版 2)</h3>
-        </div>
-        <a href="https://link.amazon/B02imVg9a" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_fr.jpg" alt="Français" onerror="this.onerror=null; this.src='FRE.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Livre Broché</span>
-          <h3 class="card-title">Le carnet inutile du petit lapin (Français)</h3>
-        </div>
-        <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_de.jpg" alt="Deutsch" onerror="this.onerror=null; this.src='der.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Taschenbuch</span>
-          <h3 class="card-title">Der Notizblock des kleinen Hasen (Deutsch)</h3>
-        </div>
-        <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-    </div>
+    <!-- 影片下方一行清楚的英文導購引導小字 -->
+    <p class="scroll-hint">
+      🐰 Love XiaoBi Rabbit's official flipbook notebooks? <a href="#xiaobi-notebooks">Scroll down to the bottom to purchase on Amazon! 👇</a>
+    </p>
   </section>
 
-  <!-- 分隔區：通用選品市集 -->
+  <!-- 中間精華區：日常選品市集 (進站第一眼直接購買) -->
   <div class="section-divider">
     <h3 class="section-title">🐾 HAMAGM Curated Market</h3>
   </div>
@@ -481,10 +419,10 @@
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
   </div>
 
-  <!-- 選品市集卡片區 (真正要買東西的電商流量首選) -->
+  <!-- 市集商品網格 -->
   <div class="market-grid" id="productGrid">
     
-    <!-- 1. 3C科技主力款：AULA F75 鍵盤 (最熱門置頂) -->
+    <!-- 1. 3C科技主力款：AULA F75 鍵盤 -->
     <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Gaming Gear</span>
@@ -603,11 +541,93 @@
 
   </div>
 
-  <!-- 網頁底部獨立專區：原創電子書與文學著作 (移至市集下方，不干擾購物體驗) -->
+  <!-- 網頁底部專區 1：小比兔官方筆記本專區 (XiaoBi Notebooks) -->
+  <section class="bottom-section" id="xiaobi-notebooks">
+    <div class="section-header">
+      <h2 class="section-heading-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
+      <span class="section-sub">Official Flipbook & Multi-Language Amazon Notebooks</span>
+    </div>
+
+    <div class="books-grid">
+      <!-- 英文版 1 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_en.png" alt="English Edition 1" onerror="this.onerror=null; this.src='image_439ef6.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Paperback</span>
+          <h3 class="card-title">Little Rabbit's Notes (English Edition 1)</h3>
+        </div>
+        <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 英文版 2 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="XBR3A.jpg" alt="English Edition 2" onerror="this.onerror=null; this.src='book_en.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Paperback</span>
+          <h3 class="card-title">Little Rabbit's Notes: I Held Up the National Flag</h3>
+        </div>
+        <a href="https://link.amazon/B072n2eaF" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 日文版 1 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_jp.png" alt="日本語版 1" onerror="this.onerror=null; this.src='image_439ec1.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">ペーパーバック</span>
+          <h3 class="card-title">小比うさぎのダメダメノート (日本語版 1)</h3>
+        </div>
+        <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 日文版 2 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="XBR3j.jpg" alt="日本語版 2" onerror="this.onerror=null; this.src='book_jp.png';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">ペーパーバック</span>
+          <h3 class="card-title">小比うさぎのダメダメノート (日本語版 2)</h3>
+        </div>
+        <a href="https://link.amazon/B02imVg9a" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 法文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_fr.jpg" alt="Français" onerror="this.onerror=null; this.src='FRE.jpg';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Livre Broché</span>
+          <h3 class="card-title">Le carnet inutile du petit lapin (Français)</h3>
+        </div>
+        <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+
+      <!-- 德文版 -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="book_de.jpg" alt="Deutsch" onerror="this.onerror=null; this.src='der.jpg';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag book-tag">Taschenbuch</span>
+          <h3 class="card-title">Der Notizblock des kleinen Hasen (Deutsch)</h3>
+        </div>
+        <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 網頁底部專區 2：原創小說與文學著作 (Author's Bookshelf) -->
   <section class="author-bookshelf">
-    <div class="corner-header">
-      <h2 class="corner-title" style="font-size: 20px;">📚 Author's Bookshelf | Novels & Philosophy</h2>
-      <span class="corner-sub">Original literary works by Han Yang (Available on Kindle)</span>
+    <div class="section-header">
+      <h2 class="section-heading-title">📚 Author's Bookshelf | Novels & Philosophy</h2>
+      <span class="section-sub">Original literary works by Han Yang (Available on Kindle)</span>
     </div>
 
     <div class="books-grid">
