@@ -212,7 +212,7 @@
       max-width: 940px;
     }
 
-    /* 書籍與筆記本專用網格 */
+    /* 書籍專用網格 */
     .books-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -238,7 +238,7 @@
     }
     .card-book-cover {
       width: 100%;
-      height: 200px;
+      height: 230px;
       background: #f1f5f9;
       display: flex;
       align-items: center;
@@ -334,7 +334,7 @@
       color: var(--text-sub);
     }
 
-    /* 網頁底部：原創小說專區 (在小比兔下方) */
+    /* 網頁底部：原創小說專區 */
     .author-bookshelf {
       width: 100%;
       max-width: 940px;
@@ -393,13 +393,12 @@
         <div class="video-caption">📦 Owl Delivery & Xiaobi Figure Unboxing</div>
       </div>
     </div>
-    <!-- 影片下方一行清楚的英文導購引導小字 -->
     <p class="scroll-hint">
       🐰 Love XiaoBi Rabbit's official flipbook notebooks? <a href="#xiaobi-notebooks">Scroll down to the bottom to purchase on Amazon! 👇</a>
     </p>
   </section>
 
-  <!-- 中間精華區：日常選品市集 (進站第一眼直接購買) -->
+  <!-- 中間精華區：日常選品市集 -->
   <div class="section-divider">
     <h3 class="section-title">🐾 HAMAGM Curated Market</h3>
   </div>
@@ -541,7 +540,7 @@
 
   </div>
 
-  <!-- 網頁底部專區 1：小比兔官方筆記本專區 (XiaoBi Notebooks) -->
+  <!-- 網頁底部專區 1：小比兔官方筆記本專區 -->
   <section class="bottom-section" id="xiaobi-notebooks">
     <div class="section-header">
       <h2 class="section-heading-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
@@ -623,7 +622,7 @@
     </div>
   </section>
 
-  <!-- 網頁底部專區 2：原創小說與文學著作 (Author's Bookshelf) -->
+  <!-- 網頁底部專區 2：原創小說與文學著作 (使用單字命名圖檔) -->
   <section class="author-bookshelf">
     <div class="section-header">
       <h2 class="section-heading-title">📚 Author's Bookshelf | Novels & Philosophy</h2>
@@ -631,10 +630,22 @@
     </div>
 
     <div class="books-grid">
-      <!-- 1. Abejundio -->
+      <!-- 1. Read Smarter (Smarter.jfif) -->
       <div class="card">
-        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
-          <span>🇪🇸</span>
+        <div class="card-book-cover">
+          <img src="Smarter.jfif" alt="Read Smarter" onerror="this.onerror=null; this.src='Smarter.jpg';">
+        </div>
+        <div class="card-content">
+          <span class="card-tag novel-tag">Kindle Edition</span>
+          <h3 class="card-title">Read Smarter: A Novelist’s Field Guide</h3>
+        </div>
+        <a href="https://link.amazon/B043rKAkO" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+      </div>
+
+      <!-- 2. Abejundio (Abejundio.jfif) -->
+      <div class="card">
+        <div class="card-book-cover">
+          <img src="Abejundio.jfif" alt="Abejundio" onerror="this.onerror=null; this.src='Abejundio.jpg';">
         </div>
         <div class="card-content">
           <span class="card-tag novel-tag">Kindle Edition</span>
@@ -643,10 +654,10 @@
         <a href="https://link.amazon/B0eFr2u8i" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
       </div>
 
-      <!-- 2. Liebesleid -->
+      <!-- 3. Liebesleid (Liebesleid.jfif) -->
       <div class="card">
-        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
-          <span>🎻</span>
+        <div class="card-book-cover">
+          <img src="Liebesleid.jfif" alt="Liebesleid" onerror="this.onerror=null; this.src='Liebesleid.jpg';">
         </div>
         <div class="card-content">
           <span class="card-tag novel-tag">Kindle Edition</span>
@@ -655,10 +666,10 @@
         <a href="https://link.amazon/B0gJg1Q4R" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
       </div>
 
-      <!-- 3. The Recipe for a Second Chance -->
+      <!-- 4. The Recipe for a Second Chance (Recipe.jfif) -->
       <div class="card">
-        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
-          <span>🍜</span>
+        <div class="card-book-cover">
+          <img src="Recipe.jfif" alt="The Recipe for a Second Chance" onerror="this.onerror=null; this.src='Recipe.jpg';">
         </div>
         <div class="card-content">
           <span class="card-tag novel-tag">Kindle Edition</span>
@@ -667,10 +678,10 @@
         <a href="https://link.amazon/B0hjzbFOV" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
       </div>
 
-      <!-- 4. Papa’s Kitchen -->
+      <!-- 5. Papa’s Kitchen (Kitchen.jfif) -->
       <div class="card">
-        <div class="card-book-cover" style="background:#f8fafc; font-size:40px;">
-          <span>🍲</span>
+        <div class="card-book-cover">
+          <img src="Kitchen.jfif" alt="Papa’s Kitchen" onerror="this.onerror=null; this.src='Kitchen.jpg';">
         </div>
         <div class="card-content">
           <span class="card-tag novel-tag">Kindle Edition</span>
