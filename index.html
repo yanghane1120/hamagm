@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAMAGM - Official Store & Gear</title>
   
-  <!-- 網站專屬分頁圖示 (Favicon)：精準重現藍色圓角方形與白色流線 H 標誌 -->
+  <!-- 網站專屬分頁圖示 (Favicon)：藍色圓角方形與白色流線 H 標誌 -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367d3f8'/%3E%3Cstop offset='50%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3Cfilter id='glow' x='-10%25' y='-10%25' width='120%25' height='120%25'%3E%3CfeDropShadow dx='0' dy='2' stdDeviation='1.5' flood-color='%23000' flood-opacity='0.15'/%3E%3C/filter%3E%3C/defs%3E%3Crect x='4' y='4' width='120' height='120' rx='34' fill='url(%23bgGrad)' filter='url(%23glow)'/%3E%3Cpath d='M 38 32 C 43 32 46.5 35.5 46.5 40.5 L 46.5 62 C 46.5 66 49.5 69 53.5 69 L 74.5 69 C 78.5 69 81.5 66 81.5 62 L 81.5 40.5 C 81.5 35.5 85 32 90 32 C 95 32 98.5 35.5 98.5 40.5 L 98.5 87.5 C 98.5 92.5 95 96 90 96 C 85 96 81.5 92.5 81.5 87.5 L 81.5 79 C 81.5 75 78.5 72 74.5 72 L 53.5 72 C 49.5 72 46.5 75 46.5 79 L 46.5 87.5 C 46.5 92.5 43 96 38 96 C 33 96 29.5 92.5 29.5 87.5 L 29.5 40.5 C 29.5 35.5 33 32 38 32 Z' fill='%23ffffff'/%3E%3C/svg%3E">
   <link rel="alternate icon" type="image/x-icon" href="H.jfif">
 
@@ -145,7 +145,7 @@
       color: var(--text-main);
     }
 
-    /* 小比兔出版品清單 (標準 6 本精選) */
+    /* 小比兔出版品清單 */
     .books-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -227,7 +227,7 @@
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
     }
 
-    /* 市集商品網格 (11 款精選) */
+    /* 市集商品網格 */
     .market-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -320,8 +320,13 @@
     .footer {
       margin-top: 50px;
       text-align: center;
+      padding: 20px 16px;
+      border-top: 1px solid var(--card-border);
+    }
+    .affiliate-disclosure {
       font-size: 13px;
       color: var(--text-sub);
+      line-height: 1.5;
     }
   </style>
 </head>
@@ -367,9 +372,8 @@
       </div>
     </div>
 
-    <!-- 小比兔系列出版品 (標準 6 本精選) -->
+    <!-- 小比兔系列出版品 -->
     <div class="books-grid">
-      <!-- 英文版 1 (原創版) -->
       <div class="card">
         <div class="card-book-cover">
           <img src="book_en.png" alt="English Edition 1" onerror="this.onerror=null; this.src='image_439ef6.png';">
@@ -381,7 +385,6 @@
         <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
       </div>
 
-      <!-- 英文版 2 (特別版：I Held Up the National Flag) -->
       <div class="card">
         <div class="card-book-cover">
           <img src="XBR3A.jpg" alt="English Edition 2" onerror="this.onerror=null; this.src='book_en.png';">
@@ -393,7 +396,6 @@
         <a href="https://link.amazon/B072n2eaF" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
       </div>
 
-      <!-- 日文版 1 (原創版) -->
       <div class="card">
         <div class="card-book-cover">
           <img src="book_jp.png" alt="日本語版 1" onerror="this.onerror=null; this.src='image_439ec1.png';">
@@ -405,7 +407,6 @@
         <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
       </div>
 
-      <!-- 日文版 2 (特別版) -->
       <div class="card">
         <div class="card-book-cover">
           <img src="XBR3j.jpg" alt="日本語版 2" onerror="this.onerror=null; this.src='book_jp.png';">
@@ -417,7 +418,6 @@
         <a href="https://link.amazon/B02imVg9a" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
       </div>
 
-      <!-- 法文版 -->
       <div class="card">
         <div class="card-book-cover">
           <img src="book_fr.jpg" alt="Français" onerror="this.onerror=null; this.src='FRE.jpg';">
@@ -429,7 +429,6 @@
         <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
       </div>
 
-      <!-- 德文版 -->
       <div class="card">
         <div class="card-book-cover">
           <img src="book_de.jpg" alt="Deutsch" onerror="this.onerror=null; this.src='der.jpg';">
@@ -449,21 +448,41 @@
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, pet feeders, headphones, heaters...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search market gear, pet feeders, hair care, headphones...">
   </div>
 
   <div class="filter-tabs">
     <button class="tab active" onclick="filterItems('all', this)">All</button>
-    <button class="tab" onclick="filterItems('home', this)">🏠 Home & Storage</button>
     <button class="tab" onclick="filterItems('care', this)">🦷 Personal Care</button>
+    <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
+    <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
+    <button class="tab" onclick="filterItems('home', this)">🏠 Home & Storage</button>
     <button class="tab" onclick="filterItems('holiday', this)">🎃 Holiday & Fun</button>
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
-    <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Care</button>
-    <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
   </div>
 
-  <!-- 選品市集卡片區 (共 11 個精選爆款) -->
+  <!-- 選品市集卡片區 (共 12 款精選) -->
   <div class="market-grid" id="productGrid">
+    
+    <!-- 1. 3C科技主力款：AULA F75 鍵盤 (已調至首位) -->
+    <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Gaming Gear</span>
+        <h3 class="card-title">AULA F75 Pro 75% Wireless Mechanical Keyboard</h3>
+      </div>
+      <a href="https://link.amazon/B0ewgi8NJ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 2. 個人護理爆款：巴黎萊雅 5分鐘水光護髮膜 (最新加入) -->
+    <div class="card" data-category="care" data-title="loreal paris sulfate free glossing lamination hair mask 5 minute rinse off treatment glycolic acid glass shine smoothness color caring everpure hair care">
+      <div class="card-content" style="padding-top: 24px;">
+        <span class="card-tag">Hair Treatment</span>
+        <h3 class="card-title">L'Oreal Paris EverPure Glossing Lamination Hair Mask (5.1 Fl Oz)</h3>
+      </div>
+      <a href="https://link.amazon/B0eojpQ1t" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+    </div>
+
+    <!-- 3. 寵物科技：PETKIT 3L 智慧自動餵食器 -->
     <div class="card" data-category="cat" data-title="petkit automatic cat feeder 2.4g wifi app control pet food dispenser triple fresh lock system 3l schedule dual power pet care">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Smart Feeding</span>
@@ -472,6 +491,7 @@
       <a href="https://link.amazon/B0fC3FIFz" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 4. 3C音訊：Sony WH-CH720N 無線降噪耳機 -->
     <div class="card" data-category="tech" data-title="sony wh ch720n wireless noise cancelling over ear headphones black comfortable lightweight design dual noise sensor 35 hrs battery multipoint connection audio gaming">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Active Noise Cancelling</span>
@@ -480,6 +500,7 @@
       <a href="https://link.amazon/B0fOtnGwN" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 5. 3C智慧家居：Amazon Echo Spot 智慧鬧鐘音響 -->
     <div class="card" data-category="tech" data-title="amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa black audio display">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Smart Home</span>
@@ -488,6 +509,7 @@
       <a href="https://link.amazon/B0dCFtTYG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 6. 居家收納：SummitFlare 200LB 重型搬家收納袋 6入裝 -->
     <div class="card" data-category="home" data-title="light gray moving bags 200lb heavy duty 6 pack storage bags extra large 15x13x28in summitflare waterproof collapsible">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Heavy Duty Storage</span>
@@ -496,6 +518,7 @@
       <a href="https://link.amazon/B03lm3MEk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 7. 居家保暖：WINHL 1500W 便攜式陶瓷電暖器 -->
     <div class="card" data-category="home" data-title="space heater winhl portable electric heaters indoor use 70 oscillation thermostat remote control 12h timer 1500w ptc ceramic fast safety heat office bedroom">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Fast Heating</span>
@@ -504,6 +527,7 @@
       <a href="https://link.amazon/B0ivEANQG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 8. 個人護理：COSLUS C20 沖牙機 -->
     <div class="card" data-category="care" data-title="coslus ada accepted c20 water dental flosser pick professional set pink 300ml rechargeable oral irrigator cordless travel">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Oral Hygiene</span>
@@ -512,6 +536,7 @@
       <a href="https://link.amazon/B03kheoWk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 9. 節日選品：300入萬聖節南瓜貼紙包 -->
     <div class="card" data-category="holiday" data-title="300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers anhstks">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Holiday Fun</span>
@@ -520,6 +545,7 @@
       <a href="https://link.amazon/B09494Vtp" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 10. 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
     <div class="card" data-category="snacks" data-title="hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Sweet Treats</span>
@@ -528,6 +554,7 @@
       <a href="https://link.amazon/B0i8ZJnSE" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
+    <!-- 11. 零食商品：5磅綜合派對糖果 -->
     <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Party Treats</span>
@@ -536,7 +563,8 @@
       <a href="https://link.amazon/B0jlfLH63" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis">
+    <!-- 12. 寵物用品：超靜音不鏽鋼貓咪飲水機 -->
+    <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis ultra silent">
       <div class="card-content" style="padding-top: 24px;">
         <span class="card-tag">Cat Hydration</span>
         <h3 class="card-title">Ultra-Silent Stainless Steel Cat Fountain (Desert Oasis)</h3>
@@ -544,18 +572,11 @@
       <a href="https://link.amazon/B0bpXw7EQ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
     </div>
 
-    <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Gaming Gear</span>
-        <h3 class="card-title">AULA F75 Pro 75% Wireless Mechanical Keyboard</h3>
-      </div>
-      <a href="https://link.amazon/B0ewgi8NJ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
   </div>
 
-  <div class="footer">
-    <p>As an Amazon Associate, HAMAGM earns from qualifying purchases.</p>
-  </div>
+  <footer class="footer">
+    <p class="affiliate-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
 
   <script>
     function filterItems(category, el) {
