@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-WTZW504ESG');
   </script>
 
@@ -15,7 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAMAGM - Official Store & Gear</title>
   
-  <!-- 網站專屬分頁圖示 (Favicon)：藍色圓角方形與白色流線 H 標誌 -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367d3f8'/%3E%3Cstop offset='50%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3Cfilter id='glow' x='-10%25' y='-10%25' width='120%25' height='120%25'%3E%3CfeDropShadow dx='0' dy='2' stdDeviation='1.5' flood-color='%23000' flood-opacity='0.15'/%3E%3C/filter%3E%3C/defs%3E%3Crect x='4' y='4' width='120' height='120' rx='34' fill='url(%23bgGrad)' filter='url(%23glow)'/%3E%3Cpath d='M 38 32 C 43 32 46.5 35.5 46.5 40.5 L 46.5 62 C 46.5 66 49.5 69 53.5 69 L 74.5 69 C 78.5 69 81.5 66 81.5 62 L 81.5 40.5 C 81.5 35.5 85 32 90 32 C 95 32 98.5 35.5 98.5 40.5 L 98.5 87.5 C 98.5 92.5 95 96 90 96 C 85 96 81.5 92.5 81.5 87.5 L 81.5 79 C 81.5 75 78.5 72 74.5 72 L 53.5 72 C 49.5 72 46.5 75 46.5 79 L 46.5 87.5 C 46.5 92.5 43 96 38 96 C 33 96 29.5 92.5 29.5 87.5 L 29.5 40.5 C 29.5 35.5 33 32 38 32 Z' fill='%23ffffff'/%3E%3C/svg%3E">
   <link rel="alternate icon" type="image/x-icon" href="H.jfif">
 
@@ -222,6 +220,31 @@
       max-width: 940px;
     }
 
+    /* 載入更多按鈕專區 */
+    .load-more-wrap {
+      width: 100%;
+      max-width: 940px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .load-more-btn {
+      background: #ffffff;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 24px;
+      border-radius: 9999px;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
+      transition: all 0.2s ease;
+    }
+    .load-more-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+    }
+
     /* 書籍專用網格 */
     .books-grid {
       display: grid;
@@ -298,7 +321,6 @@
     }
     .card-btn {
       display: block;
-      margin: 0 16px 16px 16px;
       text-align: center;
       background: var(--btn-bg);
       color: #111827;
@@ -321,9 +343,6 @@
       flex-direction: column;
       gap: 8px;
       padding: 0 16px 16px 16px;
-    }
-    .card-action-wrap .card-btn {
-      margin: 0;
     }
     .story-btn {
       width: 100%;
@@ -446,7 +465,7 @@
     }
     .story-video-wrap {
       position: relative;
-      padding-bottom: 177.78%; /* 9:16 直式比例 */
+      padding-bottom: 177.78%;
       height: 0;
     }
     .story-video-wrap iframe {
@@ -518,131 +537,12 @@
     <button class="tab" onclick="filterItems('snacks', this)">🍬 Snacks & Sweets</button>
   </div>
 
-  <!-- 市集商品網格 -->
-  <div class="market-grid" id="productGrid">
-    
-    <!-- 1. 3C科技主力款：AULA F75 鍵盤 -->
-    <div class="card" data-category="tech" data-title="aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Gaming Gear</span>
-        <h3 class="card-title">AULA F75 Pro 75% Wireless Mechanical Keyboard</h3>
-      </div>
-      <a href="https://link.amazon/B0ewgi8NJ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
+  <!-- 市集商品動態容器 -->
+  <div class="market-grid" id="productGrid"></div>
 
-    <!-- 2. 秋冬保暖爆款：女性觸控保暖手套 -->
-    <div class="card" data-category="winter" data-title="2 pairs winter gloves for women touch screen elastic thermal knit lining warm gloves for cold weather apparel hands">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Winter Gear</span>
-        <h3 class="card-title">2 Pairs Women's Touch Screen Thermal Knit Winter Gloves</h3>
-      </div>
-      <a href="https://link.amazon/B0bdUBXIo" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 3. 個人護理爆款：巴黎萊雅 5分鐘水光護髮膜 -->
-    <div class="card" data-category="care" data-title="loreal paris sulfate free glossing lamination hair mask 5 minute rinse off treatment glycolic acid glass shine smoothness color caring everpure hair care">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Hair Treatment</span>
-        <h3 class="card-title">L'Oreal Paris EverPure Glossing Lamination Hair Mask (5.1 Fl Oz)</h3>
-      </div>
-      <a href="https://link.amazon/B0eojpQ1t" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 4. 寵物科技：PETKIT 3L 智慧自動餵食器 -->
-    <div class="card" data-category="cat" data-title="petkit automatic cat feeder 2.4g wifi app control pet food dispenser triple fresh lock system 3l schedule dual power pet care">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Smart Feeding</span>
-        <h3 class="card-title">PETKIT 3L WiFi Automatic Pet Feeder with Triple Fresh-Lock</h3>
-      </div>
-      <a href="https://link.amazon/B0fC3FIFz" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 5. 3C音訊：Sony WH-CH720N 無線降噪耳機 -->
-    <div class="card" data-category="tech" data-title="sony wh ch720n wireless noise cancelling over ear headphones black comfortable lightweight design dual noise sensor 35 hrs battery multipoint connection audio gaming">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Active Noise Cancelling</span>
-        <h3 class="card-title">Sony WH-CH720N Wireless Noise Cancelling Over-Ear Headphones</h3>
-      </div>
-      <a href="https://link.amazon/B0fOtnGwN" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 6. 3C智慧家居：Amazon Echo Spot 智慧鬧鐘音響 -->
-    <div class="card" data-category="tech" data-title="amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa black audio display">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Smart Home</span>
-        <h3 class="card-title">Amazon Echo Spot Smart Alarm Clock with Alexa+ (Black)</h3>
-      </div>
-      <a href="https://link.amazon/B0dCFtTYG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 7. 居家收納：SummitFlare 200LB 重型搬家收納袋 6入裝 -->
-    <div class="card" data-category="home" data-title="light gray moving bags 200lb heavy duty 6 pack storage bags extra large 15x13x28in summitflare waterproof collapsible">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Heavy Duty Storage</span>
-        <h3 class="card-title">SummitFlare 200LB Heavy Duty Moving Storage Bags (6 Pack / XL)</h3>
-      </div>
-      <a href="https://link.amazon/B03lm3MEk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 8. 居家保暖：WINHL 1500W 便攜式陶瓷電暖器 -->
-    <div class="card" data-category="home" data-title="space heater winhl portable electric heaters indoor use 70 oscillation thermostat remote control 12h timer 1500w ptc ceramic fast safety heat office bedroom">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Fast Heating</span>
-        <h3 class="card-title">WINHL 1500W Portable PTC Ceramic Space Heater (70° Oscillation / Remote)</h3>
-      </div>
-      <a href="https://link.amazon/B0ivEANQG" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 9. 個人護理：COSLUS C20 沖牙機 -->
-    <div class="card" data-category="care" data-title="coslus ada accepted c20 water dental flosser pick professional set pink 300ml rechargeable oral irrigator cordless travel">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Oral Hygiene</span>
-        <h3 class="card-title">COSLUS C20 Cordless Portable Water Dental Flosser (300ML / Pink)</h3>
-      </div>
-      <a href="https://link.amazon/B03kheoWk" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 10. 節日選品：300入萬聖節南瓜貼紙包 -->
-    <div class="card" data-category="holiday" data-title="300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers anhstks">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Holiday Fun</span>
-        <h3 class="card-title">300 PCS Halloween Pumpkin Waterproof Vinyl Stickers</h3>
-      </div>
-      <a href="https://link.amazon/B09494Vtp" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 11. 零食商品：HERSHEY'S 黑巧克力棒 (36入) -->
-    <div class="card" data-category="snacks" data-title="hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Sweet Treats</span>
-        <h3 class="card-title">HERSHEY'S SPECIAL DARK Mildly Sweet Chocolate Bars (36 Count)</h3>
-      </div>
-      <a href="https://link.amazon/B0i8ZJnSE" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 12. 零食商品：5磅綜合派對糖果 -->
-    <div class="card" data-category="snacks" data-title="bulk assorted party candy mix 5lb sweetside halloween">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Party Treats</span>
-        <h3 class="card-title">Classic Bulk Assorted Party Candy Mix (5 lbs Mega Bag)</h3>
-      </div>
-      <a href="https://link.amazon/B0jlfLH63" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-    </div>
-
-    <!-- 13. 寵物用品：超靜音不鏽鋼貓咪飲水機 (已加入故事預覽按鈕) -->
-    <div class="card" data-category="cat" data-title="stainless steel cat water fountain pet oasis ultra silent">
-      <div class="card-content" style="padding-top: 24px;">
-        <span class="card-tag">Cat Hydration</span>
-        <h3 class="card-title">Ultra-Silent Stainless Steel Cat Fountain (Desert Oasis)</h3>
-      </div>
-      <div class="card-action-wrap">
-        <button type="button" class="story-btn" onclick="openStoryModal('O2khHlRJL5s', 'Cat Mom Found THIS in the Middle of...')">
-          🎬 Watch Cat Story
-        </button>
-        <a href="https://link.amazon/B0bpXw7EQ" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
-      </div>
-    </div>
-
+  <!-- 分頁載入更多按鈕 -->
+  <div class="load-more-wrap">
+    <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">Load More Gear 👇</button>
   </div>
 
   <!-- 網頁底部專區 1：小比兔官方筆記本專區 -->
@@ -651,74 +551,7 @@
       <h2 class="section-heading-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
       <span class="section-sub">Official Flipbook & Multi-Language Amazon Notebooks</span>
     </div>
-
-    <div class="books-grid">
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_en.png" alt="English Edition 1" onerror="this.onerror=null; this.src='image_439ef6.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Paperback</span>
-          <h3 class="card-title">Little Rabbit's Notes (English Edition 1)</h3>
-        </div>
-        <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="XBR3A.jpg" alt="English Edition 2" onerror="this.onerror=null; this.src='book_en.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Paperback</span>
-          <h3 class="card-title">Little Rabbit's Notes: I Held Up the National Flag</h3>
-        </div>
-        <a href="https://link.amazon/B072n2eaF" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_jp.png" alt="日本語版 1" onerror="this.onerror=null; this.src='image_439ec1.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">ペーパーバック</span>
-          <h3 class="card-title">小比うさぎのダメダメノート (日本語版 1)</h3>
-        </div>
-        <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="XBR3j.jpg" alt="日本語版 2" onerror="this.onerror=null; this.src='book_jp.png';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">ペーパーバック</span>
-          <h3 class="card-title">小比うさぎのダメダメノート (日本語版 2)</h3>
-        </div>
-        <a href="https://link.amazon/B02imVg9a" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_fr.jpg" alt="Français" onerror="this.onerror=null; this.src='FRE.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Livre Broché</span>
-          <h3 class="card-title">Le carnet inutile du petit lapin (Français)</h3>
-        </div>
-        <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="book_de.jpg" alt="Deutsch" onerror="this.onerror=null; this.src='der.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag book-tag">Taschenbuch</span>
-          <h3 class="card-title">Der Notizblock des kleinen Hasen (Deutsch)</h3>
-        </div>
-        <a href="https://link.amazon/B029TO94d" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
-      </div>
-    </div>
+    <div class="books-grid" id="xiaobiGrid"></div>
   </section>
 
   <!-- 網頁底部專區 2：原創小說與文學著作 -->
@@ -727,68 +560,7 @@
       <h2 class="section-heading-title">📚 Author's Bookshelf | Novels & Philosophy</h2>
       <span class="section-sub">Original literary works by Han Yang (Available on Kindle)</span>
     </div>
-
-    <div class="books-grid">
-      <!-- 1. Read Smarter -->
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="Smarter.jfif" alt="Read Smarter" onerror="this.onerror=null; this.src='Smarter.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag novel-tag">Kindle Edition</span>
-          <h3 class="card-title">Read Smarter: A Novelist’s Field Guide</h3>
-        </div>
-        <a href="https://link.amazon/B043rKAkO" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
-      </div>
-
-      <!-- 2. Abejundio -->
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="Abejundio.jfif" alt="Abejundio" onerror="this.onerror=null; this.src='Abejundio.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag novel-tag">Kindle Edition</span>
-          <h3 class="card-title">The non-existent Spanish philosopher Abejundio</h3>
-        </div>
-        <a href="https://link.amazon/B0eFr2u8i" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
-      </div>
-
-      <!-- 3. Liebesleid -->
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="Liebesleid.jfif" alt="Liebesleid" onerror="this.onerror=null; this.src='Liebesleid.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag novel-tag">Kindle Edition</span>
-          <h3 class="card-title">Liebesleid: A Symphony for the Broken</h3>
-        </div>
-        <a href="https://link.amazon/B0gJg1Q4R" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
-      </div>
-
-      <!-- 4. The Recipe for a Second Chance -->
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="Recipe.jfif" alt="The Recipe for a Second Chance" onerror="this.onerror=null; this.src='Recipe.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag novel-tag">Kindle Edition</span>
-          <h3 class="card-title">The Recipe for a Second Chance: Beef Noodle & Memory</h3>
-        </div>
-        <a href="https://link.amazon/B0hjzbFOV" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
-      </div>
-
-      <!-- 5. Papa’s Kitchen -->
-      <div class="card">
-        <div class="card-book-cover">
-          <img src="Kitchen.jfif" alt="Papa’s Kitchen" onerror="this.onerror=null; this.src='Kitchen.jpg';">
-        </div>
-        <div class="card-content">
-          <span class="card-tag novel-tag">Kindle Edition</span>
-          <h3 class="card-title">Papa’s Kitchen</h3>
-        </div>
-        <a href="https://link.amazon/B00B19Hu5" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
-      </div>
-    </div>
+    <div class="books-grid" id="authorBooksGrid"></div>
   </section>
 
   <footer class="footer">
@@ -808,47 +580,146 @@
     </div>
   </div>
 
+  <!-- 引入獨立資料庫 -->
+  <script src="products.js"></script>
+
+  <!-- 頁面邏輯腳本 -->
   <script>
+    let currentPage = 1;
+    const itemsPerPage = 12; // 每頁顯示 12 筆
+    let currentFilterCategory = 'all';
+    let currentSearchQuery = '';
+    let activeFilteredList = [];
+
+    // 核心渲染邏輯 (分頁與累積載入)
+    function renderMarketCards(reset = false) {
+      const container = document.getElementById('productGrid');
+      if (reset) {
+        container.innerHTML = '';
+        currentPage = 1;
+      }
+
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = currentPage * itemsPerPage;
+      const pageItems = activeFilteredList.slice(start, end);
+
+      pageItems.forEach(item => {
+        const storyBtnHtml = item.videoId ? `
+          <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${item.videoTitle.replace(/'/g, "\\'")}')">
+            🎬 Watch Cat Story
+          </button>
+        ` : '';
+
+        const cardHtml = `
+          <div class="card" data-category="${item.category}">
+            <div class="card-content" style="padding-top: 24px;">
+              <span class="card-tag">${item.tag}</span>
+              <h3 class="card-title">${item.title}</h3>
+            </div>
+            <div class="card-action-wrap">
+              ${storyBtnHtml}
+              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+            </div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', cardHtml);
+      });
+
+      // 檢查是否還有剩餘項目以決定顯示「Load More」按鈕
+      const loadBtn = document.getElementById('loadMoreBtn');
+      loadBtn.style.display = (end >= activeFilteredList.length) ? 'none' : 'inline-block';
+    }
+
+    function applyFilterAndSearch() {
+      activeFilteredList = marketProducts.filter(item => {
+        const matchesCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
+        const searchTarget = (item.title + ' ' + (item.searchTerms || '')).toLowerCase();
+        const matchesSearch = searchTarget.includes(currentSearchQuery);
+        return matchesCategory && matchesSearch;
+      });
+      renderMarketCards(true);
+    }
+
     function filterItems(category, el) {
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       el.classList.add('active');
-      const cards = document.querySelectorAll('#productGrid .card');
-      cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+      currentFilterCategory = category;
+      applyFilterAndSearch();
+    }
+
+    function loadMore() {
+      currentPage++;
+      renderMarketCards(false);
+    }
+
+    // 渲染書籍清單 (小比兔與原創著作)
+    function renderBooks() {
+      const xiaobiContainer = document.getElementById('xiaobiGrid');
+      xiaobiNotebooks.forEach(book => {
+        const html = `
+          <div class="card">
+            <div class="card-book-cover">
+              <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover}';">
+            </div>
+            <div class="card-content">
+              <span class="card-tag book-tag">${book.tag}</span>
+              <h3 class="card-title">${book.title}</h3>
+            </div>
+            <div class="card-action-wrap">
+              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 📖</a>
+            </div>
+          </div>
+        `;
+        xiaobiContainer.insertAdjacentHTML('beforeend', html);
+      });
+
+      const authorContainer = document.getElementById('authorBooksGrid');
+      authorBooks.forEach(book => {
+        const html = `
+          <div class="card">
+            <div class="card-book-cover">
+              <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover}';">
+            </div>
+            <div class="card-content">
+              <span class="card-tag novel-tag">${book.tag}</span>
+              <h3 class="card-title">${book.title}</h3>
+            </div>
+            <div class="card-action-wrap">
+              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Amazon 📖</a>
+            </div>
+          </div>
+        `;
+        authorContainer.insertAdjacentHTML('beforeend', html);
       });
     }
 
-    document.getElementById('searchInput').addEventListener('input', function(e) {
-      const query = e.target.value.toLowerCase().trim();
-      const cards = document.querySelectorAll('#productGrid .card');
-      cards.forEach(card => {
-        const title = card.dataset.title.toLowerCase();
-        card.style.display = title.includes(query) ? 'flex' : 'none';
-      });
-    });
-
-    // 開啟故事彈窗並自動載入 Shorts
+    // Shorts 影片彈窗控制
     function openStoryModal(videoId, title) {
       const modal = document.getElementById('storyModal');
       const iframe = document.getElementById('storyIframe');
       const titleEl = document.getElementById('storyModalTitle');
-      
       titleEl.textContent = title || '🎬 Story Preview';
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
       modal.style.display = 'flex';
     }
 
-    // 關閉故事彈窗並清空 iframe 停止播放聲音
     function closeStoryModal(e) {
       const modal = document.getElementById('storyModal');
       const iframe = document.getElementById('storyIframe');
       iframe.src = '';
       modal.style.display = 'none';
     }
+
+    // 初始化事件監聽與初次載入
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      currentSearchQuery = e.target.value.toLowerCase().trim();
+      applyFilterAndSearch();
+    });
+
+    // 啟動頁面
+    activeFilteredList = [...marketProducts];
+    renderMarketCards(true);
+    renderBooks();
   </script>
 </body>
 </html>
