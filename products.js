@@ -143,7 +143,16 @@ const marketProducts = [
     videoTitle: "Memories on Display: Frameo WiFi Digital Frame"
   }
 ];
-
+{
+    id: "ninja-blender",
+    category: "home",
+    tag: "Kitchen & Dining",
+    title: "Ninja Professional Plus Blender with Auto-iQ (1400W / 72oz / BN701)",
+    searchTerms: "ninja professional plus blender bn701 auto iq 1400w 72oz pitcher smoothie frozen drink ice crusher",
+    amazonUrl: "https://link.amazon/B0dJjEt8Z",
+    videoId: "DML7hc5Uo5o",
+    videoTitle: "Crush Ice In Seconds: Ninja Auto-iQ Power"
+  }
 // 2. 小比兔官方筆記本清單
 const xiaobiNotebooks = [
   {
