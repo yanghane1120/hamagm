@@ -12,10 +12,10 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HAMAGM - Official Cat Hub, IP World & Gear</title>
+  <title>HAMAGM - Entertainment, Tech, Wisdom & Life Hacks for a Happier Life</title>
   
-  <!-- 水藍底白字立體 H Favicon (無黑框、純向量高解析度) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='cyanGrad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367e8f9'/%3E%3Cstop offset='40%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23cyanGrad)'/%3E%3Cpath d='M28 24 h14 v20 h16 v-20 h14 v52 h-14 v-20 h-16 v20 h-14 z' fill='%23ffffff'/%3E%3C/svg%3E">
+  <!-- 水藍底白字立體 H Favicon (純向量 SVG，高解析度且無黑框) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='cyanGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367e8f9'/%3E%3Cstop offset='40%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23cyanGrad)'/%3E%3Cpath d='M28 24 h14 v20 h16 v-20 h14 v52 h-14 v-20 h-16 v20 h-14 z' fill='%23ffffff'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,8 +49,8 @@
     }
     .header {
       text-align: center;
-      max-width: 620px;
-      margin-bottom: 20px;
+      max-width: 640px;
+      margin-bottom: 22px;
     }
     .avatar {
       width: 104px;
@@ -68,26 +68,34 @@
       letter-spacing: -0.5px;
       color: var(--text-main);
     }
+    .slogan {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 6px;
+      line-height: 1.4;
+      letter-spacing: -0.2px;
+    }
     .bio {
       color: var(--text-sub);
-      font-size: 14.5px;
-      margin-top: 8px;
+      font-size: 14px;
+      margin-top: 10px;
       line-height: 1.6;
     }
 
-    /* 精簡後的社群連結標籤列 */
+    /* 社群連結標籤列 */
     .social-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: 16px;
     }
     .social-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 15px;
+      padding: 7px 16px;
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 9999px;
@@ -552,11 +560,15 @@
 </head>
 <body>
 
-  <!-- 首頁主視覺：貓咪主角世界觀 + 精簡官方社群導流 -->
+  <!-- 首頁主視覺：英文 Slogan + 品牌定位 + 社群導流 -->
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
-    <p class="bio">🐾 "Ha! Making animals great, and the age a little better."<br>歡迎來到哈馬格姆的貓咪基地！這裡有本喵嚴選好物、原創故事動畫，以及隔壁棚小比兔的手帳。👇</p>
+    <p class="slogan">✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.</p>
+    <p class="bio">
+      🐾 "Ha! Making animals great, and the age a little better."<br>
+      Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit's creative notebook series below. 👇
+    </p>
     
     <!-- 官方社群與影音入口 (YouTube / IG / FB) -->
     <div class="social-links">
@@ -582,30 +594,30 @@
       </div>
     </div>
     <p class="scroll-hint">
-      🐾 喜歡本喵精選的療癒與生活好物嗎？<br>
-      <a href="#productGrid">👇 往下滑瀏覽貓奴專屬推薦市集！</a>
+      🐾 Looking for viral life-solving gear curated by the Master Cat?<br>
+      <a href="#productGrid">👇 Scroll down to browse our Curated Market!</a>
     </p>
   </section>
 
-  <!-- 中間市集區：貓咪主子嚴選導購 -->
+  <!-- 中間市集區：HAMAGM 精選導購 -->
   <div class="section-divider">
-    <h3 class="section-title">🐾 HAMAGM 貓咪嚴選市集</h3>
-    <p class="section-desc-note">主子親自把關！鏟屎官工作升級必備、生活降壓與貓奴好物指南</p>
+    <h3 class="section-title">🐾 HAMAGM Curated Market</h3>
+    <p class="section-desc-note">Hand-picked gear for better living, productivity, and stress-free everyday routines.</p>
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋鍵盤、防寒保暖、護理用品、寵物餵食機...">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search keyboards, warm gloves, grooming, pet feeders...">
   </div>
 
   <div class="filter-tabs">
-    <button class="tab active" onclick="filterItems('all', this)">全部 All</button>
-    <button class="tab" onclick="filterItems('tech', this)">⌨️ 電競 3C</button>
-    <button class="tab" onclick="filterItems('winter', this)">🧤 暖冬好物</button>
-    <button class="tab" onclick="filterItems('care', this)">🦷 個人護理</button>
-    <button class="tab" onclick="filterItems('cat', this)">🐱 貓咪好物</button>
-    <button class="tab" onclick="filterItems('home', this)">🏠 居家收納</button>
-    <button class="tab" onclick="filterItems('holiday', this)">🎃 節慶趣味</button>
-    <button class="tab" onclick="filterItems('snacks', this)">🍬 零食點心</button>
+    <button class="tab active" onclick="filterItems('all', this)">All Items</button>
+    <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
+    <button class="tab" onclick="filterItems('winter', this)">🧤 Winter Gear</button>
+    <button class="tab" onclick="filterItems('care', this)">🦷 Personal Care</button>
+    <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Essentials</button>
+    <button class="tab" onclick="filterItems('home', this)">🏠 Home & Living</button>
+    <button class="tab" onclick="filterItems('holiday', this)">🎃 Fun & Festive</button>
+    <button class="tab" onclick="filterItems('snacks', this)">🍬 Treats & Snacks</button>
   </div>
 
   <!-- 市集商品動態容器 -->
@@ -613,19 +625,19 @@
 
   <!-- 分頁載入更多按鈕 -->
   <div class="load-more-wrap">
-    <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">查看更多好物 👇</button>
+    <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">Load More Gear 👇</button>
   </div>
 
   <!-- 網頁底部專區 1：小比兔官方筆記本專區 -->
   <section class="bottom-section" id="xiaobi-notebooks">
     <div class="section-header">
-      <h2 class="section-heading-title">🐰 隔壁棚的小比兔手帳（貓咪特約贊助）</h2>
-      <span class="section-sub">XiaoBi Rabbit: Little White Rabbit's Notes</span>
+      <h2 class="section-heading-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
+      <span class="section-sub">(Special Guest Appearance & Official Flipbook Series)</span>
     </div>
     
     <!-- 多國語言直達通道 -->
     <div class="quick-lang-links">
-      <span>🌏 Amazon 官方直達捷徑：</span>
+      <span>🌏 Direct Amazon Links:</span>
       <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer">🇺🇸 English Edition</a>
       <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer">🇯🇵 日本語版</a>
       <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer">🇫🇷 Édition Française</a>
@@ -641,7 +653,7 @@
           allowfullscreen>
         </iframe>
       </div>
-      <div class="video-caption">📖 Inside The Notebook: 實體手帳翻頁動畫與內頁預覽</div>
+      <div class="video-caption">📖 Inside The Notebook: Physical Flipbook Animation & Page Preview</div>
     </div>
 
     <div class="books-grid" id="xiaobiGrid"></div>
@@ -650,7 +662,7 @@
   <!-- 網頁底部專區 2：原創小說與文學著作 -->
   <section class="author-bookshelf">
     <div class="section-header">
-      <h2 class="section-heading-title">📚 鏟屎官的書房 | 原創小說與哲學</h2>
+      <h2 class="section-heading-title">📚 Author's Bookshelf | Novels & Philosophy</h2>
       <span class="section-sub">Original literary works by Han Yang (Available on Kindle)</span>
     </div>
     <div class="books-grid" id="authorBooksGrid"></div>
@@ -702,7 +714,7 @@
         const hasVideo = (typeof item.videoId === 'string' && item.videoId.trim() !== '');
         const storyBtnHtml = hasVideo ? `
           <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${(item.videoTitle || 'Story Preview').replace(/'/g, "\\'")}')">
-            🎬 看貓咪短劇 Watch Story
+            🎬 Watch Cat Story
           </button>
         ` : '';
 
@@ -759,7 +771,7 @@
               <h3 class="card-title">${book.title}</h3>
             </div>
             <div class="card-action-wrap">
-              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">Amazon 購買 📖</a>
+              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
             </div>
           </div>
         `;
@@ -814,3 +826,5 @@
   </script>
 </body>
 </html>
+```<FollowUp>
+更新上去後，在瀏覽器頁籤確認顯示正常了嗎？如果還有需要微調字句或按鈕文字的地方，隨時告訴我！</FollowUp>
