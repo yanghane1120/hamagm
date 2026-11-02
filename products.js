@@ -161,8 +161,7 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B00aA9YjN",
     videoId: "CjYn7HgQrbg",
     videoTitle: "The Ultimate Cozy Bedtime Reading Light"
-  },
-  {
+ {
     id: "petbusy-cat-toy",
     category: "cat",
     tag: "Cat Toys",
@@ -171,8 +170,21 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B06Lhb3RV",
     videoId: "N3OIgIOwC_E",
     videoTitle: "Interactive Catnip Kicker Fish Toy"
+  },
+  {
+    id: "aussie-miracle-hair",
+    category: "care",
+    tag: "Hair Treatment",
+    title: "Aussie Total Miracle Shampoo, Conditioner & 3-Min Deep Treatment Bundle",
+    searchTerms: "aussie total miracle shampoo conditioner 3 minute deep treatment apricot macadamia oil damaged hair bundle",
+    amazonUrl: "https://link.amazon/B03LPJYi3",
+    videoId: "A3RDqr8fYdQ",
+    videoTitle: "Miracle Hair Fix in 3 Minutes"
   }
 ];
+需要為這款護髮修護套組撰寫 YouTube Shorts 短影音文案或 SEO 標籤嗎？
+
+是
 // 2. 小比兔官方筆記本清單
 const xiaobiNotebooks = [
   {
