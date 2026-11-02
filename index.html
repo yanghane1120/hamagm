@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAMAGM - Entertainment, Tech, Wisdom & Life Hacks for a Happier Life</title>
   
-  <!-- 水藍底白字立體 H Favicon (純向量 SVG，高解析度且無黑框) -->
+  <!-- 水藍底白字立體 H Favicon (純向量 SVG) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='cyanGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367e8f9'/%3E%3Cstop offset='40%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23cyanGrad)'/%3E%3Cpath d='M28 24 h14 v20 h16 v-20 h14 v52 h-14 v-20 h-16 v20 h-14 z' fill='%23ffffff'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,15 +38,42 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 36px 16px 80px 16px;
+      padding: 24px 16px 80px 16px;
     }
+
+    /* 多國語言切換列 */
+    .lang-switcher {
+      display: flex;
+      gap: 6px;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: #64748b;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
     .header {
       text-align: center;
       max-width: 640px;
@@ -559,7 +586,7 @@
       color: #ffffff;
     }
 
-    /* 專區內部的翻頁預覽影片 */
+    /* 翻頁開箱影片 */
     .xiaobi-preview-wrap {
       margin-bottom: 24px;
       border-radius: 16px;
@@ -568,7 +595,7 @@
       background: #0f172a;
     }
 
-    /* 網頁底部：原創小說專區 */
+    /* 原創小說專區 */
     .author-bookshelf {
       width: 100%;
       max-width: 940px;
@@ -593,7 +620,7 @@
       line-height: 1.6;
     }
 
-    /* 9:16 Shorts 影片彈窗 (Modal) */
+    /* 9:16 Shorts 彈窗 */
     .story-modal {
       display: none;
       position: fixed;
@@ -640,7 +667,7 @@
     }
     .story-video-wrap {
       position: relative;
-      padding-bottom: 177.78%; /* 9:16 直式比例 */
+      padding-bottom: 177.78%;
       height: 0;
     }
     .story-video-wrap iframe {
@@ -655,17 +682,25 @@
 </head>
 <body>
 
-  <!-- 首頁主視覺：英文 Slogan + 品牌定位 + 社群導流 -->
+  <!-- 頂部多國語言切換膠囊 (ZH / EN / JP / DE / FR) -->
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">繁中</button>
+    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang="jp" onclick="setLang('jp')">JP</button>
+    <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+  </div>
+
+  <!-- 首頁主視覺 -->
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
-    <p class="slogan">✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.</p>
-    <p class="bio">
+    <p class="slogan" id="txtSlogan">✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.</p>
+    <p class="bio" id="txtBio">
       🐾 "Ha! Making animals great, and the age a little better."<br>
       Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit's creative notebook series below. 👇
     </p>
     
-    <!-- 官方社群與影音入口 (YouTube / IG / FB) -->
     <div class="social-links">
       <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill">📺 YouTube</a>
       <a href="https://www.instagram.com/dixiliuliu/" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
@@ -679,16 +714,16 @@
       <div class="video-box">
         <div class="video-iframe-wrap">
           <iframe 
-            src="https://www.youtube.com/embed/A3RDqr8fYdQ?list=PLFzCcb_2oCHY" 
-            title="HAMAGM Official Playlist" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+           src="https://www.youtube.com/embed/videoseries?list=PLFzCcb_2oCHY&loop=1" 
+           title="HAMAGM Official Playlist" 
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen>
           </iframe>
         </div>
-        <div class="video-caption">🐱 HAMAGM Official Series: Cat Stories & Shorts Playlist</div>
+        <div class="video-caption" id="txtVideoCaption">🐱 HAMAGM Official Series: Cat Stories & Shorts Playlist</div>
       </div>
     </div>
-    <p class="scroll-hint">
+    <p class="scroll-hint" id="txtScrollHint">
       🐾 Looking for viral life-solving gear curated by the Master Cat?<br>
       <a href="#productGrid">👇 Scroll down to browse our Curated Market!</a>
     </p>
@@ -696,23 +731,24 @@
 
   <!-- 中間市集區：HAMAGM 精選導購 -->
   <div class="section-divider">
-    <h3 class="section-title">🐾 HAMAGM Curated Market</h3>
-    <p class="section-desc-note">Hand-picked gear for better living, productivity, and stress-free everyday routines.</p>
+    <h3 class="section-title" id="txtMarketTitle">🐾 HAMAGM Curated Market</h3>
+    <p class="section-desc-note" id="txtMarketDesc">Hand-picked gear for better living, productivity, and stress-free everyday routines.</p>
   </div>
 
   <div class="search-box">
     <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search keyboards, warm gloves, grooming, pet feeders...">
   </div>
 
-  <div class="filter-tabs">
-    <button class="tab active" onclick="filterItems('all', this)">All Items</button>
-    <button class="tab" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
-    <button class="tab" onclick="filterItems('winter', this)">🧤 Winter Gear</button>
-    <button class="tab" onclick="filterItems('care', this)">🦷 Personal Care</button>
-    <button class="tab" onclick="filterItems('cat', this)">🐱 Cat Essentials</button>
-    <button class="tab" onclick="filterItems('home', this)">🏠 Home & Living</button>
-    <button class="tab" onclick="filterItems('holiday', this)">🎃 Fun & Festive</button>
-    <button class="tab" onclick="filterItems('snacks', this)">🍬 Treats & Snacks</button>
+  <!-- 分類篩選標籤 -->
+  <div class="filter-tabs" id="filterTabsWrap">
+    <button class="tab active" data-cat="all" onclick="filterItems('all', this)">All Items</button>
+    <button class="tab" data-cat="tech" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
+    <button class="tab" data-cat="winter" onclick="filterItems('winter', this)">🧤 Winter Gear</button>
+    <button class="tab" data-cat="care" onclick="filterItems('care', this)">🦷 Personal Care</button>
+    <button class="tab" data-cat="cat" onclick="filterItems('cat', this)">🐱 Cat Essentials</button>
+    <button class="tab" data-cat="home" onclick="filterItems('home', this)">🏠 Home & Living</button>
+    <button class="tab" data-cat="holiday" onclick="filterItems('holiday', this)">🎃 Fun & Festive</button>
+    <button class="tab" data-cat="snacks" onclick="filterItems('snacks', this)">🍬 Treats & Snacks</button>
   </div>
 
   <!-- 市集商品動態容器 -->
@@ -726,41 +762,41 @@
   <!-- 網頁底部專區 1：小比兔官方筆記本專區 & lazy life 品牌介紹 -->
   <section class="bottom-section" id="xiaobi-notebooks">
     <div class="section-header">
-      <h2 class="section-heading-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
-      <span class="section-sub">(Special Guest Appearance & Official Flipbook Series)</span>
+      <h2 class="section-heading-title" id="txtXiaobiSectionTitle">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
+      <span class="section-sub" id="txtXiaobiSectionSub">(Special Guest Appearance & Official Flipbook Series)</span>
     </div>
 
     <!-- lazy life. 官方入口與躺平時鐘介紹橫幅 -->
     <div class="lazylife-feature-banner">
       <div class="lazylife-banner-head">
-        <span class="lazylife-badge">Official IP Portal</span>
-        <h3 class="lazylife-banner-title">lazy life. — A Low-Energy World with Xiaobi</h3>
+        <span class="lazylife-badge" id="txtBadge">Official IP Portal</span>
+        <h3 class="lazylife-banner-title" id="txtBannerTitle">lazy life. — A Low-Energy World with Xiaobi</h3>
       </div>
-      <p class="lazylife-banner-text">
+      <p class="lazylife-banner-text" id="txtBannerDesc">
         我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌官方入口，集結了桌面陪伴工具、10 秒厭世哲學短劇與實體廢物小誌手帳。<br>
         <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
       </p>
       
       <div class="lazylife-features-list">
-        <span class="lazylife-feature-pill">⏰ 每日躺平時鐘 (Desk Clock)</span>
-        <span class="lazylife-feature-pill">🍅 防內耗番茄鐘 (Pomodoro)</span>
-        <span class="lazylife-feature-pill">🃏 40+ 厭世金句抽卡</span>
-        <span class="lazylife-feature-pill">🌏 5 國語言即時切換</span>
+        <span class="lazylife-feature-pill" id="pill1">⏰ 每日躺平時鐘 (Desk Clock)</span>
+        <span class="lazylife-feature-pill" id="pill2">🍅 防內耗番茄鐘 (Pomodoro)</span>
+        <span class="lazylife-feature-pill" id="pill3">🃏 40+ 厭世金句抽卡</span>
+        <span class="lazylife-feature-pill" id="pill4">🌏 5 國語言即時切換</span>
       </div>
 
       <div class="lazylife-cta-group">
-        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary">
+        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary" id="btnPortal">
           🌐 訪問 lazy life. 官方入口 ➔
         </a>
-<a href="https://yanghane1120.github.io/xiaobi-clock/xiaobi-card/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary">
-  ⏰ 免費體驗躺平時鐘
-</a>
+        <a href="https://yanghane1120.github.io/xiaobi-clock/xiaobi-card/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary" id="btnClock">
+          ⏰ 免費體驗躺平時鐘
+        </a>
       </div>
     </div>
     
     <!-- 多國語言直達通道 -->
     <div class="quick-lang-links">
-      <span>🌏 Direct Amazon Links:</span>
+      <span id="txtAmazonDirect">🌏 Direct Amazon Links:</span>
       <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer">🇺🇸 English Edition</a>
       <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer">🇯🇵 日本語版</a>
       <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer">🇫🇷 Édition Française</a>
@@ -776,7 +812,7 @@
           allowfullscreen>
         </iframe>
       </div>
-      <div class="video-caption">📖 Inside The Notebook: Physical Flipbook Animation & Page Preview</div>
+      <div class="video-caption" id="txtFlipbookCaption">📖 Inside The Notebook: Physical Flipbook Animation & Page Preview</div>
     </div>
 
     <div class="books-grid" id="xiaobiGrid"></div>
@@ -785,14 +821,14 @@
   <!-- 網頁底部專區 2：原創小說與文學著作 -->
   <section class="author-bookshelf">
     <div class="section-header">
-      <h2 class="section-heading-title">📚 Author's Bookshelf | Novels & Philosophy</h2>
-      <span class="section-sub">Original literary works by Han Yang (Available on Kindle)</span>
+      <h2 class="section-heading-title" id="txtAuthorTitle">📚 Author's Bookshelf | Novels & Philosophy</h2>
+      <span class="section-sub" id="txtAuthorSub">Original literary works by Han Yang (Available on Kindle)</span>
     </div>
     <div class="books-grid" id="authorBooksGrid"></div>
   </section>
 
   <footer class="footer">
-    <p class="affiliate-disclosure">
+    <p class="affiliate-disclosure" id="txtFooter">
       © HAMAGM & Han Yang. All rights reserved.<br>
       As an Amazon Associate I earn from qualifying purchases.
     </p>
@@ -814,13 +850,265 @@
   <!-- 引入獨立資料庫 -->
   <script src="products.js?v=3"></script>
 
-  <!-- 頁面邏輯腳本 -->
+  <!-- 多語言與頁面邏輯腳本 -->
   <script>
+    // 5 國語言資料字典
+    const i18n = {
+      zh: {
+        slogan: "✨ 娛樂、科技、生活智慧 — 帶領你過上更輕鬆快樂的生活策略。",
+        bio: '🐾「哈！讓動物更偉大，也讓時代稍微美好一點。」<br>歡迎來到 HAMAGM 貓咪官方旗艦 Hub！探索紓壓好物、爆笑動物故事與小比兔廢物筆記系列。👇',
+        videoCaption: "🐱 HAMAGM 官方系列：貓咪故事與熱門 Shorts 播放清單",
+        scrollHint: "🐾 正在尋找貓主子欽點的爆款生活神器嗎？<br><a href=\"#productGrid\">👇 往下滑動瀏覽精選市集！</a>",
+        marketTitle: "🐾 HAMAGM 精選好物市集",
+        marketDesc: "精選日常生活、效率提升與紓壓好物，打造無痛生活節奏。",
+        searchPlaceholder: "🔍 搜尋鍵盤、發熱手套、美容理毛、寵物餵食器...",
+        loadMore: "載入更多精選商品 👇",
+        watchStory: "🎬 觀看貓咪短劇",
+        viewAmazon: "前往 Amazon 查看 🛒",
+        readKindle: "Kindle 線上閱讀 📖",
+        xiaobiTitle: "🐰 小比兔官方專區：小白兔的廢物筆記",
+        xiaobiSub: "(特別客座聯動 & 官方翻頁實體手帳)",
+        badge: "官方 IP 入口",
+        bannerTitle: "lazy life. — 與小比兔一同探索低耗能生活",
+        bannerDesc: "我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的官方入口，集結了桌面陪伴工具、10 秒厭世短劇與實體廢物小誌手帳。<br><em>「只要躺得夠平，生活的刀就砍不到我。」</em>",
+        pill1: "⏰ 每日躺平時鐘",
+        pill2: "🍅 防內耗番茄鐘",
+        pill3: "🃏 40+ 厭世金句抽卡",
+        pill4: "🌏 5 國語言即時切換",
+        btnPortal: "🌐 訪問 lazy life. 官方入口 ➔",
+        btnClock: "⏰ 免費體驗躺平時鐘",
+        amazonDirect: "🌏 Amazon 官方直達：",
+        flipbookCaption: "📖 筆記本內頁：實體翻頁動畫與手帳展示",
+        authorTitle: "📚 作者書房 | 原創小說與哲學著作",
+        authorSub: "楊寒原創文學與哲學著作（Kindle 繁中/多語版上架中）",
+        footer: "© HAMAGM & 楊寒。版權所有。<br>身為 Amazon 聯盟行銷夥伴，本站可能自符合條件的購買中獲得收益。",
+        cats: {
+          all: "全部商品",
+          tech: "⌨️ 科技與電競",
+          winter: "🧤 保暖冬日好物",
+          care: "🦷 個人護理",
+          cat: "🐱 貓咪必備",
+          home: "🏠 居家生活",
+          holiday: "🎃 節慶與趣味",
+          snacks: "🍬 點心零食"
+        }
+      },
+      en: {
+        slogan: "✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.",
+        bio: '🐾 "Ha! Making animals great, and the age a little better."<br>Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit\'s creative notebook series below. 👇',
+        videoCaption: "🐱 HAMAGM Official Series: Cat Stories & Shorts Playlist",
+        scrollHint: "🐾 Looking for viral life-solving gear curated by the Master Cat?<br><a href=\"#productGrid\">👇 Scroll down to browse our Curated Market!</a>",
+        marketTitle: "🐾 HAMAGM Curated Market",
+        marketDesc: "Hand-picked gear for better living, productivity, and stress-free everyday routines.",
+        searchPlaceholder: "🔍 Search keyboards, warm gloves, grooming, pet feeders...",
+        loadMore: "Load More Gear 👇",
+        watchStory: "🎬 Watch Cat Story",
+        viewAmazon: "View on Amazon 🛒",
+        readKindle: "Read on Kindle 📖",
+        xiaobiTitle: "🐰 XiaoBi Rabbit: Little White Rabbit's Notes",
+        xiaobiSub: "(Special Guest Appearance & Official Flipbook Series)",
+        badge: "Official IP Portal",
+        bannerTitle: "lazy life. — A Low-Energy World with Xiaobi",
+        bannerDesc: "We don't talk about grand ambitions—only how to effortlessly and legitimately devolve into liquid. Discover our anti-productivity desk tools, 10-second philosophical skits, and physical notebooks.<br><em>\"If you lie flat enough, nobody can cut you down.\"</em>",
+        pill1: "⏰ Daily Desk Clock",
+        pill2: "🍅 Anti-Burnout Pomodoro",
+        pill3: "🃏 40+ Unmotivated Quotes",
+        pill4: "🌏 5 Languages Supported",
+        btnPortal: "🌐 Visit lazy life. Official Portal ➔",
+        btnClock: "⏰ Free Lying Flat Clock",
+        amazonDirect: "🌏 Direct Amazon Links:",
+        flipbookCaption: "📖 Inside The Notebook: Physical Flipbook Animation & Page Preview",
+        authorTitle: "📚 Author's Bookshelf | Novels & Philosophy",
+        authorSub: "Original literary works by Han Yang (Available on Kindle)",
+        footer: "© HAMAGM & Han Yang. All rights reserved.<br>As an Amazon Associate I earn from qualifying purchases.",
+        cats: {
+          all: "All Items",
+          tech: "⌨️ Tech & Gaming",
+          winter: "🧤 Winter Gear",
+          care: "🦷 Personal Care",
+          cat: "🐱 Cat Essentials",
+          home: "🏠 Home & Living",
+          holiday: "🎃 Fun & Festive",
+          snacks: "🍬 Treats & Snacks"
+        }
+      },
+      jp: {
+        slogan: "✨ エンタメ・テクノロジー・生活の知恵 — 毎日をより心地よく過ごすライフハック。",
+        bio: '🐾「動物たちを偉大にし、この時代をほんの少し心地よくする。」<br>HAMAGM公式キャットハブへようこそ！ストレス解消アイテム、爆笑アニメ、小比（シャオビ）の脱力ノートシリーズをお楽しみください。👇',
+        videoCaption: "🐱 HAMAGM公式シリーズ：猫のショートアニメ＆プレイリスト",
+        scrollHint: "🐾 猫マスター厳選のバズり生活便利グッズをお探しですか？<br><a href=\"#productGrid\">👇 スクロールしてマーケットを見る！</a>",
+        marketTitle: "🐾 HAMAGM 厳選マーケット",
+        marketDesc: "快適な毎日、生産性向上、ノーストレスな暮らしのための選りすぐりアイテム。",
+        searchPlaceholder: "🔍 キーボード、防寒手袋、グルーミング、給餌器を検索...",
+        loadMore: "さらに読み込む 👇",
+        watchStory: "🎬 ショート動画を見る",
+        viewAmazon: "Amazonで見る 🛒",
+        readKindle: "Kindleで読む 📖",
+        xiaobiTitle: "🐰 小比（シャオビ）うさぎ公式：白うさぎの無駄遣いノート",
+        xiaobiSub: "(スペシャルゲスト連動 & 公式パラパラ漫画ノート)",
+        badge: "公式IPポータル",
+        bannerTitle: "lazy life. — 小比うさぎと過ごす低エネルギー生活",
+        bannerDesc: "大それた夢は語りません。いかに合理的に液状化するかだけを研究しています。デスクトップ時計ツール、10秒哲学アニメ、脱力ノートをお届けします。<br><em>「寝転がっていれば、誰にも切り倒されることはない。」</em>",
+        pill1: "⏰ ごろごろデスク時計",
+        pill2: "🍅 脱力ポモドーロ",
+        pill3: "🃏 40+ ネガティブ名言ガチャ",
+        pill4: "🌏 5カ国語対応",
+        btnPortal: "🌐 lazy life. 公式サイトへ ➔",
+        btnClock: "⏰ ごろごろ時計を体験",
+        amazonDirect: "🌏 各国Amazon直通リンク：",
+        flipbookCaption: "📖 ノートの中身：パラパラ漫画アニメーション紹介",
+        authorTitle: "📚 著者の本棚 | 小説・哲学作品",
+        authorSub: "楊寒（Han Yang）によるオリジナル文芸・哲学作品（Kindleで配信中）",
+        footer: "© HAMAGM & Han Yang. All rights reserved.<br>Amazonアソシエイトとして、適格販売により収入を得ています。",
+        cats: {
+          all: "全商品",
+          tech: "⌨️ テック＆ゲーム",
+          winter: "🧤 冬の防寒グッズ",
+          care: "🦷 パーソナルケア",
+          cat: "🐱 猫のおすすめ品",
+          home: "🏠 暮らし・インテリア",
+          holiday: "🎃 フェス＆ホリデー",
+          snacks: "🍬 スナック・おやつ"
+        }
+      },
+      de: {
+        slogan: "✨ Unterhaltung, Technologie & Lebensweisheit — Strategien für ein entspannteres Leben.",
+        bio: '🐾 "Tiere großartig machen und die Welt ein Stück gemütlicher."<br>Willkommen im offiziellen HAMAGM Cat Hub! Entdecke virale Life-Hacks, humorvolle Kurzgeschichten und die kreativen Notizbücher von Hase Xiaobi. 👇',
+        videoCaption: "🐱 HAMAGM Offiziell: Katzen-Kurzgeschichten & Playlist",
+        scrollHint: "🐾 Auf der Suche nach genialen Life-Hack-Gadgets?<br><a href=\"#productGrid\">👇 Scrolle nach unten zum Shop!</a>",
+        marketTitle: "🐾 HAMAGM Kuratierter Markt",
+        marketDesc: "Handverlesene Gadgets für Produktivität, Gemütlichkeit und stressfreien Alltag.",
+        searchPlaceholder: "🔍 Tastaturen, warme Handschuhe, Tierpflege suchen...",
+        loadMore: "Mehr Produkte laden 👇",
+        watchStory: "🎬 Katzen-Short ansehen",
+        viewAmazon: "Auf Amazon ansehen 🛒",
+        readKindle: "Auf Kindle lesen 📖",
+        xiaobiTitle: "🐰 Hase XiaoBi: Das nutzlose Notizbuch",
+        xiaobiSub: "(Sonderausgabe & Offizielles Daumenkino)",
+        badge: "Offizielles Portal",
+        bannerTitle: "lazy life. — Entspannt leben mit Hase XiaoBi",
+        bannerDesc: "Keine großen Reden über Leistung – nur die Kunst, sich friedlich in eine Pfütze zu verwandeln. Entdecke Schreibtisch-Tools, 10-Sekunden-Sketche und Notizbücher.<br><em>\"Wer flach liegt, kann von nichts umgeworfen werden.\"</em>",
+        pill1: "⏰ Schreibtisch-Uhr",
+        pill2: "🍅 Anti-Burnout Pomodoro",
+        pill3: "🃏 40+ Demotivierende Zitate",
+        pill4: "🌏 5 Sprachen verfügbar",
+        btnPortal: "🌐 lazy life. Portal öffnen ➔",
+        btnClock: "⏰ Faulenzer-Uhr starten",
+        amazonDirect: "🌏 Direkte Amazon Links:",
+        flipbookCaption: "📖 Daumenkino-Animation & Buchseiten-Vorschau",
+        authorTitle: "📚 Autorenregal | Romane & Philosophie",
+        authorSub: "Literarische Werke von Han Yang (Verfügbar auf Kindle)",
+        footer: "© HAMAGM & Han Yang. Alle Rechte vorbehalten.<br>Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.",
+        cats: {
+          all: "Alle Artikel",
+          tech: "⌨️ Gaming & Technik",
+          winter: "🧤 Winter-Ausrüstung",
+          care: "🦷 Körperpflege",
+          cat: "🐱 Katzenbedarf",
+          home: "🏠 Wohnen & Leben",
+          holiday: "🎃 Feiertage & Spaß",
+          snacks: "🍬 Snacks & Genuss"
+        }
+      },
+      fr: {
+        slogan: "✨ Divertissement, Tech & Astuces de Vie — Des stratégies pour un quotidien plus doux.",
+        bio: '🐾 "Rendre les animaux formidables et l\'époque un peu plus douce."<br>Bienvenue sur le Cat Hub officiel de HAMAGM ! Découvrez nos gadgets bien-être, nos récits félins et les carnets du lapin XiaoBi. 👇',
+        videoCaption: "🐱 HAMAGM Officiel : Vidéos courtes & Playlist féline",
+        scrollHint: "🐾 À la recherche de gadgets recommandés par le Maître Chat ?<br><a href=\"#productGrid\">👇 Faites défiler vers le marché !</a>",
+        marketTitle: "🐾 HAMAGM Marché Sélectionné",
+        marketDesc: "Des équipements choisis pour un quotidien détendu, efficace et sans tracas.",
+        searchPlaceholder: "🔍 Claviers, gants chauffants, soins, distributeurs...",
+        loadMore: "Charger plus d'articles 👇",
+        watchStory: "🎬 Voir le court-métrage",
+        viewAmazon: "Voir sur Amazon 🛒",
+        readKindle: "Lire sur Kindle 📖",
+        xiaobiTitle: "🐰 Lapin XiaoBi : Le carnet inutile",
+        xiaobiSub: "(Apparition spéciale & Carnet flipbook officiel)",
+        badge: "Portail Officiel",
+        bannerTitle: "lazy life. — Le monde basse consommation de XiaoBi",
+        bannerDesc: "Ici, aucune grande ambition : nous apprenons juste à nous liquéfier sereinement. Horloge de bureau, sketchs de 10 secondes et carnets originaux.<br><em>\"Restez couché par terre : impossible de tomber plus bas.\"</em>",
+        pill1: "⏰ Horloge de Bureau",
+        pill2: "🍅 Pomodoro Anti-Burnout",
+        pill3: "🃏 40+ Citations Légères",
+        pill4: "🌏 5 Langues Disponibles",
+        btnPortal: "🌐 Visiter lazy life. ➔",
+        btnClock: "⏰ Essayer l'horloge",
+        amazonDirect: "🌏 Liens Amazon Directs :",
+        flipbookCaption: "📖 Aperçu : Animation folioscope (Flipbook) du carnet",
+        authorTitle: "📚 Bibliothèque de l'auteur | Romans & Philosophie",
+        authorSub: "Œuvres littéraires originales par Han Yang (Sur Kindle)",
+        footer: "© HAMAGM & Han Yang. Tous droits réservés.<br>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.",
+        cats: {
+          all: "Tous les articles",
+          tech: "⌨️ Tech & Gaming",
+          winter: "🧤 Confort d'hiver",
+          care: "🦷 Soins personnels",
+          cat: "🐱 Accessoires chat",
+          home: "🏠 Maison & Déco",
+          holiday: "🎃 Fêtes & Détente",
+          snacks: "🍬 Douceurs & Snacks"
+        }
+      }
+    };
+
+    let currentLang = localStorage.getItem('hamagm_lang') || 'en';
     let currentPage = 1;
     const itemsPerPage = 12;
     let currentFilterCategory = 'all';
     let currentSearchQuery = '';
     let activeFilteredList = [];
+
+    // 切換語系核心函式
+    function setLang(lang) {
+      if (!i18n[lang]) return;
+      currentLang = lang;
+      localStorage.setItem('hamagm_lang', lang);
+
+      // 更新按鈕樣式
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      const d = i18n[lang];
+
+      // 文字內容替換
+      document.getElementById('txtSlogan').innerHTML = d.slogan;
+      document.getElementById('txtBio').innerHTML = d.bio;
+      document.getElementById('txtVideoCaption').textContent = d.videoCaption;
+      document.getElementById('txtScrollHint').innerHTML = d.scrollHint;
+      document.getElementById('txtMarketTitle').textContent = d.marketTitle;
+      document.getElementById('txtMarketDesc').textContent = d.marketDesc;
+      document.getElementById('searchInput').placeholder = d.searchPlaceholder;
+      document.getElementById('loadMoreBtn').textContent = d.loadMore;
+      document.getElementById('txtXiaobiSectionTitle').textContent = d.xiaobiTitle;
+      document.getElementById('txtXiaobiSectionSub').textContent = d.xiaobiSub;
+      document.getElementById('txtBadge').textContent = d.badge;
+      document.getElementById('txtBannerTitle').textContent = d.bannerTitle;
+      document.getElementById('txtBannerDesc').innerHTML = d.bannerDesc;
+      document.getElementById('pill1').textContent = d.pill1;
+      document.getElementById('pill2').textContent = d.pill2;
+      document.getElementById('pill3').textContent = d.pill3;
+      document.getElementById('pill4').textContent = d.pill4;
+      document.getElementById('btnPortal').textContent = d.btnPortal;
+      document.getElementById('btnClock').textContent = d.btnClock;
+      document.getElementById('txtAmazonDirect').textContent = d.amazonDirect;
+      document.getElementById('txtFlipbookCaption').textContent = d.flipbookCaption;
+      document.getElementById('txtAuthorTitle').textContent = d.authorTitle;
+      document.getElementById('txtAuthorSub').textContent = d.authorSub;
+      document.getElementById('txtFooter').innerHTML = d.footer;
+
+      // 更新分類標籤名稱
+      document.querySelectorAll('#filterTabsWrap .tab').forEach(tab => {
+        const catKey = tab.dataset.cat;
+        if (d.cats[catKey]) {
+          tab.textContent = d.cats[catKey];
+        }
+      });
+
+      // 重新渲染市集卡片與按鈕文字
+      renderMarketCards(true);
+      renderBooks();
+    }
 
     function renderMarketCards(reset = false) {
       const container = document.getElementById('productGrid');
@@ -832,12 +1120,13 @@
       const start = (currentPage - 1) * itemsPerPage;
       const end = currentPage * itemsPerPage;
       const pageItems = activeFilteredList.slice(start, end);
+      const d = i18n[currentLang];
 
       pageItems.forEach(item => {
         const hasVideo = (typeof item.videoId === 'string' && item.videoId.trim() !== '');
         const storyBtnHtml = hasVideo ? `
           <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${(item.videoTitle || 'Story Preview').replace(/'/g, "\\'")}')">
-            🎬 Watch Cat Story
+            ${d.watchStory}
           </button>
         ` : '';
 
@@ -849,7 +1138,7 @@
             </div>
             <div class="card-action-wrap">
               ${storyBtnHtml}
-              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 🛒</a>
+              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
             </div>
           </div>
         `;
@@ -882,7 +1171,9 @@
     }
 
     function renderBooks() {
+      const d = i18n[currentLang];
       const xiaobiContainer = document.getElementById('xiaobiGrid');
+      xiaobiContainer.innerHTML = '';
       xiaobiNotebooks.forEach(book => {
         const html = `
           <div class="card">
@@ -894,7 +1185,7 @@
               <h3 class="card-title">${book.title}</h3>
             </div>
             <div class="card-action-wrap">
-              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">View on Amazon 📖</a>
+              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
             </div>
           </div>
         `;
@@ -902,6 +1193,7 @@
       });
 
       const authorContainer = document.getElementById('authorBooksGrid');
+      authorContainer.innerHTML = '';
       authorBooks.forEach(book => {
         const html = `
           <div class="card">
@@ -913,7 +1205,7 @@
               <h3 class="card-title">${book.title}</h3>
             </div>
             <div class="card-action-wrap">
-              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">Read on Kindle 📖</a>
+              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.readKindle}</a>
             </div>
           </div>
         `;
@@ -942,10 +1234,9 @@
       applyFilterAndSearch();
     });
 
-    // 啟動頁面
+    // 啟動頁面並套用預設/快取語系
     activeFilteredList = [...marketProducts];
-    renderMarketCards(true);
-    renderBooks();
+    setLang(currentLang);
   </script>
 </body>
 </html>
