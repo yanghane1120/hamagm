@@ -152,7 +152,7 @@ const marketProducts = [
     videoId: "DML7hc5Uo5o",
     videoTitle: "Crush Ice In Seconds: Ninja Auto-iQ Power"
   },
-  {
+ {
     id: "gritin-book-light",
     category: "home",
     tag: "Reading Light",
@@ -161,6 +161,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B00aA9YjN",
     videoId: "CjYn7HgQrbg",
     videoTitle: "The Ultimate Cozy Bedtime Reading Light"
+  },
+  {
+    id: "petbusy-cat-toy",
+    category: "cat",
+    tag: "Cat Toys",
+    title: "PetBusy Soft Chew Kicker Cat Toy with Catnip & Silvervine",
+    searchTerms: "petbusy cat toys natural catnip silvervine soft chew kicker crinkle bell fish sound indoor cats kittens",
+    amazonUrl: "https://link.amazon/B06Lhb3RV",
+    videoId: "N3OIgIOwC_E",
+    videoTitle: "Interactive Catnip Kicker Fish Toy"
   }
 ];
 // 2. 小比兔官方筆記本清單
