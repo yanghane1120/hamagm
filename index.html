@@ -76,38 +76,122 @@
 
     .header {
       text-align: center;
-      max-width: 640px;
-      margin-bottom: 22px;
-    }
-    .avatar {
-      width: 104px;
-      height: 104px;
-      border-radius: 50%;
-      border: 4px solid #ffffff;
-      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.15), 0 2px 6px rgba(0,0,0,0.06);
-      object-fit: cover;
-      margin-bottom: 14px;
-      background-color: #ffffff;
+      max-width: 680px;
+      width: 100%;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .title {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 800;
       letter-spacing: -0.5px;
       color: var(--text-main);
+      margin-bottom: 16px;
     }
+
+    /* 🐱 長方形專屬貓咪對話展示大卡 */
+    .cat-message-card {
+      width: 100%;
+      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+      border: 2px solid #bae6fd;
+      border-radius: 24px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.12);
+      text-align: left;
+      position: relative;
+    }
+    .cat-photo-wrap {
+      flex-shrink: 0;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cat-card-photo {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.15);
+      background-color: #e0f2fe;
+    }
+    .cat-text-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cat-card-badge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .cat-badge-pill {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      letter-spacing: 0.3px;
+    }
+    .cat-visit-hint {
+      font-size: 12px;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    .cat-quote-box {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* RWD 響應式調整：窄螢幕時改為上下排列 */
+    @media (max-width: 600px) {
+      .cat-message-card {
+        flex-direction: column;
+        padding: 18px 16px;
+        gap: 16px;
+        text-align: center;
+      }
+      .cat-photo-wrap {
+        width: 130px;
+      }
+      .cat-card-badge {
+        justify-content: center;
+      }
+      .cat-quote-box {
+        text-align: center;
+        justify-content: center;
+        font-size: 15.5px;
+      }
+    }
+
     .slogan {
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--primary);
-      margin-top: 6px;
+      margin-top: 18px;
       line-height: 1.4;
-      letter-spacing: -0.2px;
+      text-align: center;
     }
     .bio {
       color: var(--text-sub);
-      font-size: 14px;
-      margin-top: 10px;
+      font-size: 13.5px;
+      margin-top: 8px;
       line-height: 1.6;
+      text-align: center;
     }
 
     /* 社群連結標籤列 */
@@ -140,7 +224,7 @@
       transform: translateY(-1px);
     }
 
-    /* 頂部影片展示區塊 */
+    /* 頂部影片展示區塊 (單支精選 Shorts 循環播放) */
     .showcase-corner {
       width: 100%;
       max-width: 680px;
@@ -691,10 +775,26 @@
     <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
   </div>
 
-  <!-- 首頁主視覺 -->
+  <!-- 首頁主視覺：標題 ➔ 趴貓專屬語錄卡片 ➔ Slogan & Bio ➔ 社群列 -->
   <div class="header">
-    <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
+
+    <!-- 🐱 戴水藍色棒球帽的布偶貓對話長方大卡 -->
+    <div class="cat-message-card">
+      <div class="cat-photo-wrap">
+        <img src="cat-greeting.jpg" alt="HAMAGM Cat" class="cat-card-photo" onerror="this.onerror=null; this.src='HAMAGM.jfif';">
+      </div>
+      <div class="cat-text-wrap">
+        <div class="cat-card-badge">
+          <span class="cat-badge-pill" id="catBadgePill">🐾 店長貓咪悄悄話</span>
+          <span class="cat-visit-hint" id="catVisitHint">↻ 每次拜訪/重新整理刷新</span>
+        </div>
+        <div class="cat-quote-box" id="catSpeechBox">
+          喵～歡迎光臨！今天想來點什麼好心情呢？
+        </div>
+      </div>
+    </div>
+
     <p class="slogan" id="txtSlogan">✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.</p>
     <p class="bio" id="txtBio">
       🐾 "Ha! Making animals great, and the age a little better."<br>
@@ -708,7 +808,7 @@
     </div>
   </div>
 
-  <!-- 頂部：影片展示區塊 (已更換為 Q1bo5mLh84k，並設定自動循環播放) -->
+  <!-- 頂部：影片展示區塊 (單支精選 Shorts 循環播放) -->
   <section class="showcase-corner">
     <div class="video-grid">
       <div class="video-box">
@@ -852,8 +952,178 @@
 
   <!-- 多語言與頁面邏輯腳本 -->
   <script>
+    // 30 句精選貓咪語錄庫 (支援繁中/英/日/德/法)
+    const catQuotesData = {
+      zh: [
+        "喵～歡迎光臨！今天想來點什麼好心情呢？",
+        "你終於來啦！我今天戴了新帽子，好看嗎？喵～",
+        "哈囉！外面辛苦了，快進來吹吹風、歇歇腳吧～",
+        "喵嗚～看到你走進來，我的尾巴都忍不住搖起來了！",
+        "歡迎光臨～今天也請讓我為你帶來滿滿的活力喔！",
+        "嗨！今天過得好嗎？歡迎隨時跟我聊聊天喔，喵～",
+        "喵～你可以慢慢看，但要記得分我一點摸摸的時間喔！",
+        "今天的工作或課業很累吧？來，借你吸一口貓毛充充電～",
+        "喵嗚！我的帽子戴正了嗎？想用最可愛的樣子迎接你呀。",
+        "不用急著決定，先坐下來，我陪你一起發呆一會兒～",
+        "喵～你笑起來的樣子最好看，要常來找我玩喔！",
+        "看到你的笑容，本喵店長今天所有的疲勞都瞬間消失了！",
+        "喵～如果有任何找不到的寶藏，隨時呼喚我，我馬上小跑步過來！",
+        "今天有超棒的新品喔，要不要讓我這個小導遊帶你逛逛？",
+        "慢慢逛、慢慢選，把這裡當成自己家一樣放鬆就好囉～",
+        "如果拿不定主意，本喵可以用肉球幫你算塔羅選一個喔，喵！",
+        "這款是我私心最喜歡的，看你這麼有眼光，偷偷推薦給你～",
+        "肚子餓了嗎？還是口渴了？需要什麼都儘管跟店長說喔！",
+        "喵嗚～不管今天遇到了什麼煩心事，進到這裡就通通忘掉吧。",
+        "世界很吵鬧，但這裡只有溫暖的微風、好東西和我，喵～",
+        "謝謝你特地繞過來，只要看到你平安快樂，我就好開心。",
+        "辛苦了！生活偶爾也要像本喵一樣，學會好好趴下來放空喔。",
+        "喵～你今天也是最棒的，請收下我滿滿的呼嚕嚕祝福！",
+        "隨便看看也好，就算只是來跟我打個招呼，我也超級期待的。",
+        "喵～你來了啊？先跟你說早安午安晚安！你一定要好好的！～",
+        "今天能遇見你真是太好了！下次經過一定要再來找我玩喔。",
+        "帶走喜歡的東西，也別忘了把我的好心情一起打包帶回家～",
+        "喵嗚～天冷要記得添衣服，要好好照顧自己喔！",
+        "真高興見到你，一定要再跟我多說說話喔，喵～",
+        "謝謝你的到來，我的小帽子和我都好想念你了呢！"
+      ],
+      en: [
+        "Meow~ Welcome! What kind of good mood are you looking for today?",
+        "You're finally here! I'm wearing a new cap today, cute isn't it? Meow~",
+        "Hello! It's tough out there, come on in, take a breeze and rest your paws~",
+        "Meow~ Seeing you walk in makes my tail wag uncontrollably!",
+        "Welcome! Let me bring you a full dose of joyful energy today!",
+        "Hi! How was your day? Feel free to chat with me anytime, meow~",
+        "Meow~ Take your time, but remember to save some petting time for me!",
+        "Tired from work or study today? Here, take a sniff of warm cat fluff to recharge~",
+        "Meow! Is my cap on straight? I wanted to look my absolute best for you.",
+        "No rush to decide, sit down first. I'll zone out peacefully with you~",
+        "Meow~ You look best when you smile. Come visit me more often!",
+        "Seeing your smile makes all my managerial fatigue vanish instantly!",
+        "Meow~ If you can't find a treasure, call me and I'll trot right over!",
+        "We have awesome gear today! Care to let this little tour guide show you around?",
+        "Browse slowly, choose at ease, just relax like you're right at home~",
+        "Can't make up your mind? I can use my soft paw to pick one with Tarot luck, meow!",
+        "This one is my personal secret favorite. Since you have great taste, I'll recommend it~",
+        "Hungry or thirsty? Whatever you need, just whisper to the Cat Boss!",
+        "Meow~ Whatever bothered you today, forget it all once you step inside.",
+        "The world is noisy, but here there's only warm breeze, good things, and me, meow~",
+        "Thank you for stopping by! As long as you are safe and happy, I'm delighted.",
+        "Good work! Life sometimes requires lying flat and spacing out comfortably like me.",
+        "Meow~ You did great today too. Please take my full purring blessings!",
+        "Just window-shopping is totally fine. Even just dropping by to say hi makes my day.",
+        "Meow~ You're here! Good morning, good afternoon, good evening! Stay wonderful!~",
+        "It's so wonderful seeing you today! Be sure to visit me again next time.",
+        "Take what you love, and don't forget to pack my sunny mood home with you~",
+        "Meow~ Bundle up when it's chilly, take gentle care of yourself!",
+        "So glad to see you! Be sure to talk to me more often, meow~",
+        "Thank you for coming! Both my little cap and I miss you already!"
+      ],
+      jp: [
+        "ニャ～いらっしゃいませ！今日はどんな素敵な気分をお探しですか？",
+        "やっと来てくれたね！今日新しいキャップをかぶってみたの、似合ってる？ニャ～",
+        "お疲れ様！外は大変だったでしょ、ゆっくり風に吹かれて休んでいってね～",
+        "ニャ～！入ってきたのを見て、しっぽが思わずフリフリしちゃった！",
+        "いらっしゃいませ～！今日も元気をいっぱいお届けするニャ！",
+        "やあ！今日はどんな一日だった？いつでもおしゃべりしてね、ニャ～",
+        "ゆっくり見ていいけど、撫でてくれる時間もちゃんと残しておいてね！",
+        "お仕事やお勉強でお疲れ？ほら、モフモフを吸ってパワーチャージしていいよ～",
+        "ニャ！帽子曲がってない？一番可愛い姿でお迎えしたかったんだ。",
+        "焦って決めなくて大丈夫。座って一緒にぼーっとしよう～",
+        "ニャ～君の笑顔が一番素敵だよ。またいつでも会いに来てね！",
+        "君の笑顔を見たら、店長猫の疲れなんて一瞬で吹き飛んじゃった！",
+        "探し物が見つからなかったら呼んでね、トコトコ駆けつけるニャ！",
+        "今日は最高の新商品があるよ！小さなガイド猫と一緒に見て回る？",
+        "ゆっくり選んで、自分の家みたいにくつろいでいってね～",
+        "迷ったら、肉球タロットで選んであげてもいいよ、ニャ！",
+        "これ、実は一番のお気に入りなんだ。お目が高い君だけにこっそり教えちゃう～",
+        "お腹空いた？喉乾いた？必要なものは何でも店長に言ってね！",
+        "嫌なことがあったら、ここに入った瞬間に全部忘れちゃおう。",
+        "外は騒がしいけれど、ここには心地よい風といいものと、ぼくがいるよ、ニャ～",
+        "立ち寄ってくれてありがとう。元気な顔を見られただけで幸せだよ。",
+        "お疲れ様！たまにはぼくみたいに、ゴロゴロ寝転がって脱力しなきゃね。",
+        "ニャ～君は今日も最高だよ！ゴロゴロの祝福をたっぷり受け取ってね！",
+        "見るだけでも大歓迎。挨拶しに来てくれるだけで飛び跳ねるほど嬉しいニャ。",
+        "ニャ～来てくれたんだね！おはよう、こんにちは、おやすみ！元気でいてね！～",
+        "今日会えて本当によかった！また通りかかったら遊んでいってね。",
+        "お気に入りと一緒に、ぼくのご機嫌なパワーも連れて帰ってね～",
+        "ニャ～寒くなったら暖かくして、自分を大切にするんだよ！",
+        "会えて嬉しいニャ！またいっぱいお話ししようね～",
+        "来てくれてありがとう！ぼくもお気に入りの帽子も、もう君が恋しいよ！"
+      ],
+      de: [
+        "Miau~ Willkommen! Was für eine gute Laune suchst du heute?",
+        "Endlich bist du da! Ich trage heute eine neue Kappe, schick, oder? Miau~",
+        "Hallo! Draußen ist es anstrengend, komm rein und ruh deine Pfoten aus~",
+        "Miau~ Als ich dich sah, fing mein Schwanz sofort an zu wedeln!",
+        "Willkommen! Lass mich dir heute eine große Portion Energie schenken!",
+        "Hi! Wie war dein Tag? Plaudere jederzeit gerne mit mir, miau~",
+        "Miau~ Schau dich in Ruhe um, aber vergiss nicht, mich ein wenig zu kraulen!",
+        "Müde von der Arbeit? Schnupper an meinem flauschigen Fell zum Auftanken~",
+        "Miau! Sitzt meine Kappe gerade? Ich wollte dich besonders niedlich begrüßen.",
+        "Keine Eile! Setz dich erst einmal hin, ich chille gerne eine Weile mit dir~",
+        "Miau~ Dein Lächeln steht dir am besten. Besuch mich bald wieder!",
+        "Dein Lächeln lässt alle Müdigkeit des Katzen-Chefs im Nu verfliegen!",
+        "Miau~ Wenn du etwas suchst, ruf mich einfach, ich flitze sofort herbei!",
+        "Heute gibt es tolle Schätze! Darf ich dich als kleiner Reiseleiter herumführen?",
+        "Stöbere ganz entspannt, fühl dich wie zu Hause~",
+        "Kannst du dich nicht entscheiden? Ich tippe mit meiner Pfote für dich, miau!",
+        "Das hier ist mein geheimer Favorit. Für dich mit gutem Geschmack: ein Geheimtipp~",
+        "Hunger oder Durst? Was immer du brauchst, sag es einfach dem Chef!",
+        "Miau~ Was auch immer dich geärgert hat, vergiss es hier einfach alles.",
+        "Die Welt ist laut, aber hier gibt es nur sanfte Brisen, gute Sachen und mich, miau~",
+        "Danke fürs Vorbeischauen! Zu sehen, dass es dir gut geht, macht mich glücklich.",
+        "Gute Arbeit! Manchmal muss man sich wie eine Katze einfach hinlegen und faulenzen.",
+        "Miau~ Du warst heute spitze! Nimm mein schnurrendes Glück mit!",
+        "Nur Gucken ist völlig okay. Sogar nur kurz Hallo zu sagen freut mich riesig.",
+        "Miau~ Du bist da! Guten Morgen, Tag und Abend! Pass gut auf dich auf!~",
+        "Schön, dich getroffen zu haben! Komm beim nächsten Mal unbedingt wieder vorbei.",
+        "Nimm Schönes mit und pack meine gute Laune gleich mit ein~",
+        "Miau~ Zieh dich warm an, wenn es kalt wird, und sorge gut für dich!",
+        "So schön, dich zu sehen! Erzähl mir bald wieder mehr, miau~",
+        "Danke fürs Kommen! Meine kleine Kappe und ich vermissen dich jetzt schon!"
+      ],
+      fr: [
+        "Miaou~ Bienvenue ! De quelle bonne humeur as-tu envie aujourd'hui ?",
+        "Te voilà enfin ! Je porte une nouvelle casquette aujourd'hui, elle me va bien ? Miaou~",
+        "Coucou ! C'est dur dehors, entre donc te reposer les pattes à l'abri~",
+        "Miaou~ Dès que je t'ai vu entrer, ma queue s'est mise à frétiller de joie !",
+        "Bienvenue ! Laisse-moi t'apporter une bonne dose d'énergie positive aujourd'hui !",
+        "Salut ! Comment s'est passée ta journée ? Viens bavarder quand tu veux, miaou~",
+        "Miaou~ Prends tout ton temps, mais garde un petit moment pour me caresser !",
+        "Fatigué par le travail ? Viens respirer un peu de douceur féline pour recharger tes batteries~",
+        "Miaou ! Ma casquette est bien droite ? Je voulais être tout beau pour t'accueillir.",
+        "Pas besoin de te presser, assieds-toi d'abord. On va rêvasser ensemble un instant~",
+        "Miaou~ C'est quand tu souris que tu es le plus beau. Reviens souvent me voir !",
+        "Ton sourire fait disparaître en un éclair toute la fatigue du gérant félin !",
+        "Miaou~ Si tu ne trouves pas ton bonheur, appelle-moi et j'arrive au petit trot !",
+        "Il y a de super nouveautés aujourd'hui ! Tu veux que je te serve de guide ?",
+        "Flâne tranquillement, choisis à ton rythme, fais comme chez toi~",
+        "Hésitant ? Je peux utiliser mon petit coussinet pour tirer au sort, miaou !",
+        "C'est mon article préféré en secret. Comme tu as bon goût, je te le recommande vivement~",
+        "Faim ou soif ? Quoi qu'il te faille, demande au Boss félin !",
+        "Miaou~ Quels que soient tes soucis du jour, oublie tout en franchissant cette porte.",
+        "Le monde est bruyant, mais ici il n'y a que de la douceur, de belles choses et moi, miaou~",
+        "Merci d'avoir fait le détour ! Te voir en forme me rend tellement heureux.",
+        "Bravo pour aujourd'hui ! Parfois, il faut savoir s'étaler de tout son long pour déconnecter.",
+        "Miaou~ Tu as été formidable aujourd'hui. Reçois toutes mes bénédictions ronronnantes !",
+        "Regarder sans rien prendre est parfait aussi. Juste un petit bonjour me comble de joie.",
+        "Miaou~ Te voilà ! Bonjour, bonsoir et bonne journée ! Prends grand soin de toi !~",
+        "C'était si doux de te croiser aujourd'hui ! Reviens vite me faire un coucou.",
+        "Emporte ce qui te plaît, et n'oublie pas d'emporter ma bonne humeur avec toi~",
+        "Miaou~ Couvre-toi bien quand il fait froid, prends bien soin de toi !",
+        "Tellement content de te voir ! Reviens vite me raconter tes aventures, miaou~",
+        "Merci de ta visite ! Ma petite casquette et moi avons déjà hâte de te revoir !"
+      ]
+    };
+
+    // 每次載入時決定當次拜訪的隨機語錄索引 (0 ~ 29)
+    const currentVisitQuoteIndex = Math.floor(Math.random() * catQuotesData.zh.length);
+
+    // 5 國語言介面字典
     const i18n = {
       zh: {
+        catBadge: "🐾 店長貓咪悄悄話",
+        catVisitHint: "↻ 每次拜訪/重新整理刷新",
         slogan: "✨ 娛樂、科技、生活智慧 — 帶領你過上更輕鬆快樂的生活策略。",
         bio: '🐾「哈！讓動物更偉大，也讓時代稍微美好一點。」<br>歡迎來到 HAMAGM 貓咪官方旗艦 Hub！探索紓壓好物、爆笑動物故事與小比兔廢物筆記系列。👇',
         videoCaption: "🐱 HAMAGM 官方系列：貓咪故事與熱門 Shorts",
@@ -893,6 +1163,8 @@
         }
       },
       en: {
+        catBadge: "🐾 Cat Boss Whispers",
+        catVisitHint: "↻ Refreshed on every visit",
         slogan: "✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.",
         bio: '🐾 "Ha! Making animals great, and the age a little better."<br>Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit\'s creative notebook series below. 👇',
         videoCaption: "🐱 HAMAGM Official Series: Cat Stories & Shorts",
@@ -932,6 +1204,8 @@
         }
       },
       jp: {
+        catBadge: "🐾 店長猫のひそひそ話",
+        catVisitHint: "↻ 訪問・更新ごとに新しい言葉",
         slogan: "✨ エンタメ・テクノロジー・生活の知恵 — 毎日をより心地よく過ごすライフハック。",
         bio: '🐾「動物たちを偉大にし、この時代をほんの少し心地よくする。」<br>HAMAGM公式キャットハブへようこそ！ストレス解消アイテム、爆笑アニメ、小比（シャオビ）の脱力ノートシリーズをお楽しみください。👇',
         videoCaption: "🐱 HAMAGM公式シリーズ：猫のショートアニメ",
@@ -971,6 +1245,8 @@
         }
       },
       de: {
+        catBadge: "🐾 Katzen-Chef Flüsterpost",
+        catVisitHint: "↻ Bei jedem Besuch neu geladen",
         slogan: "✨ Unterhaltung, Technologie & Lebensweisheit — Strategien für ein entspannteres Leben.",
         bio: '🐾 "Tiere großartig machen und die Welt ein Stück gemütlicher."<br>Willkommen im offiziellen HAMAGM Cat Hub! Entdecke virale Life-Hacks, humorvolle Kurzgeschichten und die kreativen Notizbücher von Hase Xiaobi. 👇',
         videoCaption: "🐱 HAMAGM Offiziell: Katzen-Kurzgeschichten & Shorts",
@@ -1010,6 +1286,8 @@
         }
       },
       fr: {
+        catBadge: "🐾 Les Confidences du Chat",
+        catVisitHint: "↻ Renouvelé à chaque visite",
         slogan: "✨ Divertissement, Tech & Astuces de Vie — Des stratégies pour un quotidien plus doux.",
         bio: '🐾 "Rendre les animaux formidables et l\'époque un peu plus douce."<br>Bienvenue sur le Cat Hub officiel de HAMAGM ! Découvrez nos gadgets bien-être, nos récits félins et les carnets du lapin XiaoBi. 👇',
         videoCaption: "🐱 HAMAGM Officiel : Vidéos courtes & Shorts félins",
@@ -1057,6 +1335,7 @@
     let currentSearchQuery = '';
     let activeFilteredList = [];
 
+    // 切換語系核心函式
     function setLang(lang) {
       if (!i18n[lang]) return;
       currentLang = lang;
@@ -1068,6 +1347,12 @@
 
       const d = i18n[lang];
 
+      // 更新貓咪對話框與標籤 (隨機鎖定同一個索引，切換語言不重跳)
+      document.getElementById('catBadgePill').textContent = d.catBadge;
+      document.getElementById('catVisitHint').textContent = d.catVisitHint;
+      document.getElementById('catSpeechBox').textContent = catQuotesData[lang][currentVisitQuoteIndex];
+
+      // 文字內容替換
       document.getElementById('txtSlogan').innerHTML = d.slogan;
       document.getElementById('txtBio').innerHTML = d.bio;
       document.getElementById('txtVideoCaption').textContent = d.videoCaption;
@@ -1093,6 +1378,7 @@
       document.getElementById('txtAuthorSub').textContent = d.authorSub;
       document.getElementById('txtFooter').innerHTML = d.footer;
 
+      // 更新分類標籤名稱
       document.querySelectorAll('#filterTabsWrap .tab').forEach(tab => {
         const catKey = tab.dataset.cat;
         if (d.cats[catKey]) {
