@@ -142,7 +142,7 @@ const marketProducts = [
     videoId: "Q1bo5mLh84k",
     videoTitle: "Memories on Display: Frameo WiFi Digital Frame"
   },
-  {
+{
     id: "ninja-blender",
     category: "home",
     tag: "Kitchen & Dining",
@@ -151,9 +151,8 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0dJjEt8Z",
     videoId: "DML7hc5Uo5o",
     videoTitle: "Crush Ice In Seconds: Ninja Auto-iQ Power"
-  }
-];
-{
+  },
+  {
     id: "gritin-book-light",
     category: "home",
     tag: "Reading Light",
@@ -163,6 +162,7 @@ const marketProducts = [
     videoId: "CjYn7HgQrbg",
     videoTitle: "The Ultimate Cozy Bedtime Reading Light"
   }
+];
 // 2. 小比兔官方筆記本清單
 const xiaobiNotebooks = [
   {
