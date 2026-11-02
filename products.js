@@ -1,6 +1,6 @@
 // products.js - HAMAGM 獨立資料庫
 
-// 1. 日常精選市集商品清單 (已新增 15.6吋 數位相框)
+// 1. 日常精選市集商品清單 (已新增 15.6吋 數位相框、Ninja 破壁調理機)
 const marketProducts = [
   {
     id: "f75",
@@ -141,9 +141,8 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B06ugWlej",
     videoId: "Q1bo5mLh84k",
     videoTitle: "Memories on Display: Frameo WiFi Digital Frame"
-  }
-];
-{
+  },
+  {
     id: "ninja-blender",
     category: "home",
     tag: "Kitchen & Dining",
@@ -153,6 +152,8 @@ const marketProducts = [
     videoId: "DML7hc5Uo5o",
     videoTitle: "Crush Ice In Seconds: Ninja Auto-iQ Power"
   }
+];
+
 // 2. 小比兔官方筆記本清單
 const xiaobiNotebooks = [
   {
