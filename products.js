@@ -161,7 +161,8 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B00aA9YjN",
     videoId: "CjYn7HgQrbg",
     videoTitle: "The Ultimate Cozy Bedtime Reading Light"
- {
+  },
+  {
     id: "petbusy-cat-toy",
     category: "cat",
     tag: "Cat Toys",
