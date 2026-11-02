@@ -14,8 +14,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAMAGM - Official Cat Hub, IP World & Gear</title>
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367d3f8'/%3E%3Cstop offset='50%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3Cfilter id='glow' x='-10%25' y='-10%25' width='120%25' height='120%25'%3E%3CfeDropShadow dx='0' dy='2' stdDeviation='1.5' flood-color='%23000' flood-opacity='0.15'/%3E%3C/filter%3E%3C/defs%3E%3Crect x='4' y='4' width='120' height='120' rx='34' fill='url(%23bgGrad)' filter='url(%23glow)'/%3E%3Cpath d='M 38 32 C 43 32 46.5 35.5 46.5 40.5 L 46.5 62 C 46.5 66 49.5 69 53.5 69 L 74.5 69 C 78.5 69 81.5 66 81.5 62 L 81.5 40.5 C 81.5 35.5 85 32 90 32 C 95 32 98.5 35.5 98.5 40.5 L 98.5 87.5 C 98.5 92.5 95 96 90 96 C 85 96 81.5 92.5 81.5 87.5 L 81.5 79 C 81.5 75 78.5 72 74.5 72 L 53.5 72 C 49.5 72 46.5 75 46.5 79 L 46.5 87.5 C 46.5 92.5 43 96 38 96 C 33 96 29.5 92.5 29.5 87.5 L 29.5 40.5 C 29.5 35.5 33 32 38 32 Z' fill='%23ffffff'/%3E%3C/svg%3E">
-  <link rel="alternate icon" type="image/x-icon" href="H.jfif">
+  <!-- 高相容性藍色 H Favicon (純 SVG 渲染，不依賴外部檔案，永遠不破圖) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='hGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='28' fill='url(%23hGrad)'/%3E%3Cpath d='M30 26 h14 v18 h12 v-18 h14 v48 h-14 v-18 h-12 v18 h-14 z' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="alternate icon" href="H.jfif" type="image/jpeg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,7 +106,7 @@
       transform: translateY(-1px);
     }
 
-    /* 頂部影片展示區塊 (單支精選翻頁影片展示) */
+    /* 頂部影片展示區塊 (HAMAGM 貓咪播放清單) */
     .showcase-corner {
       width: 100%;
       max-width: 680px;
@@ -456,6 +457,15 @@
       color: #ffffff;
     }
 
+    /* 專區內部的翻頁預覽影片 */
+    .xiaobi-preview-wrap {
+      margin-bottom: 24px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      background: #0f172a;
+    }
+
     /* 網頁底部：原創小說專區 */
     .author-bookshelf {
       width: 100%;
@@ -547,36 +557,36 @@
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
-    <p class="bio">🐾 "Ha! Making animals great, and the age a little better."<br>歡迎來到哈馬格姆的貓咪基地！這裡有本喵嚴選好物、原創故事動畫，以及隔壁棚那隻廢物小比兔的創作手帳。👇</p>
+    <p class="bio">🐾 "Ha! Making animals great, and the age a little better."<br>歡迎來到哈馬格姆的貓咪基地！這裡有本喵嚴選好物、原創故事動畫，以及隔壁棚小比兔的手帳。👇</p>
     
     <!-- 官方社群與影音入口 -->
     <div class="social-links">
       <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill">📺 YouTube (EN)</a>
       <a href="https://www.youtube.com/@XiaoBi_jp" target="_blank" rel="noopener noreferrer" class="social-pill">🇯🇵 YouTube (日本語)</a>
       <a href="https://www.tiktok.com/@yanghne" target="_blank" rel="noopener noreferrer" class="social-pill">🎵 TikTok</a>
-      <a href="https://www.instagram.com/dixiliuliu" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
+      <a href="https://www.instagram.com/dixiliuliu/" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
       <a href="https://www.facebook.com/yanghane2" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
     </div>
   </div>
 
-  <!-- 頂部：影片展示區塊 (精選翻頁與原創動畫) -->
+  <!-- 頂部：影片展示區塊 (HAMAGM 貓咪官方播放清單) -->
   <section class="showcase-corner">
     <div class="video-grid">
       <div class="video-box">
         <div class="video-iframe-wrap">
           <iframe 
-            src="https://www.youtube.com/embed/clPbsZ7oYuI" 
-            title="Little Rabbit's Notes - Inside Flipbook" 
+            src="https://www.youtube.com/embed/A3RDqr8fYdQ?list=PLFzCcb_2oCHY" 
+            title="HAMAGM Official Playlist" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen>
           </iframe>
         </div>
-        <div class="video-caption">✨ Inside The Notebook: Animation & Flipbook Preview</div>
+        <div class="video-caption">🐱 HAMAGM Official Series: Cat Stories & Shorts Playlist</div>
       </div>
     </div>
     <p class="scroll-hint">
-      🐰 想收藏隔壁棚「小比兔」的實體翻頁原創手帳？<br>
-      <a href="#xiaobi-notebooks">👉 滑到最下方直接在 Amazon 入手多國語言版！</a>
+      🐾 喜歡本喵精選的療癒與生活好物嗎？<br>
+      <a href="#productGrid">👇 往下滑瀏覽貓奴專屬推薦市集！</a>
     </p>
   </section>
 
@@ -622,6 +632,19 @@
       <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer">🇺🇸 English Edition</a>
       <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer">🇯🇵 日本語版</a>
       <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer">🇫🇷 Édition Française</a>
+    </div>
+
+    <!-- 小比兔實體翻頁開箱影片展示 -->
+    <div class="xiaobi-preview-wrap">
+      <div class="video-iframe-wrap">
+        <iframe 
+          src="https://www.youtube.com/embed/clPbsZ7oYuI" 
+          title="Little Rabbit's Notes - Inside Flipbook" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-caption">📖 Inside The Notebook: 實體手帳翻頁動畫與內頁預覽</div>
     </div>
 
     <div class="books-grid" id="xiaobiGrid"></div>
@@ -709,8 +732,7 @@
       activeFilteredList = marketProducts.filter(item => {
         const matchesCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
         const searchTarget = (item.title + ' ' + (item.searchTerms || '')).toLowerCase();
-        const matchesSearch = searchTarget.includes(currentSearchQuery);
-        return matchesCategory && matchesSearch;
+        return matchesCategory && searchTarget.includes(currentSearchQuery);
       });
       renderMarketCards(true);
     }
@@ -795,5 +817,3 @@
   </script>
 </body>
 </html>
-```<FollowUp>
-頂部的精選翻頁影片（目前 ID 是 `clPbsZ7oYuI`），需要幫你換成播放清單，或是你有其他點閱更高的熱門影片 ID 想優先換上嗎？
