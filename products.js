@@ -153,7 +153,16 @@ const marketProducts = [
     videoTitle: "Crush Ice In Seconds: Ninja Auto-iQ Power"
   }
 ];
-
+{
+    id: "gritin-book-light",
+    category: "home",
+    tag: "Reading Light",
+    title: "Gritin 9 LED Rechargeable Clip On Book Light (80 Hrs Runtime)",
+    searchTerms: "gritin 9 led rechargeable book light reading in bed eye caring 3 color stepless dimming lightweight clip on",
+    amazonUrl: "https://link.amazon/B00aA9YjN",
+    videoId: "CjYn7HgQrbg",
+    videoTitle: "The Ultimate Cozy Bedtime Reading Light"
+  }
 // 2. 小比兔官方筆記本清單
 const xiaobiNotebooks = [
   {
