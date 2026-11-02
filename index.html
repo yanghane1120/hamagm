@@ -140,7 +140,7 @@
       transform: translateY(-1px);
     }
 
-    /* 頂部影片展示區塊 (HAMAGM 貓咪官方播放清單) */
+    /* 頂部影片展示區塊 */
     .showcase-corner {
       width: 100%;
       max-width: 680px;
@@ -708,19 +708,19 @@
     </div>
   </div>
 
-  <!-- 頂部：影片展示區塊 (HAMAGM 貓咪官方播放清單：從第一支熱門影片載入，並輪流連續播放全清單) -->
+  <!-- 頂部：影片展示區塊 (已更換為 Q1bo5mLh84k，並設定自動循環播放) -->
   <section class="showcase-corner">
     <div class="video-grid">
       <div class="video-box">
         <div class="video-iframe-wrap">
           <iframe 
-            src="https://www.youtube.com/embed/A3RDqr8fYdQ?list=PLFzCcb_2oCHY&loop=1&enablejsapi=1" 
-            title="HAMAGM Official Playlist" 
+            src="https://www.youtube.com/embed/Q1bo5mLh84k?rel=0&loop=1&playlist=Q1bo5mLh84k" 
+            title="HAMAGM Featured Short" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen>
           </iframe>
         </div>
-        <div class="video-caption" id="txtVideoCaption">🐱 HAMAGM Official Series: Cat Stories & Shorts Playlist</div>
+        <div class="video-caption" id="txtVideoCaption">🐱 HAMAGM Official Series: Cat Stories & Shorts</div>
       </div>
     </div>
     <p class="scroll-hint" id="txtScrollHint">
@@ -788,7 +788,6 @@
         <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary" id="btnPortal">
           🌐 訪問 lazy life. 官方入口 ➔
         </a>
-        <!-- 精確指向包含圖片資源的 xiaobi-card 子目錄 -->
         <a href="https://yanghane1120.github.io/xiaobi-clock/xiaobi-card/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary" id="btnClock">
           ⏰ 免費體驗躺平時鐘
         </a>
@@ -853,12 +852,11 @@
 
   <!-- 多語言與頁面邏輯腳本 -->
   <script>
-    // 5 國語言資料字典
     const i18n = {
       zh: {
         slogan: "✨ 娛樂、科技、生活智慧 — 帶領你過上更輕鬆快樂的生活策略。",
         bio: '🐾「哈！讓動物更偉大，也讓時代稍微美好一點。」<br>歡迎來到 HAMAGM 貓咪官方旗艦 Hub！探索紓壓好物、爆笑動物故事與小比兔廢物筆記系列。👇',
-        videoCaption: "🐱 HAMAGM 官方系列：貓咪故事與熱門 Shorts 播放清單",
+        videoCaption: "🐱 HAMAGM 官方系列：貓咪故事與熱門 Shorts",
         scrollHint: "🐾 正在尋找貓主子欽點的爆款生活神器嗎？<br><a href=\"#productGrid\">👇 往下滑動瀏覽精選市集！</a>",
         marketTitle: "🐾 HAMAGM 精選好物市集",
         marketDesc: "精選日常生活、效率提升與紓壓好物，打造無痛生活節奏。",
@@ -897,7 +895,7 @@
       en: {
         slogan: "✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.",
         bio: '🐾 "Ha! Making animals great, and the age a little better."<br>Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit\'s creative notebook series below. 👇',
-        videoCaption: "🐱 HAMAGM Official Series: Cat Stories & Shorts Playlist",
+        videoCaption: "🐱 HAMAGM Official Series: Cat Stories & Shorts",
         scrollHint: "🐾 Looking for viral life-solving gear curated by the Master Cat?<br><a href=\"#productGrid\">👇 Scroll down to browse our Curated Market!</a>",
         marketTitle: "🐾 HAMAGM Curated Market",
         marketDesc: "Hand-picked gear for better living, productivity, and stress-free everyday routines.",
@@ -936,7 +934,7 @@
       jp: {
         slogan: "✨ エンタメ・テクノロジー・生活の知恵 — 毎日をより心地よく過ごすライフハック。",
         bio: '🐾「動物たちを偉大にし、この時代をほんの少し心地よくする。」<br>HAMAGM公式キャットハブへようこそ！ストレス解消アイテム、爆笑アニメ、小比（シャオビ）の脱力ノートシリーズをお楽しみください。👇',
-        videoCaption: "🐱 HAMAGM公式シリーズ：猫のショートアニメ＆プレイリスト",
+        videoCaption: "🐱 HAMAGM公式シリーズ：猫のショートアニメ",
         scrollHint: "🐾 猫マスター厳選のバズり生活便利グッズをお探しですか？<br><a href=\"#productGrid\">👇 スクロールしてマーケットを見る！</a>",
         marketTitle: "🐾 HAMAGM 厳選マーケット",
         marketDesc: "快適な毎日、生産性向上、ノーストレスな暮らしのための選りすぐりアイテム。",
@@ -975,7 +973,7 @@
       de: {
         slogan: "✨ Unterhaltung, Technologie & Lebensweisheit — Strategien für ein entspannteres Leben.",
         bio: '🐾 "Tiere großartig machen und die Welt ein Stück gemütlicher."<br>Willkommen im offiziellen HAMAGM Cat Hub! Entdecke virale Life-Hacks, humorvolle Kurzgeschichten und die kreativen Notizbücher von Hase Xiaobi. 👇',
-        videoCaption: "🐱 HAMAGM Offiziell: Katzen-Kurzgeschichten & Playlist",
+        videoCaption: "🐱 HAMAGM Offiziell: Katzen-Kurzgeschichten & Shorts",
         scrollHint: "🐾 Auf der Suche nach genialen Life-Hack-Gadgets?<br><a href=\"#productGrid\">👇 Scrolle nach unten zum Shop!</a>",
         marketTitle: "🐾 HAMAGM Kuratierter Markt",
         marketDesc: "Handverlesene Gadgets für Produktivität, Gemütlichkeit und stressfreien Alltag.",
@@ -1014,7 +1012,7 @@
       fr: {
         slogan: "✨ Divertissement, Tech & Astuces de Vie — Des stratégies pour un quotidien plus doux.",
         bio: '🐾 "Rendre les animaux formidables et l\'époque un peu plus douce."<br>Bienvenue sur le Cat Hub officiel de HAMAGM ! Découvrez nos gadgets bien-être, nos récits félins et les carnets du lapin XiaoBi. 👇',
-        videoCaption: "🐱 HAMAGM Officiel : Vidéos courtes & Playlist féline",
+        videoCaption: "🐱 HAMAGM Officiel : Vidéos courtes & Shorts félins",
         scrollHint: "🐾 À la recherche de gadgets recommandés par le Maître Chat ?<br><a href=\"#productGrid\">👇 Faites défiler vers le marché !</a>",
         marketTitle: "🐾 HAMAGM Marché Sélectionné",
         marketDesc: "Des équipements choisis pour un quotidien détendu, efficace et sans tracas.",
@@ -1059,20 +1057,17 @@
     let currentSearchQuery = '';
     let activeFilteredList = [];
 
-    // 切換語系核心函式
     function setLang(lang) {
       if (!i18n[lang]) return;
       currentLang = lang;
       localStorage.setItem('hamagm_lang', lang);
 
-      // 更新按鈕樣式
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === lang);
       });
 
       const d = i18n[lang];
 
-      // 文字內容替換
       document.getElementById('txtSlogan').innerHTML = d.slogan;
       document.getElementById('txtBio').innerHTML = d.bio;
       document.getElementById('txtVideoCaption').textContent = d.videoCaption;
@@ -1098,7 +1093,6 @@
       document.getElementById('txtAuthorSub').textContent = d.authorSub;
       document.getElementById('txtFooter').innerHTML = d.footer;
 
-      // 更新分類標籤名稱
       document.querySelectorAll('#filterTabsWrap .tab').forEach(tab => {
         const catKey = tab.dataset.cat;
         if (d.cats[catKey]) {
@@ -1106,7 +1100,6 @@
         }
       });
 
-      // 重新渲染市集卡片與按鈕文字
       renderMarketCards(true);
       renderBooks();
     }
@@ -1235,7 +1228,6 @@
       applyFilterAndSearch();
     });
 
-    // 啟動頁面並套用預設/快取語系
     activeFilteredList = [...marketProducts];
     setLang(currentLang);
   </script>
