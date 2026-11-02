@@ -1250,40 +1250,63 @@
       renderBooks();
     }
 
-    function renderMarketCards(reset = false) {
-      const container = document.getElementById('productGrid');
-      if (reset) {
-        container.innerHTML = '';
-        currentPage = 1;
+function renderBooks() {
+      const d = i18n[currentLang] || i18n.en;
+      const xiaobiContainer = document.getElementById('xiaobiGrid');
+      const authorContainer = document.getElementById('authorBooksGrid');
+
+      // 檢查小比兔筆記本資料
+      if (xiaobiContainer && typeof xiaobiNotebooks !== 'undefined' && Array.isArray(xiaobiNotebooks)) {
+        xiaobiContainer.innerHTML = '';
+        xiaobiNotebooks.forEach(book => {
+          const html = `
+            <div class="card">
+              <div class="card-book-cover">
+                <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover || book.cover}';">
+              </div>
+              <div class="card-content">
+                <span class="card-tag book-tag">${book.tag || 'Notebook'}</span>
+                <h3 class="card-title">${book.title}</h3>
+              </div>
+              <div class="card-action-wrap">
+                <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
+              </div>
+            </div>
+          `;
+          xiaobiContainer.insertAdjacentHTML('beforeend', html);
+        });
       }
 
-      const start = (currentPage - 1) * itemsPerPage;
-      const end = currentPage * itemsPerPage;
-      const pageItems = activeFilteredList.slice(start, end);
-      const d = i18n[currentLang];
-
-      pageItems.forEach(item => {
-        const hasVideo = (typeof item.videoId === 'string' && item.videoId.trim() !== '');
-        const storyBtnHtml = hasVideo ? `
-          <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${(item.videoTitle || 'Story Preview').replace(/'/g, "\\'")}')">
-            ${d.watchStory}
-          </button>
-        ` : '';
-
-        const cardHtml = `
-          <div class="card" data-category="${item.category}">
-            <div class="card-content" style="padding-top: 24px;">
-              <span class="card-tag">${item.tag}</span>
-              <h3 class="card-title">${item.title}</h3>
+      // 檢查作者電子書資料
+      if (authorContainer && typeof authorBooks !== 'undefined' && Array.isArray(authorBooks)) {
+        authorContainer.innerHTML = '';
+        authorBooks.forEach(book => {
+          const html = `
+            <div class="card">
+              <div class="card-book-cover">
+                <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover || book.cover}';">
+              </div>
+              <div class="card-content">
+                <span class="card-tag novel-tag">${book.tag || 'Book'}</span>
+                <h3 class="card-title">${book.title}</h3>
+              </div>
+              <div class="card-action-wrap">
+                <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.readKindle}</a>
+              </div>
             </div>
-            <div class="card-action-wrap">
-              ${storyBtnHtml}
-              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
-            </div>
-          </div>
-        `;
-        container.insertAdjacentHTML('beforeend', cardHtml);
-      });
+          `;
+          authorContainer.insertAdjacentHTML('beforeend', html);
+        });
+      }
+    }
+
+    // 確保頁面與所有腳本完整載入後才初始化
+    window.addEventListener('load', function() {
+      if (typeof marketProducts !== 'undefined') {
+        activeFilteredList = [...marketProducts];
+      }
+      setLang(currentLang);
+    });
 
       const loadBtn = document.getElementById('loadMoreBtn');
       loadBtn.style.display = (end >= activeFilteredList.length) ? 'none' : 'inline-block';
