@@ -1,6 +1,6 @@
 // products.js - HAMAGM 獨立資料庫
 
-// 1. 日常精選市集商品清單 (全數完成 Shorts 綁定)
+// 1. 日常精選市集商品清單 (已新增 15.6吋 數位相框)
 const marketProducts = [
   {
     id: "f75",
@@ -131,6 +131,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0bpXw7EQ",
     videoId: "O2khHlRJL5s",
     videoTitle: "Cat Mom Found THIS in the Middle of..."
+  },
+  {
+    id: "frameo-15",
+    category: "tech",
+    tag: "Smart Display",
+    title: "BIGASUO 64GB 15.6\" Frameo WiFi Digital Picture Frame (FHD Touch Screen)",
+    searchTerms: "bigasuo 64gb 15.6 inch frameo digital picture frame wifi large electronic photo frames fhd ips touch screen",
+    amazonUrl: "https://link.amazon/B06ugWlej",
+    videoId: "Q1bo5mLh84k",
+    videoTitle: "Memories on Display: Frameo WiFi Digital Frame"
   }
 ];
 
