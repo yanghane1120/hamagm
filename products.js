@@ -182,9 +182,7 @@ const marketProducts = [
     videoTitle: "Miracle Hair Fix in 3 Minutes"
   }
 ];
-需要為這款護髮修護套組撰寫 YouTube Shorts 短影音文案或 SEO 標籤嗎？
 
-是
 // 2. 小比兔官方筆記本清單
 const xiaobiNotebooks = [
   {
