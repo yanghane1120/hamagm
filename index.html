@@ -14,9 +14,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HAMAGM - Official Cat Hub, IP World & Gear</title>
   
-  <!-- 高相容性藍色 H Favicon (純 SVG 渲染，不依賴外部檔案，永遠不破圖) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='hGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='28' fill='url(%23hGrad)'/%3E%3Cpath d='M30 26 h14 v18 h12 v-18 h14 v48 h-14 v-18 h-12 v18 h-14 z' fill='%23ffffff'/%3E%3C/svg%3E">
-  <link rel="alternate icon" href="H.jfif" type="image/jpeg">
+  <!-- 水藍底白字立體 H Favicon (無黑框、純向量高解析度) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='cyanGrad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367e8f9'/%3E%3Cstop offset='40%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23cyanGrad)'/%3E%3Cpath d='M28 24 h14 v20 h16 v-20 h14 v52 h-14 v-20 h-16 v20 h-14 z' fill='%23ffffff'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,23 +75,23 @@
       line-height: 1.6;
     }
 
-    /* 社群連結標籤列 */
+    /* 精簡後的社群連結標籤列 */
     .social-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       margin-top: 14px;
     }
     .social-pill {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 6px 13px;
+      gap: 6px;
+      padding: 7px 15px;
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 9999px;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--text-main);
       text-decoration: none;
@@ -106,7 +105,7 @@
       transform: translateY(-1px);
     }
 
-    /* 頂部影片展示區塊 (HAMAGM 貓咪播放清單) */
+    /* 頂部影片展示區塊 (HAMAGM 貓咪官方播放清單) */
     .showcase-corner {
       width: 100%;
       max-width: 680px;
@@ -553,19 +552,17 @@
 </head>
 <body>
 
-  <!-- 首頁主視覺：貓咪主角世界觀 + 社群導流 -->
+  <!-- 首頁主視覺：貓咪主角世界觀 + 精簡官方社群導流 -->
   <div class="header">
     <img src="HAMAGM.jfif" alt="HAMAGM" class="avatar" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80';">
     <h1 class="title">HAMAGM</h1>
     <p class="bio">🐾 "Ha! Making animals great, and the age a little better."<br>歡迎來到哈馬格姆的貓咪基地！這裡有本喵嚴選好物、原創故事動畫，以及隔壁棚小比兔的手帳。👇</p>
     
-    <!-- 官方社群與影音入口 -->
+    <!-- 官方社群與影音入口 (YouTube / IG / FB) -->
     <div class="social-links">
-      <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill">📺 YouTube (EN)</a>
-      <a href="https://www.youtube.com/@XiaoBi_jp" target="_blank" rel="noopener noreferrer" class="social-pill">🇯🇵 YouTube (日本語)</a>
-      <a href="https://www.tiktok.com/@yanghne" target="_blank" rel="noopener noreferrer" class="social-pill">🎵 TikTok</a>
+      <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill">📺 YouTube</a>
       <a href="https://www.instagram.com/dixiliuliu/" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
-      <a href="https://www.facebook.com/yanghane2" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
+      <a href="https://www.facebook.com/Hamagm99" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
     </div>
   </div>
 
