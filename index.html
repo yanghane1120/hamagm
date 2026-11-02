@@ -408,7 +408,37 @@
       background: #e2e8f0;
       border-color: #94a3b8;
     }
-/* 小比兔 lazy life. 官方入口推薦橫幅 */
+
+    /* 網頁底部：小比兔筆記本專區 */
+    .bottom-section {
+      width: 100%;
+      max-width: 940px;
+      margin-top: 50px;
+      background: #ffffff;
+      border: 2px solid #bae6fd;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.05);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+    .section-heading-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .section-sub {
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+
+    /* 小比兔 lazy life. 官方入口推薦橫幅 */
     .lazylife-feature-banner {
       background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
       border: 1.5px solid #bae6fd;
@@ -501,64 +531,33 @@
       background: #f1f5f9;
       border-color: #94a3b8;
     }
-    <!-- 網頁底部專區 1：小比兔官方筆記本專區 & lazy life 品牌介紹 -->
-  <section class="bottom-section" id="xiaobi-notebooks">
-    <div class="section-header">
-      <h2 class="section-heading-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
-      <span class="section-sub">(Special Guest Appearance & Official Flipbook Series)</span>
-    </div>
 
-    <!-- lazy life. 官方入口與躺平時鐘介紹橫幅 -->
-    <div class="lazylife-feature-banner">
-      <div class="lazylife-banner-head">
-        <span class="lazylife-badge">Official IP Portal</span>
-        <h3 class="lazylife-banner-title">lazy life. — A Low-Energy World with Xiaobi</h3>
-      </div>
-      <p class="lazylife-banner-text">
-        我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌官方入口，集結了桌面陪伴工具、10 秒厭世哲學短劇與實體廢物小誌手帳。<br>
-        <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
-      </p>
-      
-      <div class="lazylife-features-list">
-        <span class="lazylife-feature-pill">⏰ 每日躺平時鐘 (Desk Clock)</span>
-        <span class="lazylife-feature-pill">🍅 防內耗番茄鐘 (Pomodoro)</span>
-        <span class="lazylife-feature-pill">🃏 40+ 厭世金句抽卡</span>
-        <span class="lazylife-feature-pill">🌏 5 國語言即時切換</span>
-      </div>
-
-      <div class="lazylife-cta-group">
-        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary">
-          🌐 訪問 lazy life. 官方入口 ➔
-        </a>
-        <a href="https://yanghane1120.github.io/xiaobi-clock/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary">
-          ⏰ 免費體驗躺平時鐘
-        </a>
-      </div>
-    </div>
-    
-    <!-- 多國語言直達通道 -->
-    <div class="quick-lang-links">
-      <span>🌏 Direct Amazon Links:</span>
-      <a href="https://link.amazon/B09m4WMbS" target="_blank" rel="noopener noreferrer">🇺🇸 English Edition</a>
-      <a href="https://link.amazon/B00kvYWNj" target="_blank" rel="noopener noreferrer">🇯🇵 日本語版</a>
-      <a href="https://link.amazon/B0dTmtta4" target="_blank" rel="noopener noreferrer">🇫🇷 Édition Française</a>
-    </div>
-
-    <!-- 小比兔實體翻頁開箱影片展示 -->
-    <div class="xiaobi-preview-wrap">
-      <div class="video-iframe-wrap">
-        <iframe 
-          src="https://www.youtube.com/embed/clPbsZ7oYuI?rel=0&loop=1&playlist=clPbsZ7oYuI" 
-          title="Little Rabbit's Notes - Inside Flipbook" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-caption">📖 Inside The Notebook: Physical Flipbook Animation & Page Preview</div>
-    </div>
-
-    <div class="books-grid" id="xiaobiGrid"></div>
-  </section>
+    .quick-lang-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      background: #f0f9ff;
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--text-sub);
+      align-items: center;
+    }
+    .quick-lang-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      background: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid #bae6fd;
+      transition: all 0.2s;
+    }
+    .quick-lang-links a:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
 
     /* 專區內部的翻頁預覽影片 */
     .xiaobi-preview-wrap {
@@ -724,11 +723,39 @@
     <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">Load More Gear 👇</button>
   </div>
 
-  <!-- 網頁底部專區 1：小比兔官方筆記本專區 -->
+  <!-- 網頁底部專區 1：小比兔官方筆記本專區 & lazy life 品牌介紹 -->
   <section class="bottom-section" id="xiaobi-notebooks">
     <div class="section-header">
       <h2 class="section-heading-title">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
       <span class="section-sub">(Special Guest Appearance & Official Flipbook Series)</span>
+    </div>
+
+    <!-- lazy life. 官方入口與躺平時鐘介紹橫幅 -->
+    <div class="lazylife-feature-banner">
+      <div class="lazylife-banner-head">
+        <span class="lazylife-badge">Official IP Portal</span>
+        <h3 class="lazylife-banner-title">lazy life. — A Low-Energy World with Xiaobi</h3>
+      </div>
+      <p class="lazylife-banner-text">
+        我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌官方入口，集結了桌面陪伴工具、10 秒厭世哲學短劇與實體廢物小誌手帳。<br>
+        <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
+      </p>
+      
+      <div class="lazylife-features-list">
+        <span class="lazylife-feature-pill">⏰ 每日躺平時鐘 (Desk Clock)</span>
+        <span class="lazylife-feature-pill">🍅 防內耗番茄鐘 (Pomodoro)</span>
+        <span class="lazylife-feature-pill">🃏 40+ 厭世金句抽卡</span>
+        <span class="lazylife-feature-pill">🌏 5 國語言即時切換</span>
+      </div>
+
+      <div class="lazylife-cta-group">
+        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary">
+          🌐 訪問 lazy life. 官方入口 ➔
+        </a>
+        <a href="https://yanghane1120.github.io/xiaobi-clock/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary">
+          ⏰ 免費體驗躺平時鐘
+        </a>
+      </div>
     </div>
     
     <!-- 多國語言直達通道 -->
@@ -742,12 +769,12 @@
     <!-- 小比兔實體翻頁開箱影片展示 -->
     <div class="xiaobi-preview-wrap">
       <div class="video-iframe-wrap">
-<iframe 
-  src="https://www.youtube.com/embed/clPbsZ7oYuI?rel=0&loop=1&playlist=clPbsZ7oYuI" 
-  title="Little Rabbit's Notes - Inside Flipbook" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  allowfullscreen>
-</iframe>
+        <iframe 
+          src="https://www.youtube.com/embed/clPbsZ7oYuI?rel=0&loop=1&playlist=clPbsZ7oYuI" 
+          title="Little Rabbit's Notes - Inside Flipbook" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
       </div>
       <div class="video-caption">📖 Inside The Notebook: Physical Flipbook Animation & Page Preview</div>
     </div>
@@ -922,5 +949,3 @@
   </script>
 </body>
 </html>
-```<FollowUp>
-</FollowUp>
