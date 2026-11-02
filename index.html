@@ -579,13 +579,38 @@
       color: #ffffff;
     }
 
-    /* 翻頁開箱影片 */
+    /* 🛠️ 小比兔翻頁開箱影片展示區 (修復比例與 100% 滿版) */
     .xiaobi-preview-wrap {
       margin-bottom: 24px;
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--card-border);
       background: #0f172a;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+    .video-iframe-wrap {
+      position: relative;
+      padding-bottom: 56.25%; /* 保持標準 16:9 比例 */
+      height: 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    .video-iframe-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-caption {
+      padding: 10px 14px;
+      background: #f8fafc;
+      border-top: 1px solid var(--card-border);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      text-align: center;
     }
 
     /* 原創小說專區 */
@@ -1250,7 +1275,67 @@
       renderBooks();
     }
 
-function renderBooks() {
+    function renderMarketCards(reset = false) {
+      const container = document.getElementById('productGrid');
+      if (reset) {
+        container.innerHTML = '';
+        currentPage = 1;
+      }
+
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = currentPage * itemsPerPage;
+      const pageItems = activeFilteredList.slice(start, end);
+      const d = i18n[currentLang];
+
+      pageItems.forEach(item => {
+        const hasVideo = (typeof item.videoId === 'string' && item.videoId.trim() !== '');
+        const storyBtnHtml = hasVideo ? `
+          <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${(item.videoTitle || 'Story Preview').replace(/'/g, "\\'")}')">
+            ${d.watchStory}
+          </button>
+        ` : '';
+
+        const cardHtml = `
+          <div class="card" data-category="${item.category}">
+            <div class="card-content" style="padding-top: 24px;">
+              <span class="card-tag">${item.tag}</span>
+              <h3 class="card-title">${item.title}</h3>
+            </div>
+            <div class="card-action-wrap">
+              ${storyBtnHtml}
+              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
+            </div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', cardHtml);
+      });
+
+      const loadBtn = document.getElementById('loadMoreBtn');
+      loadBtn.style.display = (end >= activeFilteredList.length) ? 'none' : 'inline-block';
+    }
+
+    function applyFilterAndSearch() {
+      activeFilteredList = marketProducts.filter(item => {
+        const matchesCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
+        const searchTarget = (item.title + ' ' + (item.searchTerms || '')).toLowerCase();
+        return matchesCategory && searchTarget.includes(currentSearchQuery);
+      });
+      renderMarketCards(true);
+    }
+
+    function filterItems(category, el) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      currentFilterCategory = category;
+      applyFilterAndSearch();
+    }
+
+    function loadMore() {
+      currentPage++;
+      renderMarketCards(false);
+    }
+
+    function renderBooks() {
       const d = i18n[currentLang] || i18n.en;
       const xiaobiContainer = document.getElementById('xiaobiGrid');
       const authorContainer = document.getElementById('authorBooksGrid');
@@ -1300,82 +1385,6 @@ function renderBooks() {
       }
     }
 
-    // 確保頁面與所有腳本完整載入後才初始化
-    window.addEventListener('load', function() {
-      if (typeof marketProducts !== 'undefined') {
-        activeFilteredList = [...marketProducts];
-      }
-      setLang(currentLang);
-    });
-
-      const loadBtn = document.getElementById('loadMoreBtn');
-      loadBtn.style.display = (end >= activeFilteredList.length) ? 'none' : 'inline-block';
-    }
-
-    function applyFilterAndSearch() {
-      activeFilteredList = marketProducts.filter(item => {
-        const matchesCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
-        const searchTarget = (item.title + ' ' + (item.searchTerms || '')).toLowerCase();
-        return matchesCategory && searchTarget.includes(currentSearchQuery);
-      });
-      renderMarketCards(true);
-    }
-
-    function filterItems(category, el) {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      currentFilterCategory = category;
-      applyFilterAndSearch();
-    }
-
-    function loadMore() {
-      currentPage++;
-      renderMarketCards(false);
-    }
-
-    function renderBooks() {
-      const d = i18n[currentLang];
-      const xiaobiContainer = document.getElementById('xiaobiGrid');
-      xiaobiContainer.innerHTML = '';
-      xiaobiNotebooks.forEach(book => {
-        const html = `
-          <div class="card">
-            <div class="card-book-cover">
-              <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover}';">
-            </div>
-            <div class="card-content">
-              <span class="card-tag book-tag">${book.tag}</span>
-              <h3 class="card-title">${book.title}</h3>
-            </div>
-            <div class="card-action-wrap">
-              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
-            </div>
-          </div>
-        `;
-        xiaobiContainer.insertAdjacentHTML('beforeend', html);
-      });
-
-      const authorContainer = document.getElementById('authorBooksGrid');
-      authorContainer.innerHTML = '';
-      authorBooks.forEach(book => {
-        const html = `
-          <div class="card">
-            <div class="card-book-cover">
-              <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover}';">
-            </div>
-            <div class="card-content">
-              <span class="card-tag novel-tag">${book.tag}</span>
-              <h3 class="card-title">${book.title}</h3>
-            </div>
-            <div class="card-action-wrap">
-              <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.readKindle}</a>
-            </div>
-          </div>
-        `;
-        authorContainer.insertAdjacentHTML('beforeend', html);
-      });
-    }
-
     function openStoryModal(videoId, title) {
       const modal = document.getElementById('storyModal');
       const iframe = document.getElementById('storyIframe');
@@ -1397,8 +1406,13 @@ function renderBooks() {
       applyFilterAndSearch();
     });
 
-    activeFilteredList = [...marketProducts];
-    setLang(currentLang);
+    // 確保 DOM 與 products.js 完全載入後才初始化渲染
+    window.addEventListener('load', function() {
+      if (typeof marketProducts !== 'undefined') {
+        activeFilteredList = [...marketProducts];
+      }
+      setLang(currentLang);
+    });
   </script>
 </body>
 </html>
