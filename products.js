@@ -189,8 +189,8 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B02tG5lqh",
     videoId: "oqTMz8-80nM",
     videoTitle: "Effortless Cleaning: Bissell CleanView Swivel Power"
-];
-{
+  },
+  {
     id: "spacex-starship",
     category: "tech",
     tag: "Space Collectibles",
@@ -199,5 +199,5 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0imKdLHn",
     videoId: "QXGeOfBkrDg",
     videoTitle: "SpaceX Starship 1:144 Scale Desktop Model"
- }
+  }
 ];
