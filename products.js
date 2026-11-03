@@ -199,8 +199,8 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0imKdLHn",
     videoId: "QXGeOfBkrDg",
     videoTitle: "SpaceX Starship 1:144 Scale Desktop Model"
-}
-];
+  },
+  {
     id: "stanley-quencher-30oz",
     category: "home",
     tag: "Drinkware",
@@ -209,5 +209,5 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B08TWhkGb",
     videoId: "BzgxRE5z2rA",
     videoTitle: "Stay Hydrated in Style: Stanley Quencher H2.0 30oz"
-}
+  }
 ];
