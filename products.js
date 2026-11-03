@@ -1,6 +1,4 @@
-// products.js - HAMAGM 獨立資料庫
-
-// 1. 日常精選市集商品清單 (已新增 15.6吋 數位相框、Ninja 破壁調理機)
+// 1. 日常精選市集商品清單
 const marketProducts = [
   {
     id: "f75",
@@ -142,7 +140,7 @@ const marketProducts = [
     videoId: "Q1bo5mLh84k",
     videoTitle: "Memories on Display: Frameo WiFi Digital Frame"
   },
-{
+  {
     id: "ninja-blender",
     category: "home",
     tag: "Kitchen & Dining",
@@ -152,7 +150,7 @@ const marketProducts = [
     videoId: "DML7hc5Uo5o",
     videoTitle: "Crush Ice In Seconds: Ninja Auto-iQ Power"
   },
- {
+  {
     id: "gritin-book-light",
     category: "home",
     tag: "Reading Light",
@@ -177,94 +175,4 @@ const marketProducts = [
     category: "care",
     tag: "Hair Treatment",
     title: "Aussie Total Miracle Shampoo, Conditioner & 3-Min Deep Treatment Bundle",
-    searchTerms: "aussie total miracle shampoo conditioner 3 minute deep treatment apricot macadamia oil damaged hair bundle",
-    amazonUrl: "https://link.amazon/B03LPJYi3",
-    videoId: "A3RDqr8fYdQ",
-    videoTitle: "Miracle Hair Fix in 3 Minutes"
-  }
-];
-
-// 2. 小比兔官方筆記本清單
-const xiaobiNotebooks = [
-  {
-    cover: "book_en.png",
-    fallbackCover: "image_439ef6.png",
-    tag: "Paperback",
-    title: "Little Rabbit's Notes (English Edition 1)",
-    amazonUrl: "https://link.amazon/B09m4WMbS"
-  },
-  {
-    cover: "XBR3A.jpg",
-    fallbackCover: "book_en.png",
-    tag: "Paperback",
-    title: "Little Rabbit's Notes: I Held Up the National Flag",
-    amazonUrl: "https://link.amazon/B072n2eaF"
-  },
-  {
-    cover: "book_jp.png",
-    fallbackCover: "image_439ec1.png",
-    tag: "ペーパーバック",
-    title: "小比うさぎのダメダメノート (日本語版 1)",
-    amazonUrl: "https://link.amazon/B00kvYWNj"
-  },
-  {
-    cover: "XBR3j.jpg",
-    fallbackCover: "book_jp.png",
-    tag: "ペーパーバック",
-    title: "小比うさぎのダメダメノート (日本語版 2)",
-    amazonUrl: "https://link.amazon/B02imVg9a"
-  },
-  {
-    cover: "book_fr.jpg",
-    fallbackCover: "FRE.jpg",
-    tag: "Livre Broché",
-    title: "Le carnet inutile du petit lapin (Français)",
-    amazonUrl: "https://link.amazon/B0dTmtta4"
-  },
-  {
-    cover: "book_de.jpg",
-    fallbackCover: "der.jpg",
-    tag: "Taschenbuch",
-    title: "Der Notizblock des kleinen Hasen (Deutsch)",
-    amazonUrl: "https://link.amazon/B029TO94d"
-  }
-];
-
-// 3. 原創小說與哲學書籍清單
-const authorBooks = [
-  {
-    cover: "Smarter.jfif",
-    fallbackCover: "Smarter.jpg",
-    tag: "Kindle Edition",
-    title: "Read Smarter: A Novelist’s Field Guide",
-    amazonUrl: "https://link.amazon/B043rKAkO"
-  },
-  {
-    cover: "Abejundio.jfif",
-    fallbackCover: "Abejundio.jpg",
-    tag: "Kindle Edition",
-    title: "The non-existent Spanish philosopher Abejundio",
-    amazonUrl: "https://link.amazon/B0eFr2u8i"
-  },
-  {
-    cover: "Liebesleid.jfif",
-    fallbackCover: "Liebesleid.jpg",
-    tag: "Kindle Edition",
-    title: "Liebesleid: A Symphony for the Broken",
-    amazonUrl: "https://link.amazon/B0gJg1Q4R"
-  },
-  {
-    cover: "Recipe.jfif",
-    fallbackCover: "Recipe.jpg",
-    tag: "Kindle Edition",
-    title: "The Recipe for a Second Chance: Beef Noodle & Memory",
-    amazonUrl: "https://link.amazon/B0hjzbFOV"
-  },
-  {
-    cover: "Kitchen.jfif",
-    fallbackCover: "Kitchen.jpg",
-    tag: "Kindle Edition",
-    title: "Papa’s Kitchen",
-    amazonUrl: "https://link.amazon/B00B19Hu5"
-  }
-];
+    searchTerms: "
