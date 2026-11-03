@@ -209,5 +209,15 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B08TWhkGb",
     videoId: "BzgxRE5z2rA",
     videoTitle: "Stay Hydrated in Style: Stanley Quencher H2.0 30oz"
+  },
+  {
+    id: "umite-dutch-oven",
+    category: "home",
+    tag: "Kitchen & Dining",
+    title: "Umite Chef 5QT Enameled Cast Iron Dutch Oven with Lid & Potholders (Cream White)",
+    searchTerms: "enameled cast iron dutch oven umite chef 5qt heavy duty cookware bread baking braising roasting cream white",
+    amazonUrl: "https://link.amazon/B01LL1DOR",
+    videoId: "_E46WYDnwgQ",
+    videoTitle: "The Ultimate Sourdough & Stew Companion: Umite Chef 5QT"
   }
 ];
