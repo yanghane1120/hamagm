@@ -189,5 +189,15 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B02tG5lqh",
     videoId: "oqTMz8-80nM",
     videoTitle: "Effortless Cleaning: Bissell CleanView Swivel Power"
-  }
+];
+{
+    id: "spacex-starship",
+    category: "tech",
+    tag: "Space Collectibles",
+    title: "1:144 SpaceX Starship Model with Sturdy Bracket (13.43in)",
+    searchTerms: "1 144 spacex starship model rocket sturdy bracket durable plastic space enthusiasts gift collection",
+    amazonUrl: "https://link.amazon/B0imKdLHn",
+    videoId: "QXGeOfBkrDg",
+    videoTitle: "SpaceX Starship 1:144 Scale Desktop Model"
+ }
 ];
