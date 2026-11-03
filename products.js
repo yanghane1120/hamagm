@@ -175,4 +175,19 @@ const marketProducts = [
     category: "care",
     tag: "Hair Treatment",
     title: "Aussie Total Miracle Shampoo, Conditioner & 3-Min Deep Treatment Bundle",
-    searchTerms: "
+    searchTerms: "aussie total miracle shampoo conditioner 3 minute deep treatment apricot macadamia oil damaged hair bundle",
+    amazonUrl: "https://link.amazon/B03LPJYi3",
+    videoId: "A3RDqr8fYdQ",
+    videoTitle: "Miracle Hair Fix in 3 Minutes"
+  },
+  {
+    id: "bissell-cleanview",
+    category: "home",
+    tag: "Floor Care",
+    title: "Bissell CleanView Swivel Upright Vacuum (Triple Action Brush Roll / 3836)",
+    searchTerms: "bissell cleanview swivel upright vacuum triple action brush roll multi cyclonic suction 3836",
+    amazonUrl: "https://link.amazon/B02tG5lqh",
+    videoId: "oqTMz8-80nM",
+    videoTitle: "Effortless Cleaning: Bissell CleanView Swivel Power"
+  }
+];
