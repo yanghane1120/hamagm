@@ -13,7 +13,6 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0ewgi8NJ",
     videoId: "UD3FO4SysaE",
     videoTitle: "Even my cat plays better with this keyboard..."
-  
   },
   {
     id: "hair-mask",
