@@ -223,6 +223,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B01LL1DOR",
     videoId: "_E46WYDnwgQ",
     videoTitle: "The Ultimate Sourdough & Stew Companion: Umite Chef 5QT"
+  },
+  {
+    id: "stanley-quencher-30oz-ash",
+    category: "home",
+    tag: "Drinkware",
+    title: "STANLEY Quencher H2.0 FlowState Tumbler with Handle (30 oz / Ash)",
+    searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 30 oz cup holder compatible stainless steel ash",
+    amazonUrl: "https://link.amazon/B05ln23HR",
+    videoId: "T6xCDCKXAio",
+    videoTitle: "Everyday Hydration: Stanley Quencher H2.0 30oz (Ash)"
   }
 ];
 
