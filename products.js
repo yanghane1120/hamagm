@@ -233,6 +233,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B05ln23HR",
     videoId: "T6xCDCKXAio",
     videoTitle: "Everyday Hydration: Stanley Quencher H2.0 30oz (Ash)"
+  },
+  {
+    id: "stanley-quencher-40oz-rosequartz",
+    category: "home",
+    tag: "Drinkware",
+    title: "STANLEY Quencher H2.0 FlowState Tumbler with Handle (40 oz / Rose Quartz 2.0)",
+    searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz",
+    amazonUrl: "https://link.amazon/B04rN2f5B",
+    videoId: "sqmnr6m_ZaA",
+    videoTitle: "Hydration Upgrade: Stanley Quencher H2.0 40oz (Rose Quartz)"
   }
 ];
 
