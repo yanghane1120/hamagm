@@ -13,16 +13,7 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0ewgi8NJ",
     videoId: "UD3FO4SysaE",
     videoTitle: "Even my cat plays better with this keyboard..."
-  },
-  {
-    id: "gloves",
-    category: "winter",
-    tag: "Winter Gear",
-    title: "2 Pairs Women's Touch Screen Thermal Knit Winter Gloves",
-    searchTerms: "2 pairs winter gloves for women touch screen elastic thermal knit lining warm gloves",
-    amazonUrl: "https://link.amazon/B0bdUBXIo",
-    videoId: "6HE65tM37Wc",
-    videoTitle: "Cold Hands, Warm Hearts"
+  
   },
   {
     id: "hair-mask",
