@@ -4,7 +4,7 @@
 // 1. 日常精選市集商品清單 (marketProducts)
 // ==========================================
 const marketProducts = [
-  {
+{
     id: "f75",
     category: "tech",
     tag: "Gaming Gear",
@@ -12,7 +12,7 @@ const marketProducts = [
     searchTerms: "aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound",
     amazonUrl: "https://link.amazon/B0ewgi8NJ",
     videoId: "weBkKhh-wEA",
-    videoTitle: "Even my cat plays better with this keyboard..."
+    videoTitle: "Even my cat plays better with this mechanical keyboard! ⚡🔥"
   },
   {
     id: "hair-mask",
