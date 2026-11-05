@@ -4,7 +4,7 @@
 // 1. 日常精選市集商品清單 (marketProducts)
 // ==========================================
 const marketProducts = [
-{
+  {
     id: "f75",
     category: "tech",
     tag: "Gaming Gear",
@@ -263,6 +263,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B00wmIHE9",
     videoId: "VbTL98rMSVY",
     videoTitle: "Stay Cool All Day: Stanley Quencher H2.0 40oz (Rose Quartz 2.0)"
+  },
+  {
+    id: "young-washington",
+    category: "entertainment",
+    tag: "Historical Drama",
+    title: "Young Washington (Directed by Jon Erwin / Starring Kelsey Grammer & Mary-Louise Parker)",
+    searchTerms: "young washington movie jon erwin kelsey grammer mary louise parker william franklyn miller historical drama",
+    amazonUrl: "https://link.amazon/B0dJGdQkd",
+    videoId: "QHKzHzaBlPE",
+    videoTitle: "Before He Led A Nation: The Untold Story of Young Washington"
   }
 ];
 
