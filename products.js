@@ -313,6 +313,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0f7IqMYv",
     videoId: "QXGeOfBkrDg",
     videoTitle: "Wear The Mission: SpaceX Embroidered Baseball Cap (Black)"
+  },
+  {
+    id: "washington-a-life",
+    category: "entertainment",
+    tag: "Pulitzer Winner",
+    title: "Washington: A Life (Pulitzer Prize Winner by Ron Chernow)",
+    searchTerms: "washington a life ron chernow pulitzer prize winner biography founding fathers george washington",
+    amazonUrl: "https://link.amazon/B08bTS5y0",
+    videoId: "mZ6zZq_6xzA",
+    videoTitle: "The Definitive Portrait: Washington: A Life (Pulitzer Prize Winner)"
   }
 ];
 
