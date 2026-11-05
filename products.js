@@ -293,6 +293,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0b5ipRIY",
     videoId: "eeFrYm8x1cU",
     videoTitle: "Aesthetic Daily Hydration: Stanley Quencher H2.0 30oz (Ash)"
+  },
+  {
+    id: "jolisu-reading-glasses-5pack",
+    category: "care",
+    tag: "Vision Care",
+    title: "JOLISU 5-Pack Men's 2.00 Blue Light Blocking Reading Glasses (Lightweight Metal Frame)",
+    searchTerms: "jolisu 5 pack reading glasses men 2.00 blue light blocking readers lightweight thin metal frame computer reading",
+    amazonUrl: "https://link.amazon/B07y5SqCN",
+    videoId: "pUhCGpfgNcw",
+    videoTitle: "Work & Read in Comfort: JOLISU Blue Light Blocking Glasses 5-Pack"
   }
 ];
 
