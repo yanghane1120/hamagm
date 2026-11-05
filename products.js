@@ -283,6 +283,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B02uRVCB4",
     videoId: "q0eutYTG-ng",
     videoTitle: "The Viral Stanley Quencher H2.0 40oz (Rose Quartz 2.0)"
+  },
+  {
+    id: "stanley-quencher-30oz-ash-v2",
+    category: "home",
+    tag: "Drinkware",
+    title: "STANLEY Quencher H2.0 FlowState Tumbler with Handle (30 oz / Ash)",
+    searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 30 oz cup holder compatible stainless steel ash travel cup bpa free",
+    amazonUrl: "https://link.amazon/B0b5ipRIY",
+    videoId: "eeFrYm8x1cU",
+    videoTitle: "Aesthetic Daily Hydration: Stanley Quencher H2.0 30oz (Ash)"
   }
 ];
 
