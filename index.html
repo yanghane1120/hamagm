@@ -1,1377 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTZW504ESG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-WTZW504ESG');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HAMAGM - Entertainment, Tech, Wisdom & Life Hacks for a Happier Life</title>
-  
-  <!-- 水藍底白字立體 H Favicon (純向量 SVG) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='cyanGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2367e8f9'/%3E%3Cstop offset='40%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%230284c7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23cyanGrad)'/%3E%3Cpath d='M28 24 h14 v20 h16 v-20 h14 v52 h-14 v-20 h-16 v20 h-14 z' fill='%23ffffff'/%3E%3C/svg%3E">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAMAGM - 萬用動物市集</title>
   <style>
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --primary: #0284c7;
-      --primary-light: #e0f2fe;
-      --text-main: #0f172a;
-      --text-sub: #64748b;
-      --btn-bg: #f59e0b;
-      --btn-hover: #d97706;
-      --tag-book: #ecfdf5;
-      --tag-book-text: #059669;
-      --tag-novel: #eff6ff;
-      --tag-novel-text: #1d4ed8;
+    /* 全域重設與字型 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text-main);
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 24px 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      color: #111827;
+      margin-bottom: 6px;
+    }
+    header p {
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    /* 主要容器 */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* 商品卡片網格 (對應原截圖 3 欄排版) */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    /* 商品卡片樣式 */
+    .product-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 24px 16px 80px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
     }
 
-    /* 多國語言切換列 */
-    .lang-switcher {
+    /* 頂部標籤 */
+    .product-tag {
+      display: inline-block;
+      align-self: flex-start;
+      background-color: #e0f2fe;
+      color: #0284c7;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    /* 商品主標題 */
+    .product-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111827;
+      line-height: 1.45;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    /* 🎬 影片標題展示區塊 (小於商品名稱，獨立排版) */
+    .product-video-title {
       display: flex;
-      gap: 6px;
-      background: #e2e8f0;
-      padding: 4px;
-      border-radius: 9999px;
-      margin-bottom: 18px;
-    }
-    .lang-btn {
-      border: none;
-      background: transparent;
-      color: #64748b;
-      font-size: 12.5px;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .lang-btn.active {
-      background: #ffffff;
-      color: var(--primary);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    }
-
-    .header {
-      text-align: center;
-      max-width: 680px;
-      margin-bottom: 32px;
-      width: 100%;
-    }
-    .title {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-    .slogan {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 16px;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;           /* 小於商品標題 */
       line-height: 1.4;
-    }
-
-    /* 趴姿店長貓與隨機語錄長方形大框框 */
-    .cat-dialog-box {
-      width: 100%;
-      background: #ffffff;
-      border: 2px solid #bae6fd;
-      border-radius: 20px;
-      padding: 18px 22px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      box-shadow: 0 8px 24px -6px rgba(2, 132, 199, 0.1);
+      color: #374151;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 12px;
       margin-bottom: 16px;
       text-align: left;
     }
-    .cat-box-img-wrap {
+    .product-video-title .video-icon {
+      font-size: 0.95rem;
       flex-shrink: 0;
-      width: 130px;
+      margin-top: 1px;
     }
-    .cat-box-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
+    .product-video-title .video-text {
+      font-weight: 500;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;        /* 超過兩行自動省略，維持整齊度 */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
     }
-    .cat-box-text-wrap {
-      flex: 1;
+
+    /* 按鈕容器 */
+    .product-actions {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-    }
-    .cat-box-tag {
-      font-size: 11.5px;
-      font-weight: 800;
-      color: #0284c7;
-      background: #e0f2fe;
-      padding: 3px 10px;
-      border-radius: 9999px;
-      align-self: flex-start;
-      letter-spacing: 0.2px;
-    }
-    .cat-box-quote {
-      font-size: 15.5px;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.55;
-    }
-
-    @media (max-width: 600px) {
-      .cat-dialog-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 16px;
-        gap: 12px;
-      }
-      .cat-box-img-wrap {
-        width: 110px;
-      }
-      .cat-box-tag {
-        align-self: center;
-      }
-    }
-
-    .bio {
-      color: var(--text-sub);
-      font-size: 13.5px;
-      line-height: 1.6;
-    }
-
-    /* 社群連結標籤列 */
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 10px;
-      margin-top: 14px;
+      margin-top: auto;
     }
-    .social-pill {
+
+    /* 觀看短劇按鈕 (灰色框按鈕) */
+    .btn-video {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
-      padding: 7px 16px;
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: 9999px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-main);
-      text-decoration: none;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-      transition: all 0.2s ease;
-    }
-    .social-pill:hover {
-      background: var(--primary-light);
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-1px);
-    }
-
-    /* 分隔標題 */
-    .section-divider {
       width: 100%;
-      max-width: 940px;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    .section-title {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    .section-title::before, .section-title::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: #e2e8f0;
-      max-width: 120px;
-    }
-    .section-desc-note {
-      font-size: 13.5px;
-      color: var(--text-sub);
-      margin-top: 6px;
-    }
-
-    /* 搜尋與分類 */
-    .search-box {
-      width: 100%;
-      max-width: 540px;
-      margin-bottom: 18px;
-    }
-    .search-input {
-      width: 100%;
-      padding: 13px 20px;
-      border-radius: 9999px;
-      border: 1.5px solid var(--card-border);
-      background: var(--card-bg);
-      color: var(--text-main);
-      font-size: 14.5px;
-      outline: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      transition: all 0.2s ease;
-    }
-    .search-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-    }
-    .search-input::placeholder {
-      color: #94a3b8;
-    }
-    .filter-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .tab {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-sub);
-      padding: 7px 18px;
-      border-radius: 9999px;
-      font-size: 13.5px;
+      padding: 10px 14px;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      font-size: 0.92rem;
       font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-      transition: all 0.2s ease;
-    }
-    .tab.active, .tab:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-    }
-
-    /* 市集商品網格 */
-    .market-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 940px;
-    }
-
-    /* 載入更多按鈕專區 */
-    .load-more-wrap {
-      width: 100%;
-      max-width: 940px;
-      text-align: center;
-      margin-top: 30px;
-    }
-    .load-more-btn {
-      background: #ffffff;
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
-      padding: 10px 24px;
-      border-radius: 9999px;
-      font-size: 14.5px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
-      transition: all 0.2s ease;
-    }
-    .load-more-btn:hover {
-      background: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
-    }
-
-    /* 書籍專用網格 */
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    /* 卡片共用樣式 */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.08);
-      border-color: #cbd5e1;
-    }
-    .card-book-cover {
-      width: 100%;
-      height: 230px;
-      background: #f1f5f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px;
-    }
-    .card-book-cover img {
-      max-height: 100%;
-      max-width: 100%;
-      object-fit: contain;
-      border-radius: 5px;
-      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
-    }
-    .card-content {
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .card-tag {
-      display: inline-block;
-      align-self: flex-start;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--primary);
-      background: var(--primary-light);
-      padding: 3px 8px;
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-    .card-tag.book-tag {
-      color: var(--tag-book-text);
-      background: var(--tag-book);
-    }
-    .card-tag.novel-tag {
-      color: var(--tag-novel-text);
-      background: var(--tag-novel);
-    }
-    .card-title {
-      font-size: 14.5px;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
-    .card-btn {
-      display: block;
-      text-align: center;
-      background: var(--btn-bg);
-      color: #111827;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 13.5px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(245, 158, 11, 0.2);
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-    .card-btn:hover {
-      background: var(--btn-hover);
-      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
-    }
-
-    /* 動作按鈕區塊與看故事按鈕 */
-    .card-action-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 0 16px 16px 16px;
-    }
-    .story-btn {
-      width: 100%;
-      background: #f1f5f9;
-      color: #0f172a;
       border: 1px solid #cbd5e1;
-      padding: 9px 12px;
       border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.2s ease;
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease;
     }
-    .story-btn:hover {
-      background: #e2e8f0;
+    .btn-video:hover {
+      background-color: #e2e8f0;
       border-color: #94a3b8;
     }
 
-    /* 網頁底部：小比兔筆記本專區 */
-    .bottom-section {
-      width: 100%;
-      max-width: 940px;
-      margin-top: 50px;
-      background: #ffffff;
-      border: 2px solid #bae6fd;
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.05);
-    }
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-      gap: 8px;
-    }
-    .section-heading-title {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-    .section-sub {
-      font-size: 13.5px;
-      color: var(--text-sub);
-    }
-
-    /* 小比兔 lazy life. 官方入口推薦橫幅 */
-    .lazylife-feature-banner {
-      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
-      border: 1.5px solid #bae6fd;
-      border-radius: 20px;
-      padding: 22px 20px;
-      margin-bottom: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);
-    }
-    .lazylife-banner-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .lazylife-badge {
-      background: #0284c7;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      padding: 3px 10px;
-      border-radius: 9999px;
-      text-transform: uppercase;
-    }
-    .lazylife-banner-title {
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--text-main);
-    }
-    .lazylife-banner-text {
-      font-size: 13.5px;
-      color: var(--text-sub);
-      line-height: 1.6;
-    }
-    .lazylife-features-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .lazylife-feature-pill {
-      font-size: 12px;
-      font-weight: 700;
-      color: #0369a1;
-      background: #e0f2fe;
-      padding: 4px 10px;
-      border-radius: 8px;
-    }
-    .lazylife-cta-group {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 4px;
-    }
-    .lazylife-btn-primary {
-      background: #0284c7;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 13px;
-      padding: 9px 18px;
-      border-radius: 10px;
+    /* 前往 Amazon 按鈕 (橘色實心按鈕) */
+    .btn-amazon {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
-      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
-      transition: all 0.2s ease;
-    }
-    .lazylife-btn-primary:hover {
-      background: #0369a1;
-      transform: translateY(-1px);
-    }
-    .lazylife-btn-secondary {
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid #cbd5e1;
-      text-decoration: none;
+      width: 100%;
+      padding: 11px 14px;
+      background-color: #f59e0b;
+      color: #ffffff;
+      font-size: 0.95rem;
       font-weight: 700;
-      font-size: 13px;
-      padding: 9px 16px;
+      border: none;
       border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(245, 158, 11, 0.25);
+      transition: background 0.15s ease;
     }
-    .lazylife-btn-secondary:hover {
-      background: #f1f5f9;
-      border-color: #94a3b8;
-    }
-
-    /* 翻頁開箱影片展示區 (16:9 滿版修復) */
-    .xiaobi-preview-wrap {
-      margin-bottom: 24px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--card-border);
-      background: #0f172a;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    }
-    .video-iframe-wrap {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      width: 100%;
-    }
-    .video-iframe-wrap iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    .video-caption {
-      padding: 10px 14px;
-      background: #f8fafc;
-      border-top: 1px solid var(--card-border);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-main);
-      text-align: center;
+    .btn-amazon:hover {
+      background-color: #d97706;
     }
 
-    /* 原創小說專區 */
-    .author-bookshelf {
-      width: 100%;
-      max-width: 940px;
-      margin-top: 30px;
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-    }
-
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-      padding: 20px 16px;
-      border-top: 1px solid var(--card-border);
-      max-width: 620px;
-    }
-    .affiliate-disclosure {
-      font-size: 13px;
-      color: var(--text-sub);
-      line-height: 1.6;
-    }
-
-    /* 9:16 Shorts 彈窗 (市集卡片點擊看故事使用) */
-    .story-modal {
+    /* 影片彈窗 (Modal) */
+    .video-modal {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.75);
       align-items: center;
       justify-content: center;
+      z-index: 1000;
       padding: 16px;
     }
-    .story-modal-content {
-      background: #0f172a;
-      border-radius: 20px;
-      overflow: hidden;
-      width: 100%;
-      max-width: 360px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      position: relative;
-    }
-    .story-modal-header {
-      padding: 12px 16px;
+    .video-modal.active {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #ffffff;
-      font-size: 13px;
-      font-weight: 700;
-      background: #1e293b;
     }
-    .story-modal-close {
-      background: none;
-      border: none;
-      color: #94a3b8;
-      font-size: 24px;
-      cursor: pointer;
-      line-height: 1;
-    }
-    .story-modal-close:hover {
-      color: #ffffff;
-    }
-    .story-video-wrap {
+    .modal-content {
       position: relative;
-      padding-bottom: 177.78%;
-      height: 0;
+      background: #000;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 420px; /* 適合 YouTube Shorts 垂直比例 */
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
     }
-    .story-video-wrap iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .modal-content iframe {
       width: 100%;
       height: 100%;
       border: 0;
+    }
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. 頂部多國語言切換膠囊 -->
-  <div class="lang-switcher">
-    <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">繁中</button>
-    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" data-lang="jp" onclick="setLang('jp')">JP</button>
-    <button class="lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
-    <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-  </div>
+  <header>
+    <h1>HAMAGM 萬用動物市集</h1>
+    <p>日常精選好物 × 療癒貓咪短劇</p>
+  </header>
 
-  <!-- 2. 首頁主視覺：大標題 ➔ 趴姿店長貓長方框 ➔ 說明 ➔ 社群 -->
-  <div class="header">
-    <h1 class="title">HAMAGM</h1>
-    <p class="slogan" id="txtSlogan">✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.</p>
-    
-    <!-- 🐱 趴姿店長貓與隨機語錄長方框 (重整頁面自動更換) -->
-    <div class="cat-dialog-box">
-      <div class="cat-box-img-wrap">
-        <img src="cat-greeting.jpg" alt="HAMAGM Master Cat" class="cat-box-img" onerror="this.onerror=null; this.src='HAMAGM.jfif';">
-      </div>
-      <div class="cat-box-text-wrap">
-        <span class="cat-box-tag" id="txtCatBoxTag">🐾 貓咪店長悄悄話 (每次重整刷新)</span>
-        <div class="cat-box-quote" id="txtCatQuote">載入中...</div>
-      </div>
+  <main class="container">
+    <div id="product-container" class="product-grid">
+      <!-- 商品卡片由 JavaScript 動態生成 -->
     </div>
+  </main>
 
-    <p class="bio" id="txtBio">
-      🐾 "Ha! Making animals great, and the age a little better."<br>
-      Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit's creative notebook series below. 👇
-    </p>
-    
-    <div class="social-links">
-      <a href="https://www.youtube.com/@HAMAGM99" target="_blank" rel="noopener noreferrer" class="social-pill">📺 YouTube</a>
-      <a href="https://www.instagram.com/dixiliuliu/" target="_blank" rel="noopener noreferrer" class="social-pill">📸 Instagram</a>
-      <a href="https://www.facebook.com/Hamagm99" target="_blank" rel="noopener noreferrer" class="social-pill">📘 Facebook</a>
+  <!-- YouTube Shorts 播放彈窗 -->
+  <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+      <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 
-  <!-- 3. 中間市集區：HAMAGM 精選導購 -->
-  <div class="section-divider">
-    <h3 class="section-title" id="txtMarketTitle">🐾 HAMAGM Curated Market</h3>
-    <p class="section-desc-note" id="txtMarketDesc">Hand-picked gear for better living, productivity, and stress-free everyday routines.</p>
-  </div>
+  <!-- 引用外部 products.js 資料庫 -->
+  <script src="products.js"></script>
 
-  <div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search keyboards, warm gloves, grooming, pet feeders...">
-  </div>
-
-  <!-- 分類篩選標籤 -->
-  <div class="filter-tabs" id="filterTabsWrap">
-    <button class="tab active" data-cat="all" onclick="filterItems('all', this)">All Items</button>
-    <button class="tab" data-cat="tech" onclick="filterItems('tech', this)">⌨️ Tech & Gaming</button>
-    <button class="tab" data-cat="winter" onclick="filterItems('winter', this)">🧤 Winter Gear</button>
-    <button class="tab" data-cat="care" onclick="filterItems('care', this)">🦷 Personal Care</button>
-    <button class="tab" data-cat="cat" onclick="filterItems('cat', this)">🐱 Cat Essentials</button>
-    <button class="tab" data-cat="home" onclick="filterItems('home', this)">🏠 Home & Living</button>
-    <button class="tab" data-cat="holiday" onclick="filterItems('holiday', this)">🎃 Fun & Festive</button>
-    <button class="tab" data-cat="snacks" onclick="filterItems('snacks', this)">🍬 Treats & Snacks</button>
-  </div>
-
-  <!-- 市集商品動態容器 -->
-  <div class="market-grid" id="productGrid"></div>
-
-  <!-- 分頁載入更多按鈕 -->
-  <div class="load-more-wrap">
-    <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">Load More Gear 👇</button>
-  </div>
-
-  <!-- 4. 網頁底部專區 1：小比兔官方筆記本專區 & lazy life 品牌介紹 -->
-  <section class="bottom-section" id="xiaobi-notebooks">
-    <div class="section-header">
-      <h2 class="section-heading-title" id="txtXiaobiSectionTitle">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
-      <span class="section-sub" id="txtXiaobiSectionSub">(Special Guest Appearance & Official Flipbook Series)</span>
-    </div>
-
-    <!-- lazy life. 官方入口與躺平時鐘介紹橫幅 -->
-    <div class="lazylife-feature-banner">
-      <div class="lazylife-banner-head">
-        <span class="lazylife-badge" id="txtBadge">Official IP Portal</span>
-        <h3 class="lazylife-banner-title" id="txtBannerTitle">lazy life. — A Low-Energy World with Xiaobi</h3>
-      </div>
-      <p class="lazylife-banner-text" id="txtBannerDesc">
-        我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌官方入口，集結了桌面陪伴工具、10 秒厭世哲學短劇與實體廢物小誌手帳。<br>
-        <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
-      </p>
-      
-      <div class="lazylife-features-list">
-        <span class="lazylife-feature-pill" id="pill1">⏰ 每日躺平時鐘 (Desk Clock)</span>
-        <span class="lazylife-feature-pill" id="pill2">🍅 防內耗番茄鐘 (Pomodoro)</span>
-        <span class="lazylife-feature-pill" id="pill3">🃏 40+ 厭世金句抽卡</span>
-        <span class="lazylife-feature-pill" id="pill4">🌏 5 國語言即時切換</span>
-      </div>
-
-      <div class="lazylife-cta-group">
-        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary" id="btnPortal">
-          🌐 訪問 lazy life. 官方入口 ➔
-        </a>
-        <a href="https://yanghane1120.github.io/xiaobi-clock/xiaobi-card/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary" id="btnClock">
-          ⏰ 免費體驗躺平時鐘
-        </a>
-      </div>
-    </div>
-
-    <!-- 小比兔實體翻頁開箱影片展示 -->
-    <div class="xiaobi-preview-wrap">
-      <div class="video-iframe-wrap">
-        <iframe 
-          src="https://www.youtube.com/embed/clPbsZ7oYuI?rel=0&loop=1&playlist=clPbsZ7oYuI" 
-          title="Little Rabbit's Notes - Inside Flipbook" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="video-caption" id="txtFlipbookCaption">📖 Inside The Notebook: Physical Flipbook Animation & Page Preview</div>
-    </div>
-
-    <div class="books-grid" id="xiaobiGrid"></div>
-  </section>
-
-  <!-- 5. 網頁底部專區 2：原創小說與文學著作 -->
-  <section class="author-bookshelf">
-    <div class="section-header">
-      <h2 class="section-heading-title" id="txtAuthorTitle">📚 Author's Bookshelf | Novels & Philosophy</h2>
-      <span class="section-sub" id="txtAuthorSub">Original literary works by Han Yang (Available on Kindle)</span>
-    </div>
-    <div class="books-grid" id="authorBooksGrid"></div>
-  </section>
-
-  <footer class="footer">
-    <p class="affiliate-disclosure" id="txtFooter">
-      © HAMAGM & Han Yang. All rights reserved.<br>
-      As an Amazon Associate I earn from qualifying purchases.
-    </p>
-  </footer>
-
-  <!-- 全站共用的 Shorts 故事彈窗結構 -->
-  <div id="storyModal" class="story-modal" onclick="closeStoryModal(event)">
-    <div class="story-modal-content" onclick="event.stopPropagation()">
-      <div class="story-modal-header">
-        <span id="storyModalTitle">🎬 Story Preview</span>
-        <button class="story-modal-close" onclick="closeStoryModal()">&times;</button>
-      </div>
-      <div class="story-video-wrap">
-        <iframe id="storyIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- 引入獨立資料庫 -->
-  <script src="products.js?v=3"></script>
-
-  <!-- 多語言與頁面邏輯腳本 -->
   <script>
-    const catQuotesData = {
-      zh: [
-        "喵～歡迎光臨！今天想來點什麼好心情呢？",
-        "你終於來啦！我今天戴了新帽子，好看嗎？喵～",
-        "哈囉！外面辛苦了，快進來吹吹風、歇歇腳吧～",
-        "喵嗚～看到你走進來，我的尾巴都忍不住搖起來了！",
-        "歡迎光臨～今天也請讓我為你帶來滿滿的活力喔！",
-        "嗨！今天過得好嗎？歡迎隨時跟我聊聊天喔，喵～",
-        "喵～你可以慢慢看，但要記得分我一點摸摸的時間喔！",
-        "今天的工作或課業很累吧？來，借你吸一口貓毛充充電～",
-        "喵嗚！我的帽子戴正了嗎？想用最可愛的樣子迎接你呀。",
-        "不用急著決定，先坐下來，我陪你一起發呆一會兒～",
-        "喵～你笑起來的樣子最好看，要常來找我玩喔！",
-        "看到你的笑容，本喵店長今天所有的疲勞都瞬間消失了！",
-        "喵～如果有任何找不到的寶藏，隨時呼喚我，我馬上小跑步過來！",
-        "今天有超棒的新品喔，要不要讓我這個小導遊帶你逛逛？",
-        "慢慢逛、慢慢選，把這裡當成自己家一樣放鬆就好囉～",
-        "如果拿不定主意，本喵可以用肉球幫你算塔羅選一個喔，喵！",
-        "這款是我私心最喜歡的，看你這麼有眼光，偷偷推薦給你～",
-        "肚子餓了嗎？還是口渴了？需要什麼都儘管跟店長說喔！",
-        "喵嗚～不管今天遇到了什麼煩心事，進到這裡就通通忘掉吧。",
-        "世界很吵鬧，但這裡只有溫暖的微風、好東西和我，喵～",
-        "謝謝你特地繞過來，只要看到你平安快樂，我就好開心。",
-        "辛苦了！生活偶爾也要像本喵一樣，學會好好趴下來放空喔。",
-        "喵～你今天也是最棒的，請收下我滿滿的呼嚕嚕祝福！",
-        "隨便看看也好，就算只是來跟我打個招呼，我也超級期待的。",
-        "喵～你來了啊？先跟你說早安午安晚安！你一定要好好的！～",
-        "今天能遇見你真是太好了！下次經過一定要再來找我玩喔。",
-        "帶走喜歡的東西，也別忘了把我的好心情一起打包帶回家～",
-        "喵嗚～天冷要記得添衣服，要好好照顧自己喔！",
-        "真高興見到你，一定要再跟我多說說話喔，喵～",
-        "謝謝你的到來，我的小帽子和我都好想念你了呢！"
-      ],
-      en: [
-        "Meow~ Welcome! What kind of good vibes are you looking for today?",
-        "You're finally here! I'm wearing my new cap today, does it look good? Meow~",
-        "Hello! It's tough out there—come on in, catch the breeze, and rest your paws~",
-        "Meow~ Seeing you walk in makes my tail wag uncontrollably!",
-        "Welcome! Let me bring you a heart full of energy today!",
-        "Hi! How was your day? Feel free to chat with me anytime, meow~",
-        "Meow~ Take your time browsing, but remember to save some time for headpats!",
-        "Tired from work or school today? Here, borrow some cat fluff to recharge~",
-        "Meow! Is my cap on straight? I wanted to look my absolute cutest for you.",
-        "No rush to make up your mind. Sit down, let me space out with you for a bit~",
-        "Meow~ You look best when you smile. Come visit me often, okay?",
-        "Seeing your smile made all of this Cat Manager's exhaustion disappear!",
-        "Meow~ If you can't find a hidden gem, call me! I'll jog right over!",
-        "We've got amazing new gear today—want me to be your little tour guide?",
-        "Take your time, browse around, and relax just like you're at home~",
-        "Can't decide? I can read your fortune with my soft paw pads, meow!",
-        "This one is secretly my favorite. Since you have great taste, here's a whisper recommendation~",
-        "Are you hungry? Or thirsty? Whatever you need, just tell the Cat Manager!",
-        "Meow~ Whatever bothered you today, leave it at the door and forget it all here.",
-        "The world is noisy, but here there's only warm breeze, cool gear, and me, meow~",
-        "Thank you for stopping by. Seeing you safe and happy makes my whole day.",
-        "You've worked hard! Life is best enjoyed when you know how to flop down and relax like me.",
-        "Meow~ You are wonderful today! Accept my warmest purring blessings!",
-        "Even if you're just looking around or stopping by to say hi, I look forward to it so much.",
-        "Meow~ You made it! Good morning, good afternoon, and good evening! Take care of yourself!",
-        "It's so wonderful seeing you today! Be sure to drop by again next time.",
-        "Take home what you love, and don't forget to pack my good mood with you too~",
-        "Meow~ Remember to bundle up when it's chilly, and take good care of yourself!",
-        "So glad to see you! Come chat with me more next time, meow~",
-        "Thank you for visiting! My little cap and I have already missed you so much!"
-      ],
-      jp: [
-        "ニャ〜いらっしゃい！今日はどんなご機嫌をお探しですか？",
-        "やっと来てくれたニャ！今日新しい帽子をかぶってるの、似合ってる？",
-        "お疲れ様！外は大変だったでしょ、ゆっくり風に当たって休んでいってニャ〜",
-        "ニャ〜入ってきたのを見て、しっぽが思わずフリフリしちゃった！",
-        "いらっしゃいませ〜今日も元気をいっぱいうけとってね！",
-        "ハイ！今日はいかがですか？いつでもお話ししてね、ニャ〜",
-        "ゆっくり見ていいけど、撫でてくれる時間も残しておいてねニャ！",
-        "お仕事やお勉強でお疲れ？ほら、猫毛を吸ってエネルギーチャージしていいよ〜",
-        "帽子曲がってないニャ？一番可愛い姿で迎えたかったんだよ。",
-        "焦らなくて大丈夫。座って、一緒にのんびりぼーっとしよう〜",
-        "ニャ〜あなたの笑顔が一番素敵。また会いに来てね！",
-        "あなたの笑顔を見たら、店長の疲れも一瞬で吹き飛んじゃったニャ！",
-        "お宝が見つからない時は呼んでね、トコトコ駆けつけるからニャ！",
-        "今日は素敵な新商品があるよ、小さなツアーガイドをしてあげようか？",
-        "のんびり選んでね、自分のおうちみたいにくつろいでいいんだよ〜",
-        "迷ったら、肉球タロットで占ってあげるニャ！",
-        "これ、実は一番のお気に入り。センスのいいあなたにこっそり教えちゃう〜",
-        "お腹空いた？喉乾いた？何でも店長に言ってね！",
-        "嫌なことがあっても、ここに入ったら全部忘れちゃおうニャ。",
-        "世界は騒がしいけど、ここには温かい風といいものと僕がいるよニャ〜",
-        "わざわざ立ち寄ってくれてありがとう。元気な姿を見られて本当に嬉しい！",
-        "お疲れ様！たまには僕みたいにゴロゴロ転がって力を抜こうニャ。",
-        "今日もあなたは最高！ゴロゴロの祝福をたっぷり受け取ってねニャ〜",
-        "ただ挨拶に来てくれるだけでも、すごく楽しみに待ってるんだよ。",
-        "来てくれたんだね！おはよう、こんにちは、こんばんは！元気でいてね！",
-        "会えてよかったニャ！また近くを通ったら遊びに来てね。",
-        "お気に入りと一緒に、僕のハッピーな気持ちも持ち帰ってね〜",
-        "寒くなってきたから暖かくして、自分を大切にしてねニャ！",
-        "会えて嬉しいニャ、今度来たらもっとたくさんお話ししようね！",
-        "来てくれてありがとう！僕の帽子も僕も、もうあなたに会いたいニャ！"
-      ],
-      de: [
-        "Miau~ Willkommen! Was für eine gute Laune suchst du heute?",
-        "Du bist endlich da! Ich trage heute meine neue Mütze, steht sie mir? Miau~",
-        "Hallo! Draußen ist es anstrengend – komm rein und ruh dich aus~",
-        "Miau~ Als ich dich sah, konnte mein Schwanz nicht aufhören zu wedeln!",
-        "Willkommen! Lass mich dir heute jede Menge Energie schenken!",
-        "Hi! Wie war dein Tag? Du kannst jederzeit mit mir plaudern, miau~",
-        "Miau~ Schau dich in Ruhe um, aber vergiss nicht, mich ein wenig zu kraulen!",
-        "Müde von der Arbeit? Hier, leih dir etwas Katzen-Energie zum Auftanken~",
-        "Miau! Sitzt meine Mütze richtig? Ich wollte mich von meiner süßesten Seite zeigen.",
-        "Keine Eile. Setz dich zu mir, lass uns einfach kurz gemeinsam faulenzen~",
-        "Miau~ Dein Lächeln steht dir am besten. Besuch mich bald wieder!",
-        "Dein Lächeln vertreibt die ganze Müdigkeit dieses Katzen-Chefs im Nu!",
-        "Miau~ Wenn du etwas nicht findest, ruf mich einfach – ich komme sofort angedackelt!",
-        "Heute gibt es tolle neue Sachen – soll ich dich ein wenig herumführen?",
-        "Stöbere ganz entspannt, fühl dich wie zu Hause~",
-        "Kannst du dich nicht entscheiden? Ich kann mit meinen Pfoten für dich wählen, miau!",
-        "Das hier ist mein Geheimtipp. Für jemanden mit so gutem Geschmack wie dich~",
-        "Hast du Hunger oder Durst? Sag dem Chefkater einfach Bescheid!",
-        "Miau~ Was auch immer dich heute geärgert hat: Vergiss es hier einfach.",
-        "Die Welt ist laut, aber hier gibt es nur warme Brisen, schöne Dinge und mich~",
-        "Danke fürs Vorbeikommen! Dich glücklich zu sehen, macht mich froh.",
-        "Gute Arbeit heute! Manchmal muss man sich einfach wie eine Katze hinlegen und entspannen.",
-        "Miau~ Du bist heute großartig! Hier ist mein schnurrender Segen für dich!",
-        "Auch wenn du nur kurz 'Hallo' sagst, freue ich mich riesig darauf.",
-        "Miau~ Du bist da! Guten Morgen, guten Tag und guten Abend! Pass gut auf dich auf!",
-        "Schön, dich heute getroffen zu haben! Schau bald wieder vorbei.",
-        "Nimm mit, was dir gefällt, und pack meine gute Laune gleich mit ein~",
-        "Miau~ Zieh dich warm an, wenn es kalt ist, und pass gut auf dich auf!",
-        "Ich freue mich so, dich zu sehen! Erzähl mir beim nächsten Mal noch mehr, miau~",
-        "Danke für deinen Besuch! Meine kleine Mütze und ich vermissen dich jetzt schon!"
-      ],
-      fr: [
-        "Miaou~ Bienvenue ! De quelle bonne humeur as-tu envie aujourd'hui ?",
-        "Tu es enfin là ! Je porte ma nouvelle casquette aujourd'hui, elle me va bien ? Miaou~",
-        "Coucou ! La journée a été rude dehors, viens te poser et te reposer un peu~",
-        "Miaou~ En te voyant entrer, ma queue n'a pas pu s'empêcher de remuer !",
-        "Bienvenue ! Laisse-moi t'apporter plein d'énergie aujourd'hui !",
-        "Salut ! Comment s'est passée ta journée ? Discute avec moi quand tu veux, miaou~",
-        "Miaou~ Prends ton temps pour regarder, mais garde un moment pour me caresser !",
-        "Fatigué par le travail ou les cours ? Viens recharger tes batteries contre mes poils doux~",
-        "Miaou ! Ma casquette est bien droite ? Je voulais être au sommet de ma mignonnerie.",
-        "Rien ne presse. Assieds-toi avec moi, rêvassons un instant ensemble~",
-        "Miaou~ C'est quand tu souris que tu es le plus beau. Reviens me voir souvent !",
-        "Ton sourire fait disparaître toute la fatigue de ce Maître Chat en un éclair !",
-        "Miaou~ Si tu cherches un trésor caché, appelle-moi, j'accours à petites pattes !",
-        "Il y a de super nouveautés aujourd'hui, tu veux que je sois ton petit guide ?",
-        "Prends tout ton temps, fais comme chez toi et détends-toi~",
-        "Tu hésites ? Je peux tirer les cartes avec mes petits coussinets, miaou !",
-        "C'est mon petit coup de cœur secret. Rien que pour toi qui as si bon goût~",
-        "Tu as faim ou soif ? Dis-le simplement au Maître Chat !",
-        "Miaou~ Quels que soient tes soucis du jour, oublie tout en franchissant cette porte.",
-        "Le monde est bruyant, mais ici il n'y a que de la douceur, de bonnes choses et moi~",
-        "Merci d'avoir fait le détour. Te voir en forme me rend tellement heureux.",
-        "Beau travail aujourd'hui ! La vie est tellement plus douce quand on sait s'allonger pour ne rien faire.",
-        "Miaou~ Tu es formidable aujourd'hui ! Reçois toutes mes bénédictions ronronnantes !",
-        "Même si tu viens juste jeter un œil ou dire bonjour, j'ai toujours hâte de te voir.",
-        "Miaou~ Te voilà ! Bonjour, bonsoir et bonne journée ! Prends bien soin de toi !",
-        "C'était formidable de te croiser aujourd'hui ! Repasse vite me voir.",
-        "Emporte ce qui te plaît, et n'oublie pas d'emporter ma bonne humeur avec toi~",
-        "Miaou~ Couvre-toi bien quand il fait froid et prends bien soin de toi !",
-        "Tellement content de te voir ! Discute encore un peu avec moi la prochaine fois, miaou~",
-        "Merci pour ta visite ! Ma petite casquette et moi, on s'ennuie déjà de toi !"
-      ]
-    };
+    // 渲染所有日常精選市集商品
+    function renderMarketProducts() {
+      const container = document.getElementById('product-container');
+      if (!container || typeof marketProducts === 'undefined') return;
 
-    const currentQuoteIndex = Math.floor(Math.random() * catQuotesData.zh.length);
+      container.innerHTML = marketProducts.map(item => `
+        <article class="product-card">
+          <span class="product-tag">${item.tag || 'HOT'}</span>
+          <h2 class="product-title">${item.title}</h2>
 
-    const i18n = {
-      zh: {
-        slogan: "✨ 娛樂、科技、生活智慧 — 帶領你過上更輕鬆快樂的生活策略。",
-        bio: '🐾「哈！讓動物更偉大，也讓時代稍微美好一點。」<br>歡迎來到 HAMAGM 貓咪官方旗艦 Hub！探索紓壓好物、爆笑動物故事與小比兔廢物筆記系列。👇',
-        catTag: "🐾 貓咪店長悄悄話 (每次重整刷新)",
-        marketTitle: "🐾 HAMAGM 精選好物市集",
-        marketDesc: "精選日常生活、效率提升與紓壓好物，打造無痛生活節奏。",
-        searchPlaceholder: "🔍 搜尋鍵盤、發熱手套、美容理毛、寵物餵食器...",
-        loadMore: "載入更多精選商品 👇",
-        watchStory: "🎬 觀看貓咪短劇",
-        viewAmazon: "前往 Amazon 查看 🛒",
-        readKindle: "Kindle 線上閱讀 📖",
-        xiaobiTitle: "🐰 小比兔官方專區：小白兔的廢物筆記",
-        xiaobiSub: "(特別客座聯動 & 官方翻頁實體手帳)",
-        badge: "官方 IP 入口",
-        bannerTitle: "lazy life. — 與小比兔一同探索低耗能生活",
-        bannerDesc: "我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的官方入口，集結了桌面陪伴工具、10 秒厭世短劇與實體廢物小誌手帳。<br><em>「只要躺得夠平，生活的刀就砍不到我。」</em>",
-        pill1: "⏰ 每日躺平時鐘",
-        pill2: "🍅 防內耗番茄鐘",
-        pill3: "🃏 40+ 厭世金句抽卡",
-        pill4: "🌏 5 國語言即時切換",
-        btnPortal: "🌐 訪問 lazy life. 官方入口 ➔",
-        btnClock: "⏰ 免費體驗躺平時鐘",
-        flipbookCaption: "📖 筆記本內頁：實體翻頁動畫與手帳展示",
-        authorTitle: "📚 作者書房 | 原創小說與哲學著作",
-        authorSub: "楊寒原創文學與哲學著作（Kindle 繁中/多語版上架中）",
-        footer: "© HAMAGM & 楊寒。版權所有。<br>身為 Amazon 聯盟行銷夥伴，本站可能自符合條件的購買中獲得收益。",
-        cats: {
-          all: "全部商品",
-          tech: "⌨️ 科技與電競",
-          winter: "🧤 保暖冬日好物",
-          care: "🦷 個人護理",
-          cat: "🐱 貓咪必備",
-          home: "🏠 居家生活",
-          holiday: "🎃 節慶與趣味",
-          snacks: "🍬 點心零食"
-        }
-      },
-      en: {
-        slogan: "✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.",
-        bio: '🐾 "Ha! Making animals great, and the age a little better."<br>Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit\'s creative notebook series below. 👇',
-        catTag: "🐾 Cat Manager's Whisper (Refreshed on each visit)",
-        marketTitle: "🐾 HAMAGM Curated Market",
-        marketDesc: "Hand-picked gear for better living, productivity, and stress-free everyday routines.",
-        searchPlaceholder: "🔍 Search keyboards, warm gloves, grooming, pet feeders...",
-        loadMore: "Load More Gear 👇",
-        watchStory: "🎬 Watch Cat Story",
-        viewAmazon: "View on Amazon 🛒",
-        readKindle: "Read on Kindle 📖",
-        xiaobiTitle: "🐰 XiaoBi Rabbit: Little White Rabbit's Notes",
-        xiaobiSub: "(Special Guest Appearance & Official Flipbook Series)",
-        badge: "Official IP Portal",
-        bannerTitle: "lazy life. — A Low-Energy World with Xiaobi",
-        bannerDesc: "We don't talk about grand ambitions—only how to effortlessly and legitimately devolve into liquid. Discover our anti-productivity desk tools, 10-second philosophical skits, and physical notebooks.<br><em>\"If you lie flat enough, nobody can cut you down.\"</em>",
-        pill1: "⏰ Daily Desk Clock",
-        pill2: "🍅 Anti-Burnout Pomodoro",
-        pill3: "🃏 40+ Unmotivated Quotes",
-        pill4: "🌏 5 Languages Supported",
-        btnPortal: "🌐 Visit lazy life. Official Portal ➔",
-        btnClock: "⏰ Free Lying Flat Clock",
-        flipbookCaption: "📖 Inside The Notebook: Physical Flipbook Animation & Page Preview",
-        authorTitle: "📚 Author's Bookshelf | Novels & Philosophy",
-        authorSub: "Original literary works by Han Yang (Available on Kindle)",
-        footer: "© HAMAGM & Han Yang. All rights reserved.<br>As an Amazon Associate I earn from qualifying purchases.",
-        cats: {
-          all: "All Items",
-          tech: "⌨️ Tech & Gaming",
-          winter: "🧤 Winter Gear",
-          care: "🦷 Personal Care",
-          cat: "🐱 Cat Essentials",
-          home: "🏠 Home & Living",
-          holiday: "🎃 Fun & Festive",
-          snacks: "🍬 Treats & Snacks"
-        }
-      },
-      jp: {
-        slogan: "✨ エンタメ・テクノロジー・生活の知恵 — 毎日をより心地よく過ごすライフハック。",
-        bio: '🐾「動物たちを偉大にし、この時代をほんの少し心地よくする。」<br>HAMAGM公式キャットハブへようこそ！ストレス解消アイテム、爆笑アニメ、小比（シャオビ）の脱力ノートシリーズをお楽しみください。👇',
-        catTag: "🐾 猫店長のささやき（リロードで更新）",
-        marketTitle: "🐾 HAMAGM 厳選マーケット",
-        marketDesc: "快適な毎日、生産性向上、ノーストレスな暮らしのための選りすぐりアイテム。",
-        searchPlaceholder: "🔍 キーボード、防寒手袋、グルーミング、給餌器を検索...",
-        loadMore: "さらに読み込む 👇",
-        watchStory: "🎬 ショート動画を見る",
-        viewAmazon: "Amazonで見る 🛒",
-        readKindle: "Kindleで読む 📖",
-        xiaobiTitle: "🐰 小比（シャオビ）うさぎ公式：白うさぎの無駄遣いノート",
-        xiaobiSub: "(スペシャルゲスト連動 & 公式パラパラ漫画ノート)",
-        badge: "公式IPポータル",
-        bannerTitle: "lazy life. — 小比うさぎと過ごす低エネルギー生活",
-        bannerDesc: "大それた夢は語りません。いかに合理的に液状化するかだけを研究しています。デスクトップ時計ツール、10秒哲学アニメ、脱力ノートをお届けします。<br><em>「寝転がっていれば、誰にも切り倒されることはない。」</em>",
-        pill1: "⏰ ごろごろデスク時計",
-        pill2: "🍅 脱力ポモドーロ",
-        pill3: "🃏 40+ ネガティブ名言ガチャ",
-        pill4: "🌏 5カ国語対応",
-        btnPortal: "🌐 lazy life. 公式サイトへ ➔",
-        btnClock: "⏰ ごろごろ時計を体験",
-        flipbookCaption: "📖 ノートの中身：パラパラ漫画アニメーション紹介",
-        authorTitle: "📚 著者の本棚 | 小説・哲学作品",
-        authorSub: "楊寒（Han Yang）によるオリジナル文芸・哲学作品（Kindleで配信中）",
-        footer: "© HAMAGM & Han Yang. All rights reserved.<br>Amazonアソシエイトとして、適格販売により収入を得ています。",
-        cats: {
-          all: "全商品",
-          tech: "⌨️ テック＆ゲーム",
-          winter: "🧤 冬の防寒グッズ",
-          care: "🦷 パーソナルケア",
-          cat: "🐱 猫のおすすめ品",
-          home: "🏠 暮らし・インテリア",
-          holiday: "🎃 フェス＆ホリデー",
-          snacks: "🍬 スナック・おやつ"
-        }
-      },
-      de: {
-        slogan: "✨ Unterhaltung, Technologie & Lebensweisheit — Strategien für ein entspannteres Leben.",
-        bio: '🐾 "Tiere großartig machen und die Welt ein Stück gemütlicher."<br>Willkommen im offiziellen HAMAGM Cat Hub! Entdecke virale Life-Hacks, humorvolle Kurzgeschichten und die kreativen Notizbücher von Hase Xiaobi. 👇',
-        catTag: "🐾 Worte vom Chefkater (Aktualisiert bei jedem Besuch)",
-        marketTitle: "🐾 HAMAGM Kuratierter Markt",
-        marketDesc: "Handverlesene Gadgets für Produktivität, Gemütlichkeit und stressfreien Alltag.",
-        searchPlaceholder: "🔍 Tastaturen, warme Handschuhe, Tierpflege suchen...",
-        loadMore: "Mehr Produkte laden 👇",
-        watchStory: "🎬 Katzen-Short ansehen",
-        viewAmazon: "Auf Amazon ansehen 🛒",
-        readKindle: "Auf Kindle lesen 📖",
-        xiaobiTitle: "🐰 Hase XiaoBi: Das nutzlose Notizbuch",
-        xiaobiSub: "(Sonderausgabe & Offizielles Daumenkino)",
-        badge: "Offizielles Portal",
-        bannerTitle: "lazy life. — Entspannt leben mit Hase XiaoBi",
-        bannerDesc: "Keine großen Reden über Leistung – nur die Kunst, sich friedlich in eine Pfütze zu verwandeln. Entdecke Schreibtisch-Tools, 10-Sekunden-Sketche und Notizbücher.<br><em>\"Wer flach liegt, kann von nichts umgeworfen werden.\"</em>",
-        pill1: "⏰ Schreibtisch-Uhr",
-        pill2: "🍅 Anti-Burnout Pomodoro",
-        pill3: "🃏 40+ Demotivierende Zitate",
-        pill4: "🌏 5 Sprachen verfügbar",
-        btnPortal: "🌐 lazy life. Portal öffnen ➔",
-        btnClock: "⏰ Faulenzer-Uhr starten",
-        flipbookCaption: "📖 Daumenkino-Animation & Buchseiten-Vorschau",
-        authorTitle: "📚 Autorenregal | Romane & Philosophie",
-        authorSub: "Literarische Werke von Han Yang (Verfügbar auf Kindle)",
-        footer: "© HAMAGM & Han Yang. Alle Rechte vorbehalten.<br>Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.",
-        cats: {
-          all: "Alle Artikel",
-          tech: "⌨️ Gaming & Technik",
-          winter: "🧤 Winter-Ausrüstung",
-          care: "🦷 Körperpflege",
-          cat: "🐱 Katzenbedarf",
-          home: "🏠 Wohnen & Leben",
-          holiday: "🎃 Feiertage & Spaß",
-          snacks: "🍬 Snacks & Genuss"
-        }
-      },
-      fr: {
-        slogan: "✨ Divertissement, Tech & Astuces de Vie — Des stratégies pour un quotidien plus doux.",
-        bio: '🐾 "Rendre les animaux formidables et l\'époque un peu plus douce."<br>Bienvenue sur le Cat Hub officiel de HAMAGM ! Découvrez nos gadgets bien-être, nos récits félins et les carnets du lapin XiaoBi. 👇',
-        catTag: "🐾 Le mot du Maître Chat (Actualisé à chaque visite)",
-        marketTitle: "🐾 HAMAGM Marché Sélectionné",
-        marketDesc: "Des équipements choisis pour un quotidien détendu, efficace et sans tracas.",
-        searchPlaceholder: "🔍 Claviers, gants chauffants, soins, distributeurs...",
-        loadMore: "Charger plus d'articles 👇",
-        watchStory: "🎬 Voir le court-métrage",
-        viewAmazon: "Voir sur Amazon 🛒",
-        readKindle: "Lire sur Kindle 📖",
-        xiaobiTitle: "🐰 Lapin XiaoBi : Le carnet inutile",
-        xiaobiSub: "(Apparition spéciale & Carnet flipbook officiel)",
-        badge: "Portail Officiel",
-        bannerTitle: "lazy life. — Le monde basse consommation de XiaoBi",
-        bannerDesc: "Ici, aucune grande ambition : nous apprenons juste à nous liquéfier sereinement. Horloge de bureau, sketchs de 10 secondes et carnets originaux.<br><em>\"Restez couché par terre : impossible de tomber plus bas.\"</em>",
-        pill1: "⏰ Horloge de Bureau",
-        pill2: "🍅 Pomodoro Anti-Burnout",
-        pill3: "🃏 40+ Citations Légères",
-        pill4: "🌏 5 Langues Disponibles",
-        btnPortal: "🌐 Visiter lazy life. ➔",
-        btnClock: "⏰ Essayer l'horloge",
-        flipbookCaption: "📖 Aperçu : Animation folioscope (Flipbook) du carnet",
-        authorTitle: "📚 Bibliothèque de l'auteur | Romans & Philosophie",
-        authorSub: "Œuvres littéraires originales par Han Yang (Sur Kindle)",
-        footer: "© HAMAGM & Han Yang. Tous droits réservés.<br>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.",
-        cats: {
-          all: "Tous les articles",
-          tech: "⌨️ Tech & Gaming",
-          winter: "🧤 Confort d'hiver",
-          care: "🦷 Soins personnels",
-          cat: "🐱 Accessoires chat",
-          home: "🏠 Maison & Déco",
-          holiday: "🎃 Fêtes & Détente",
-          snacks: "🍬 Douceurs & Snacks"
-        }
-      }
-    };
-
-    let currentLang = localStorage.getItem('hamagm_lang') || 'en';
-    let currentPage = 1;
-    const itemsPerPage = 12;
-    let currentFilterCategory = 'all';
-    let currentSearchQuery = '';
-    let activeFilteredList = [];
-
-    function setLang(lang) {
-      if (!i18n[lang]) return;
-      currentLang = lang;
-      localStorage.setItem('hamagm_lang', lang);
-
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-
-      const d = i18n[lang];
-
-      document.getElementById('txtSlogan').innerHTML = d.slogan;
-      document.getElementById('txtBio').innerHTML = d.bio;
-      document.getElementById('txtCatBoxTag').textContent = d.catTag;
-      
-      const quotesList = catQuotesData[lang] || catQuotesData.en;
-      document.getElementById('txtCatQuote').textContent = quotesList[currentQuoteIndex];
-
-      document.getElementById('txtMarketTitle').textContent = d.marketTitle;
-      document.getElementById('txtMarketDesc').textContent = d.marketDesc;
-      document.getElementById('searchInput').placeholder = d.searchPlaceholder;
-      document.getElementById('loadMoreBtn').textContent = d.loadMore;
-      document.getElementById('txtXiaobiSectionTitle').textContent = d.xiaobiTitle;
-      document.getElementById('txtXiaobiSectionSub').textContent = d.xiaobiSub;
-      document.getElementById('txtBadge').textContent = d.badge;
-      document.getElementById('txtBannerTitle').textContent = d.bannerTitle;
-      document.getElementById('txtBannerDesc').innerHTML = d.bannerDesc;
-      document.getElementById('pill1').textContent = d.pill1;
-      document.getElementById('pill2').textContent = d.pill2;
-      document.getElementById('pill3').textContent = d.pill3;
-      document.getElementById('pill4').textContent = d.pill4;
-      document.getElementById('btnPortal').textContent = d.btnPortal;
-      document.getElementById('btnClock').textContent = d.btnClock;
-      document.getElementById('txtFlipbookCaption').textContent = d.flipbookCaption;
-      document.getElementById('txtAuthorTitle').textContent = d.authorTitle;
-      document.getElementById('txtAuthorSub').textContent = d.authorSub;
-      document.getElementById('txtFooter').innerHTML = d.footer;
-
-      document.querySelectorAll('#filterTabsWrap .tab').forEach(tab => {
-        const catKey = tab.dataset.cat;
-        if (d.cats[catKey]) {
-          tab.textContent = d.cats[catKey];
-        }
-      });
-
-      renderMarketCards(true);
-      renderBooks();
-    }
-
-    function renderMarketCards(reset = false) {
-      const container = document.getElementById('productGrid');
-      if (reset) {
-        container.innerHTML = '';
-        currentPage = 1;
-      }
-
-      const start = (currentPage - 1) * itemsPerPage;
-      const end = currentPage * itemsPerPage;
-      const pageItems = activeFilteredList.slice(start, end);
-      const d = i18n[currentLang];
-
-      pageItems.forEach(item => {
-        const hasVideo = (typeof item.videoId === 'string' && item.videoId.trim() !== '');
-        const storyBtnHtml = hasVideo ? `
-          <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${(item.videoTitle || 'Story Preview').replace(/'/g, "\\'")}')">
-            ${d.watchStory}
-          </button>
-        ` : '';
-
-        const cardHtml = `
-          <div class="card" data-category="${item.category}">
-            <div class="card-content" style="padding-top: 24px;">
-              <span class="card-tag">${item.tag}</span>
-              <h3 class="card-title">${item.title}</h3>
+          <!-- 商品名稱下方、按鈕上方的影片名稱展示區塊 -->
+          ${item.videoTitle ? `
+            <div class="product-video-title">
+              <span class="video-icon">🎬</span>
+              <span class="video-text">${item.videoTitle}</span>
             </div>
-            <div class="card-action-wrap">
-              ${storyBtnHtml}
-              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
-            </div>
+          ` : ''}
+
+          <div class="product-actions">
+            ${item.videoId ? `
+              <button class="btn-video" onclick="openVideoModal('${item.videoId}')">
+                🎬 觀看貓咪短劇
+              </button>
+            ` : ''}
+            <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="btn-amazon">
+              前往 Amazon 查看 🛒
+            </a>
           </div>
-        `;
-        container.insertAdjacentHTML('beforeend', cardHtml);
-      });
-
-      const loadBtn = document.getElementById('loadMoreBtn');
-      loadBtn.style.display = (end >= activeFilteredList.length) ? 'none' : 'inline-block';
+        </article>
+      `).join('');
     }
 
-    function applyFilterAndSearch() {
-      activeFilteredList = marketProducts.filter(item => {
-        const matchesCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
-        const searchTarget = (item.title + ' ' + (item.searchTerms || '')).toLowerCase();
-        return matchesCategory && searchTarget.includes(currentSearchQuery);
-      });
-      renderMarketCards(true);
+    // 開啟 YouTube Shorts 彈窗
+    function openVideoModal(videoId) {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoFrame');
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      modal.classList.add('active');
     }
 
-    function filterItems(category, el) {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
-      currentFilterCategory = category;
-      applyFilterAndSearch();
-    }
-
-    function loadMore() {
-      currentPage++;
-      renderMarketCards(false);
-    }
-
-    function renderBooks() {
-      const d = i18n[currentLang] || i18n.en;
-      const xiaobiContainer = document.getElementById('xiaobiGrid');
-      const authorContainer = document.getElementById('authorBooksGrid');
-
-      // 檢查小比兔筆記本資料
-      if (xiaobiContainer && typeof xiaobiNotebooks !== 'undefined' && Array.isArray(xiaobiNotebooks)) {
-        xiaobiContainer.innerHTML = '';
-        xiaobiNotebooks.forEach(book => {
-          const html = `
-            <div class="card">
-              <div class="card-book-cover">
-                <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover || book.cover}';">
-              </div>
-              <div class="card-content">
-                <span class="card-tag book-tag">${book.tag || 'Notebook'}</span>
-                <h3 class="card-title">${book.title}</h3>
-              </div>
-              <div class="card-action-wrap">
-                <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
-              </div>
-            </div>
-          `;
-          xiaobiContainer.insertAdjacentHTML('beforeend', html);
-        });
-      }
-
-      // 檢查作者電子書資料
-      if (authorContainer && typeof authorBooks !== 'undefined' && Array.isArray(authorBooks)) {
-        authorContainer.innerHTML = '';
-        authorBooks.forEach(book => {
-          const html = `
-            <div class="card">
-              <div class="card-book-cover">
-                <img src="${book.cover}" alt="${book.title}" onerror="this.onerror=null; this.src='${book.fallbackCover || book.cover}';">
-              </div>
-              <div class="card-content">
-                <span class="card-tag novel-tag">${book.tag || 'Book'}</span>
-                <h3 class="card-title">${book.title}</h3>
-              </div>
-              <div class="card-action-wrap">
-                <a href="${book.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.readKindle}</a>
-              </div>
-            </div>
-          `;
-          authorContainer.insertAdjacentHTML('beforeend', html);
-        });
-      }
-    }
-
-    function openStoryModal(videoId, title) {
-      const modal = document.getElementById('storyModal');
-      const iframe = document.getElementById('storyIframe');
-      const titleEl = document.getElementById('storyModalTitle');
-      titleEl.textContent = title || '🎬 Story Preview';
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-      modal.style.display = 'flex';
-    }
-
-    function closeStoryModal(e) {
-      const modal = document.getElementById('storyModal');
-      const iframe = document.getElementById('storyIframe');
+    // 關閉彈窗
+    function closeVideoModal(e) {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoFrame');
       iframe.src = '';
-      modal.style.display = 'none';
+      modal.classList.remove('active');
     }
 
-    document.getElementById('searchInput').addEventListener('input', function(e) {
-      currentSearchQuery = e.target.value.toLowerCase().trim();
-      applyFilterAndSearch();
-    });
-
-    // 確保 DOM 與 products.js 完全載入後才初始化渲染
-    window.addEventListener('load', function() {
-      if (typeof marketProducts !== 'undefined') {
-        activeFilteredList = [...marketProducts];
-      }
-      setLang(currentLang);
-    });
+    // 頁面載入完成後執行渲染
+    document.addEventListener('DOMContentLoaded', renderMarketProducts);
   </script>
 </body>
 </html>
