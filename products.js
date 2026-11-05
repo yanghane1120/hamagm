@@ -303,6 +303,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B07y5SqCN",
     videoId: "pUhCGpfgNcw",
     videoTitle: "Work & Read in Comfort: JOLISU Blue Light Blocking Glasses 5-Pack"
+  },
+  {
+    id: "spacex-embroidered-hat",
+    category: "apparel",
+    tag: "Space Apparel",
+    title: "Embroidered SpaceX Baseball Hat for Men and Women (Black)",
+    searchTerms: "spacex hat embroidered baseball cap men women black adjustable space enthusiast gear",
+    amazonUrl: "https://link.amazon/B0f7IqMYv",
+    videoId: "QXGeOfBkrDg",
+    videoTitle: "Wear The Mission: SpaceX Embroidered Baseball Cap (Black)"
   }
 ];
 
