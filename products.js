@@ -22,7 +22,7 @@ const marketProducts = [
     searchTerms: "loreal paris sulfate free glossing lamination hair mask 5 minute rinse off treatment",
     amazonUrl: "https://link.amazon/B0eojpQ1t",
     videoId: "904BvVq7QlM",
-    videoTitle: "The Secret Lamination Glow"
+    videoTitle: "She was crying over her ruined hair… then her CAT did THIS?! 😱🐱"
   },
   {
     id: "petkit",
@@ -32,7 +32,7 @@ const marketProducts = [
     searchTerms: "petkit automatic cat feeder 2.4g wifi app control pet food dispenser triple fresh lock",
     amazonUrl: "https://link.amazon/B0fC3FIFz",
     videoId: "mMMl6ke_Jes",
-    videoTitle: "My Cat Opened A Free Buffet For Strays..."
+    videoTitle: "My Cat Opened A Free Buffet For Strays… Until I Did THIS! 😭🐱"
   },
   {
     id: "sony-ch720n",
@@ -42,7 +42,7 @@ const marketProducts = [
     searchTerms: "sony wh ch720n wireless noise cancelling over ear headphones black comfortable",
     amazonUrl: "https://link.amazon/B0fOtnGwN",
     videoId: "twG6BkAoNN0",
-    videoTitle: "Focus Mode: Noise Cancelling On"
+    videoTitle: "0% FS GIVEN: When Your Cat Trolls the Dogs with Pure Silence 🎧💀*"
   },
   {
     id: "echo-spot",
@@ -52,7 +52,7 @@ const marketProducts = [
     searchTerms: "amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa",
     amazonUrl: "https://link.amazon/B0dCFtTYG",
     videoId: "XTRpvGpgI2Y",
-    videoTitle: "Waking Up The Smart Way"
+    videoTitle: "MY CAT BOUGHT 500 ALARM CLOCKS ON AMAZON... ⏰💀"
   },
   {
     id: "moving-bags",
@@ -62,7 +62,7 @@ const marketProducts = [
     searchTerms: "light gray moving bags 200lb heavy duty 6 pack storage bags extra large summitflare",
     amazonUrl: "https://link.amazon/B03lm3MEk",
     videoId: "WcmlxQ1OhfQ",
-    videoTitle: "Heavy Duty Moving & Storage Solution"
+    videoTitle: "HE PACKED HIS BAGS AND WALKED OUT IN THE SNOW... 🧳❄️"
   },
   {
     id: "heater",
@@ -72,7 +72,7 @@ const marketProducts = [
     searchTerms: "space heater winhl portable electric heaters indoor use 70 oscillation thermostat",
     amazonUrl: "https://link.amazon/B0ivEANQG",
     videoId: "I4AHXe0Hq3k",
-    videoTitle: "Cozy Warmth In Cold Winter"
+    videoTitle: "Cat Stole the Heater for Shivering Dog… Owner’s Reaction is PRICELESS! 😱❄️"
   },
   {
     id: "flosser",
@@ -82,7 +82,7 @@ const marketProducts = [
     searchTerms: "coslus ada accepted c20 water dental flosser pick professional set pink oral irrigator",
     amazonUrl: "https://link.amazon/B03kheoWk",
     videoId: "4llyR06ur0g",
-    videoTitle: "Clean & Fresh Daily Dental Routine"
+    videoTitle: "Tiny Cat Saves a GIANT Bear With a Water Flosser?! 😱🐾"
   },
   {
     id: "stickers",
@@ -92,7 +92,7 @@ const marketProducts = [
     searchTerms: "300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers",
     amazonUrl: "https://link.amazon/B09494Vtp",
     videoId: "Dgd7WXq1Nxg",
-    videoTitle: "The Most Savage Revenge in Cat History..."
+    videoTitle: "The Most Savage Revenge in Cat History! (Instant Regret) 🐱⚡"
   },
   {
     id: "hersheys",
@@ -112,7 +112,7 @@ const marketProducts = [
     searchTerms: "bulk assorted party candy mix 5lb sweetside halloween",
     amazonUrl: "https://link.amazon/B0jlfLH63",
     videoId: "hLE1yC90Egk",
-    videoTitle: "Ultimate Sweet Treats Party Mix"
+    videoTitle: "From Outcast to the Ultimate Cat Boss in 10 Seconds 😱👑"
   },
   {
     id: "fountain",
@@ -122,7 +122,7 @@ const marketProducts = [
     searchTerms: "stainless steel cat water fountain pet oasis ultra silent",
     amazonUrl: "https://link.amazon/B0bpXw7EQ",
     videoId: "O2khHlRJL5s",
-    videoTitle: "Cat Mom Found THIS in the Middle of..."
+    videoTitle: "Cat Mom Found THIS in the Middle of Nowhere… 🏜️🥺"
   },
   {
     id: "frameo-15",
@@ -132,7 +132,7 @@ const marketProducts = [
     searchTerms: "bigasuo 64gb 15.6 inch frameo digital picture frame wifi large electronic photo frames fhd ips touch screen",
     amazonUrl: "https://link.amazon/B06ugWlej",
     videoId: "Q1bo5mLh84k",
-    videoTitle: "Memories on Display: Frameo WiFi Digital Frame"
+    videoTitle: "She watched her baby leave forever... then THIS happened 💔🥺"
   },
   {
     id: "ninja-blender",
@@ -152,7 +152,7 @@ const marketProducts = [
     searchTerms: "gritin 9 led rechargeable book light reading in bed eye caring 3 color stepless dimming lightweight clip on",
     amazonUrl: "https://link.amazon/B00aA9YjN",
     videoId: "CjYn7HgQrbg",
-    videoTitle: "The Ultimate Cozy Bedtime Reading Light"
+    videoTitle: "My Cat Brought Me THIS In Bed?! 🥺💡"
   },
   {
     id: "petbusy-cat-toy",
@@ -272,7 +272,7 @@ const marketProducts = [
     searchTerms: "young washington movie jon erwin kelsey grammer mary louise parker william franklyn miller historical drama",
     amazonUrl: "https://link.amazon/B0dJGdQkd",
     videoId: "QHKzHzaBlPE",
-    videoTitle: "Before He Led A Nation: The Untold Story of Young Washington"
+    videoTitle: "The real reason George Washington chopped down that cherry tree… 🐱🪓"
   },
   {
     id: "stanley-quencher-40oz-rosequartz-v5",
@@ -282,7 +282,7 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz travel cup bpa free",
     amazonUrl: "https://link.amazon/B02uRVCB4",
     videoId: "q0eutYTG-ng",
-    videoTitle: "The Viral Stanley Quencher H2.0 40oz (Rose Quartz 2.0)"
+    videoTitle: "An 18th-century surveyor, his pink cup, and a confession about his mom… Guess who? 😳"
   },
   {
     id: "stanley-quencher-30oz-ash-v2",
@@ -323,6 +323,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B08bTS5y0",
     videoId: "mZ6zZq_6xzA",
     videoTitle: "The Definitive Portrait: Washington: A Life (Pulitzer Prize Winner)"
+  },
+  {
+    id: "stanley-quencher-40oz-rosequartz-v6",
+    category: "home",
+    tag: "Drinkware",
+    title: "STANLEY Quencher H2.0 FlowState Tumbler with Handle (40 oz / Rose Quartz 2.0)",
+    searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz travel cup bpa free",
+    amazonUrl: "https://link.amazon/B04wyssOr",
+    videoId: "vzr575_5XJk",
+    videoTitle: "Day 100 of the Cat Apocalypse… What did he just find?! 😱"
   }
 ];
 
