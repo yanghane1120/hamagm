@@ -333,8 +333,8 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B04wyssOr",
     videoId: "vzr575_5XJk",
     videoTitle: "Day 100 of the Cat Apocalypse… What did he just find?! 😱"
- },
-{
+  },
+  {
     id: "stanley-quencher-40oz-rosequartz-v7",
     category: "home",
     tag: "Drinkware",
@@ -353,6 +353,26 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B032CenH4",
     videoId: "MYobQnvYFo0",
     videoTitle: "Nobody believed this 10-pound ginger cat could dunk at Rucker Park… Watch till the end. 🏀🔥"
+  },
+  {
+    id: "auto-pencil-sharpener",
+    category: "home",
+    tag: "Stationery",
+    title: "Electric Pencil Sharpener for Classroom (Fully Automatic / Black)",
+    searchTerms: "electric pencil sharpener classroom fully automatic heavy duty fast auto stop black office school supplies",
+    amazonUrl: "https://link.amazon/B04GnTBbY",
+    videoId: "Hp3BHst2TnY",
+    videoTitle: "His pencil snapped mid-drawing, then his cat did THIS… ✏️⚡"
+  },
+  {
+    id: "womens-wool-scarf-checked",
+    category: "apparel",
+    tag: "Winter Fashion",
+    title: "Women's Wool Checked Scarf (Large Soft Thick Shawl & Wrap with Gift Box)",
+    searchTerms: "womens wool scarf winter checked scarves large soft thick warm shawls wraps elegant gift box holiday gift",
+    amazonUrl: "https://link.amazon/B0i0newiO",
+    videoId: "WEOLqji7MrU",
+    videoTitle: "Wait for what he brought her before she stepped into the snow… 😭"
   }
 ];
 
