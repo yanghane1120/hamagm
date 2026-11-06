@@ -1313,19 +1313,26 @@
           </div>
         ` : '';
 
-        const cardHtml = `
-          <div class="card" data-category="${item.category}">
-            <div class="card-content">
-              <span class="card-tag">${item.tag}</span>
-              <h3 class="card-story-title">${displayStoryTitle}</h3>
-              ${productSubHtml}
-            </div>
-            <div class="card-action-wrap">
-              ${storyBtnHtml}
-              <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
-            </div>
-          </div>
-        `;
+const cardHtml = `
+  <div class="card" data-category="${item.category}">
+    <div class="card-content">
+      <span class="card-tag">${item.tag}</span>
+      <!-- 1. 影片名 -->
+      <h3 class="card-story-title">${displayStoryTitle}</h3>
+      
+      <!-- 2. 影片按鈕（緊接在影片標題下方） -->
+      ${storyBtnHtml ? `<div style="margin-bottom: 14px;">${storyBtnHtml}</div>` : ''}
+
+      <!-- 3. 劇中商品名稱區塊 -->
+      ${productSubHtml}
+    </div>
+
+    <!-- 4. 商品購買按鈕（置底） -->
+    <div class="card-action-wrap" style="padding-top: 4px;">
+      <a href="${item.amazonUrl}" target="_blank" rel="noopener noreferrer" class="card-btn">${d.viewAmazon}</a>
+    </div>
+  </div>
+`;
         container.insertAdjacentHTML('beforeend', cardHtml);
       });
 
