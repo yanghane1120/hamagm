@@ -42,7 +42,7 @@ const marketProducts = [
     searchTerms: "sony wh ch720n wireless noise cancelling over ear headphones black comfortable",
     amazonUrl: "https://link.amazon/B0fOtnGwN",
     videoId: "twG6BkAoNN0",
-    videoTitle: "0% FS GIVEN: When Your Cat Trolls the Dogs with Pure Silence 🎧💀*"
+    videoTitle: "0% FS GIVEN: When Your Cat Trolls the Dogs with Pure Silence 🎧💀"
   },
   {
     id: "echo-spot",
