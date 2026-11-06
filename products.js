@@ -393,6 +393,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0bD6tyhv",
     videoId: "cLiYgk0qVAY",
     videoTitle: "Stranded on a desert island… but she only cared about THIS?! 😭🏝️"
+  },
+  {
+    id: "lodge-cast-iron-skillet-3pc",
+    category: "home",
+    tag: "Kitchen & Dining",
+    title: "Lodge Pre-Seasoned Cast Iron Skillet 3-Piece Set (8, 10.25 & 12 Inch)",
+    searchTerms: "lodge pre seasoned cast iron skillet 3 piece set 8 10.25 12 inch naturally non stick oven stove grill campfire made in usa",
+    amazonUrl: "https://link.amazon/B0f6BUOpL",
+    videoId: "YANtiwghEaI",
+    videoTitle: "My mom’s greatest heirloom wasn’t jewelry. It was THIS."
   }
 ];
 
