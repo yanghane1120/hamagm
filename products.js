@@ -296,7 +296,7 @@ const marketProducts = [
   },
   {
     id: "jolisu-reading-glasses-5pack",
-    category: "care",
+    category: "apparel",
     tag: "Vision Care",
     title: "JOLISU 5-Pack Men's 2.00 Blue Light Blocking Reading Glasses (Lightweight Metal Frame)",
     searchTerms: "jolisu 5 pack reading glasses men 2.00 blue light blocking readers lightweight thin metal frame computer reading",
@@ -346,7 +346,7 @@ const marketProducts = [
   },
   {
     id: "wilson-nba-drv-basketball",
-    category: "sports",
+    category: "home",
     tag: "Basketball",
     title: "WILSON NBA DRV Series Outdoor Basketball",
     searchTerms: "wilson nba drv series outdoor basketball durable grip rubber streetball official size",
