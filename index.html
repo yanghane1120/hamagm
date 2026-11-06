@@ -384,7 +384,7 @@
       margin-bottom: 10px;
     }
 
-    /* 🎬 影片標題展示區塊（商品名下方、按鈕上方，字體小於商品名） */
+    /* 🎬 影片標題展示區塊 */
     .card-video-title {
       display: flex;
       align-items: flex-start;
@@ -851,8 +851,8 @@
     </div>
   </div>
 
-  <!-- 引入獨立資料庫 (版本號更新為 v4 避免瀏覽器快取舊資料) -->
-  <script src="products.js?v=4"></script>
+  <!-- 引入獨立資料庫 (版本號更新為 v5 強制跳過瀏覽器快取) -->
+  <script src="products.js?v=5"></script>
 
   <!-- 多語言與頁面邏輯腳本 -->
   <script>
@@ -1314,6 +1314,7 @@
     }
 
     function applyFilterAndSearch() {
+      if (typeof marketProducts === 'undefined' || !Array.isArray(marketProducts)) return;
       activeFilteredList = marketProducts.filter(item => {
         const matchesCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
         const searchTarget = (item.title + ' ' + (item.searchTerms || '')).toLowerCase();
@@ -1407,7 +1408,7 @@
 
     // 確保 DOM 與 products.js 完全載入後才初始化渲染
     window.addEventListener('load', function() {
-      if (typeof marketProducts !== 'undefined') {
+      if (typeof marketProducts !== 'undefined' && Array.isArray(marketProducts)) {
         activeFilteredList = [...marketProducts];
       }
       setLang(currentLang);
