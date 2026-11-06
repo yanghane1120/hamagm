@@ -12,7 +12,13 @@ const marketProducts = [
     searchTerms: "aula f75 pro wireless mechanical gaming keyboard creamy switch thocky sound",
     amazonUrl: "https://link.amazon/B0ewgi8NJ",
     videoId: "weBkKhh-wEA",
-    videoTitle: "Even my cat plays better with this mechanical keyboard! ⚡🔥"
+    videoTitle: {
+      en: "Even my cat plays better with this mechanical keyboard! ⚡🔥",
+      zh: "連我家貓咪換了這把機械鍵盤都比我會打！⚡🔥",
+      jp: "うちの猫すらこのメカニカルキーボードで神プレイ連発！⚡🔥",
+      de: "Sogar meine Katze zockt mit dieser mechanischen Tastatur besser als ich! ⚡🔥",
+      fr: "Même mon chat joue mieux avec ce clavier mécanique ! ⚡🔥"
+    }
   },
   {
     id: "hair-mask",
@@ -22,7 +28,13 @@ const marketProducts = [
     searchTerms: "loreal paris sulfate free glossing lamination hair mask 5 minute rinse off treatment",
     amazonUrl: "https://link.amazon/B0eojpQ1t",
     videoId: "904BvVq7QlM",
-    videoTitle: "She was crying over her ruined hair… then her CAT did THIS?! 😱🐱"
+    videoTitle: {
+      en: "She was crying over her ruined hair… then her CAT did THIS?! 😱🐱",
+      zh: "她看著爛掉的頭髮痛哭… 結果她家貓咪居然做了這件事？！😱🐱",
+      jp: "傷んだ髪を見て泣き崩れる彼女… その時、愛猫がとった行動とは？！😱🐱",
+      de: "Sie weinte über ihre ruinierten Haare… dann tat ihre Katze DAS?! 😱🐱",
+      fr: "Elle pleurait sur ses cheveux abîmés… puis son chat a fait ÇA ?! 😱🐱"
+    }
   },
   {
     id: "petkit",
@@ -32,7 +44,13 @@ const marketProducts = [
     searchTerms: "petkit automatic cat feeder 2.4g wifi app control pet food dispenser triple fresh lock",
     amazonUrl: "https://link.amazon/B0fC3FIFz",
     videoId: "mMMl6ke_Jes",
-    videoTitle: "My Cat Opened A Free Buffet For Strays… Until I Did THIS! 😭🐱"
+    videoTitle: {
+      en: "My Cat Opened A Free Buffet For Strays… Until I Did THIS! 😭🐱",
+      zh: "我家貓咪幫外面的浪浪開了免費吃到飽… 直到我做了這件事！😭🐱",
+      jp: "うちの猫が野良猫に無料ビュッフェを開放… 私がコレをするまでは！😭🐱",
+      de: "Meine Katze hat ein Buffet für Streuner eröffnet… bis ich DAS tat! 😭🐱",
+      fr: "Mon chat a ouvert un buffet pour les errants… jusqu'à ce que je fasse ÇA ! 😭🐱"
+    }
   },
   {
     id: "sony-ch720n",
@@ -42,7 +60,13 @@ const marketProducts = [
     searchTerms: "sony wh ch720n wireless noise cancelling over ear headphones black comfortable",
     amazonUrl: "https://link.amazon/B0fOtnGwN",
     videoId: "twG6BkAoNN0",
-    videoTitle: "0% FS GIVEN: When Your Cat Trolls the Dogs with Pure Silence 🎧💀*"
+    videoTitle: {
+      en: "0% FS GIVEN: When Your Cat Trolls the Dogs with Pure Silence 🎧💀*",
+      zh: "完全沒在鳥你：當你家貓咪戴上耳機用極致安靜嘲諷整群狗 🎧💀*",
+      jp: "完全スルー：愛猫が圧倒的静寂で犬たちを煽り散らかした瞬間 🎧💀*",
+      de: "0% Respekt: Wenn deine Katze Hunde mit absoluter Stille trollt 🎧💀*",
+      fr: "Zéro respect : Quand ton chat trolle les chiens dans un silence absolu 🎧💀*"
+    }
   },
   {
     id: "echo-spot",
@@ -52,7 +76,13 @@ const marketProducts = [
     searchTerms: "amazon echo spot smart alarm clock nightstands offices kitchens designed for alexa",
     amazonUrl: "https://link.amazon/B0dCFtTYG",
     videoId: "XTRpvGpgI2Y",
-    videoTitle: "MY CAT BOUGHT 500 ALARM CLOCKS ON AMAZON... ⏰💀"
+    videoTitle: {
+      en: "MY CAT BOUGHT 500 ALARM CLOCKS ON AMAZON... ⏰💀",
+      zh: "我家貓咪偷偷在 Amazon 上下單買了 500 個鬧鐘… ⏰💀",
+      jp: "うちの猫がAmazonで目覚まし時計を500個誤発注した結果… ⏰💀",
+      de: "MEINE KATZE HAT 500 WECKER AUF AMAZON GEKAUFT... ⏰💀",
+      fr: "MON CHAT A ACHETÉ 500 RÉVEILS SUR AMAZON... ⏰💀"
+    }
   },
   {
     id: "moving-bags",
@@ -62,7 +92,13 @@ const marketProducts = [
     searchTerms: "light gray moving bags 200lb heavy duty 6 pack storage bags extra large summitflare",
     amazonUrl: "https://link.amazon/B03lm3MEk",
     videoId: "WcmlxQ1OhfQ",
-    videoTitle: "HE PACKED HIS BAGS AND WALKED OUT IN THE SNOW... 🧳❄️"
+    videoTitle: {
+      en: "HE PACKED HIS BAGS AND WALKED OUT IN THE SNOW... 🧳❄️",
+      zh: "他默默打包好所有的行李，孤身走進大雪中… 🧳❄️",
+      jp: "荷物をまとめ、彼は吹雪の中へと消えていった… 🧳❄️",
+      de: "ER PACKTE SEINE TASCHEN UND GING HINAUS IN DEN SCHNEE... 🧳❄️",
+      fr: "IL A FAIT SES VALISES ET EST PARTI DANS LA NEIGE... 🧳❄️"
+    }
   },
   {
     id: "heater",
@@ -72,7 +108,13 @@ const marketProducts = [
     searchTerms: "space heater winhl portable electric heaters indoor use 70 oscillation thermostat",
     amazonUrl: "https://link.amazon/B0ivEANQG",
     videoId: "I4AHXe0Hq3k",
-    videoTitle: "Cat Stole the Heater for Shivering Dog… Owner’s Reaction is PRICELESS! 😱❄️"
+    videoTitle: {
+      en: "Cat Stole the Heater for Shivering Dog… Owner’s Reaction is PRICELESS! 😱❄️",
+      zh: "貓咪偷偷把暖爐推給凍僵發抖的狗狗… 主人目睹後表情神絕！😱❄️",
+      jp: "震える犬のためにヒーターを盗み出した猫… 飼い主の反応が最高すぎる！😱❄️",
+      de: "Katze stiehlt Heizlüfter für zitternden Hund… Reaktion des Besitzers unbezahlbar! 😱❄️",
+      fr: "Un chat vole le radiateur pour un chien qui tremble… La réaction du maître est magique ! 😱❄️"
+    }
   },
   {
     id: "flosser",
@@ -82,7 +124,13 @@ const marketProducts = [
     searchTerms: "coslus ada accepted c20 water dental flosser pick professional set pink oral irrigator",
     amazonUrl: "https://link.amazon/B03kheoWk",
     videoId: "4llyR06ur0g",
-    videoTitle: "Tiny Cat Saves a GIANT Bear With a Water Flosser?! 😱🐾"
+    videoTitle: {
+      en: "Tiny Cat Saves a GIANT Bear With a Water Flosser?! 😱🐾",
+      zh: "小貓咪居然用洗牙機拯救了一隻巨大笨熊？！😱🐾",
+      jp: "子猫がジェットウォッシャーで巨大な熊を救出？！😱🐾",
+      de: "Winzige Katze rettet einen RIESEN-Bären mit einer Munddusche?! 😱🐾",
+      fr: "Un petit chat sauve un ours GÉANT avec un hydropulseur ?! 😱🐾"
+    }
   },
   {
     id: "stickers",
@@ -92,7 +140,13 @@ const marketProducts = [
     searchTerms: "300 pcs halloween pumpkin stickers waterproof vinyl water bottle laptop stickers",
     amazonUrl: "https://link.amazon/B09494Vtp",
     videoId: "Dgd7WXq1Nxg",
-    videoTitle: "The Most Savage Revenge in Cat History! (Instant Regret) 🐱⚡"
+    videoTitle: {
+      en: "The Most Savage Revenge in Cat History! (Instant Regret) 🐱⚡",
+      zh: "喵星人史上最狠毒的復仇計畫！（結局瞬間後悔）🐱⚡",
+      jp: "猫史上最も容赦ない復讐劇！（そして即座の後悔）🐱⚡",
+      de: "Die skrupelloseste Rache der Katzengeschichte! (Sofortige Reue) 🐱⚡",
+      fr: "La vengeance la plus sauvage de l'histoire féline ! (Regret instantané) 🐱⚡"
+    }
   },
   {
     id: "hersheys",
@@ -102,7 +156,13 @@ const marketProducts = [
     searchTerms: "hersheys special dark mildly sweet chocolate candy bars 36 count pack bulk sweetside",
     amazonUrl: "https://link.amazon/B0i8ZJnSE",
     videoId: "8dCRthWkjJQ",
-    videoTitle: "Sweet Delight & Dark Chocolate Moments"
+    videoTitle: {
+      en: "Sweet Delight & Dark Chocolate Moments 🍫✨",
+      zh: "令人無法抗拒的黑巧克力療癒時光 🍫✨",
+      jp: "至福のダークチョコレートタイム 🍫✨",
+      de: "Süßer Genuss & Zartbitter-Schokoladenmomente 🍫✨",
+      fr: "Plaisir sucré et instants chocolat noir 🍫✨"
+    }
   },
   {
     id: "candy-mix",
@@ -112,7 +172,13 @@ const marketProducts = [
     searchTerms: "bulk assorted party candy mix 5lb sweetside halloween",
     amazonUrl: "https://link.amazon/B0jlfLH63",
     videoId: "hLE1yC90Egk",
-    videoTitle: "From Outcast to the Ultimate Cat Boss in 10 Seconds 😱👑"
+    videoTitle: {
+      en: "From Outcast to the Ultimate Cat Boss in 10 Seconds 😱👑",
+      zh: "從人人忽視的邊緣貓，10秒內翻身成為頂級貓老大 😱👑",
+      jp: "のけ者からわずか10秒で最強のボス猫へ成り上がる 😱👑",
+      de: "Vom Außenseiter zum ultimativen Katzen-Boss in 10 Sekunden 😱👑",
+      fr: "De paria à boss suprême des chats en 10 secondes 😱👑"
+    }
   },
   {
     id: "fountain",
@@ -122,17 +188,29 @@ const marketProducts = [
     searchTerms: "stainless steel cat water fountain pet oasis ultra silent",
     amazonUrl: "https://link.amazon/B0bpXw7EQ",
     videoId: "O2khHlRJL5s",
-    videoTitle: "Cat Mom Found THIS in the Middle of Nowhere… 🏜️🥺"
+    videoTitle: {
+      en: "Cat Mom Found THIS in the Middle of Nowhere… 🏜️🥺",
+      zh: "貓媽媽在荒無人煙的沙漠中央找到了「這個」… 🏜️🥺",
+      jp: "砂漠の真ん中で猫のママが見つけたものとは… 🏜️🥺",
+      de: "Katzenmama fand DIES mitten im Nirgendwo… 🏜️🥺",
+      fr: "Maman chat a trouvé CECI au milieu de nulle part… 🏜️🥺"
+    }
   },
   {
     id: "frameo-15",
     category: "tech",
     tag: "Smart Display",
-    title: "BIGASUO 64GB 15.6\" Frameo WiFi Digital Picture Frame (FHD Touch Screen)",
+    title: "BIGASUO 64GB 15.6" Frameo WiFi Digital Picture Frame (FHD Touch Screen)",
     searchTerms: "bigasuo 64gb 15.6 inch frameo digital picture frame wifi large electronic photo frames fhd ips touch screen",
     amazonUrl: "https://link.amazon/B06ugWlej",
     videoId: "Q1bo5mLh84k",
-    videoTitle: "She watched her baby leave forever... then THIS happened 💔🥺"
+    videoTitle: {
+      en: "She watched her baby leave forever... then THIS happened 💔🥺",
+      zh: "她眼睜睜看著孩子永遠離開… 沒想到下一秒奇蹟發生了 💔🥺",
+      jp: "旅立つ我が子を見送った彼女… その後起きた奇跡とは 💔🥺",
+      de: "Sie sah ihr Kleines für immer gehen... dann geschah DAS 💔🥺",
+      fr: "Elle a vu son petit partir pour toujours... puis ÇA est arrivé 💔🥺"
+    }
   },
   {
     id: "ninja-blender",
@@ -142,7 +220,13 @@ const marketProducts = [
     searchTerms: "ninja professional plus blender bn701 auto iq 1400w 72oz pitcher smoothie frozen drink ice crusher",
     amazonUrl: "https://link.amazon/B0dJjEt8Z",
     videoId: "DML7hc5Uo5o",
-    videoTitle: "Crush Ice In Seconds: Ninja Auto-iQ Power"
+    videoTitle: {
+      en: "Crush Ice In Seconds: Ninja Auto-iQ Power 🍹⚡",
+      zh: "幾秒碎冰的極致快感：Ninja Auto-iQ 暴力動力 🍹⚡",
+      jp: "数秒で氷を粉砕：Ninja Auto-iQの超絶パワー 🍹⚡",
+      de: "Eis in Sekundenschnelle zerkleinern: Ninja Auto-iQ Power 🍹⚡",
+      fr: "Piler la glace en quelques secondes : la puissance Ninja Auto-iQ 🍹⚡"
+    }
   },
   {
     id: "gritin-book-light",
@@ -152,7 +236,13 @@ const marketProducts = [
     searchTerms: "gritin 9 led rechargeable book light reading in bed eye caring 3 color stepless dimming lightweight clip on",
     amazonUrl: "https://link.amazon/B00aA9YjN",
     videoId: "CjYn7HgQrbg",
-    videoTitle: "My Cat Brought Me THIS In Bed?! 🥺💡"
+    videoTitle: {
+      en: "My Cat Brought Me THIS In Bed?! 🥺💡",
+      zh: "我家貓咪半夜把「這個」叼上床給我？！🥺💡",
+      jp: "真夜中に愛猫がベッドへ運んできたものとは？！🥺💡",
+      de: "Meine Katze hat mir DAS ins Bett gebracht?! 🥺💡",
+      fr: "Mon chat m'a apporté ÇA dans mon lit ?! 🥺💡"
+    }
   },
   {
     id: "petbusy-cat-toy",
@@ -162,7 +252,13 @@ const marketProducts = [
     searchTerms: "petbusy cat toys natural catnip silvervine soft chew kicker crinkle bell fish sound indoor cats kittens",
     amazonUrl: "https://link.amazon/B06Lhb3RV",
     videoId: "N3OIgIOwC_E",
-    videoTitle: "Interactive Catnip Kicker Fish Toy"
+    videoTitle: {
+      en: "Interactive Catnip Kicker Fish Toy (Pure Chaos) 🐟😹",
+      zh: "貓薄荷瘋狂踢踢魚玩具（全場徹底暴走）🐟😹",
+      jp: "キャットニップ入りキッカー魚おもちゃ（大暴走）🐟😹",
+      de: "Interaktives Katzenminze-Fischspielzeug (Reines Chaos) 🐟😹",
+      fr: "Jouet poisson à l'herbe à chat interactif (Chaos total) 🐟😹"
+    }
   },
   {
     id: "aussie-miracle-hair",
@@ -172,7 +268,13 @@ const marketProducts = [
     searchTerms: "aussie total miracle shampoo conditioner 3 minute deep treatment apricot macadamia oil damaged hair bundle",
     amazonUrl: "https://link.amazon/B03LPJYi3",
     videoId: "A3RDqr8fYdQ",
-    videoTitle: "Miracle Hair Fix in 3 Minutes"
+    videoTitle: {
+      en: "Miracle Hair Fix in 3 Minutes ✨💆‍♀️",
+      zh: "只要3分鐘！稻草爛髮的奇蹟大復活 ✨💆‍♀️",
+      jp: "たった3分で髪質激変！奇跡のヘアケア ✨💆‍♀️",
+      de: "Wunder-Haarkur in nur 3 Minuten ✨💆‍♀️",
+      fr: "Cheveux métamorphosés en 3 minutes chrono ✨💆‍♀️"
+    }
   },
   {
     id: "bissell-cleanview",
@@ -182,7 +284,13 @@ const marketProducts = [
     searchTerms: "bissell cleanview swivel upright vacuum triple action brush roll multi cyclonic suction 3836",
     amazonUrl: "https://link.amazon/B02tG5lqh",
     videoId: "oqTMz8-80nM",
-    videoTitle: "Effortless Cleaning: Bissell CleanView Swivel Power"
+    videoTitle: {
+      en: "Effortless Cleaning: Bissell CleanView Swivel Power 🌀🧹",
+      zh: "輕鬆吸走滿地貓毛！Bissell 旋轉吸塵器的暴力吸力 🌀🧹",
+      jp: "抜け毛も一瞬で消える！Bissell CleanViewの圧倒的吸引力 🌀🧹",
+      de: "Mühelose Reinigung: Bissell CleanView Swivel Power 🌀🧹",
+      fr: "Nettoyage sans effort : La puissance pivotante du Bissell CleanView 🌀🧹"
+    }
   },
   {
     id: "spacex-starship",
@@ -192,7 +300,13 @@ const marketProducts = [
     searchTerms: "1 144 spacex starship model rocket sturdy bracket durable plastic space enthusiasts gift collection",
     amazonUrl: "https://link.amazon/B0imKdLHn",
     videoId: "QXGeOfBkrDg",
-    videoTitle: "SpaceX Starship 1:144 Scale Desktop Model"
+    videoTitle: {
+      en: "SpaceX Starship 1:144 Scale Desktop Model 🚀🌌",
+      zh: "星艦降臨桌面！SpaceX Starship 1:144 合金模型 🚀🌌",
+      jp: "スペースX スターシップ 1:144 スケール デスクトップモデル 🚀🌌",
+      de: "SpaceX Starship Tischmodell im Maßstab 1:144 🚀🌌",
+      fr: "Modèle de bureau SpaceX Starship à l'échelle 1:144 🚀🌌"
+    }
   },
   {
     id: "stanley-quencher-30oz",
@@ -202,7 +316,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flowstate tumbler handle straw 30 oz cup holder compatible stainless steel rose quartz",
     amazonUrl: "https://link.amazon/B08TWhkGb",
     videoId: "31SNNPtm-Og",
-    videoTitle: "Stay Hydrated in Style: Stanley Quencher H2.0 30oz"
+    videoTitle: {
+      en: "Stay Hydrated in Style: Stanley Quencher H2.0 30oz 💧✨",
+      zh: "隨時保溫補水：Stanley Quencher H2.0 30oz 粉晶美型杯 💧✨",
+      jp: "おしゃれに水分補給：Stanley クエンチャー H2.0 30oz 💧✨",
+      de: "Stilvoll hydriert bleiben: Stanley Quencher H2.0 30oz 💧✨",
+      fr: "Restez hydraté avec style : Stanley Quencher H2.0 30oz 💧✨"
+    }
   },
   {
     id: "umite-dutch-oven",
@@ -212,7 +332,13 @@ const marketProducts = [
     searchTerms: "enameled cast iron dutch oven umite chef 5qt heavy duty cookware bread baking braising roasting cream white",
     amazonUrl: "https://link.amazon/B01LL1DOR",
     videoId: "_E46WYDnwgQ",
-    videoTitle: "The Ultimate Sourdough & Stew Companion: Umite Chef 5QT"
+    videoTitle: {
+      en: "The Ultimate Sourdough & Stew Companion: Umite Chef 5QT 🍲🥖",
+      zh: "酸種麵包與燉肉首選！Umite Chef 5QT 琺瑯鑄鐵鍋 🍲🥖",
+      jp: "サワードウと煮込み料理の相棒：Umite Chef 5QT 鋳鉄鍋 🍲🥖",
+      de: "Der perfekte Begleiter für Sauerteig & Schmorgerichte: Umite Chef 5QT 🍲🥖",
+      fr: "Le compagnon idéal pour le pain au levain et les ragoûts : Umite Chef 5QT 🍲🥖"
+    }
   },
   {
     id: "stanley-quencher-30oz-ash",
@@ -222,7 +348,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 30 oz cup holder compatible stainless steel ash",
     amazonUrl: "https://link.amazon/B05ln23HR",
     videoId: "T6xCDCKXAio",
-    videoTitle: "Everyday Hydration: Stanley Quencher H2.0 30oz (Ash)"
+    videoTitle: {
+      en: "Everyday Hydration: Stanley Quencher H2.0 30oz (Ash) ☕🧊",
+      zh: "質感生活日常：Stanley Quencher H2.0 30oz 灰霧灰極簡杯 ☕🧊",
+      jp: "毎日の水分補給に：Stanley クエンチャー 30oz (アッシュ) ☕🧊",
+      de: "Tägliche Hydratation: Stanley Quencher H2.0 30oz (Ash) ☕🧊",
+      fr: "Hydratation quotidienne : Stanley Quencher H2.0 30oz (Ash) ☕🧊"
+    }
   },
   {
     id: "stanley-quencher-40oz-rosequartz",
@@ -232,7 +364,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz",
     amazonUrl: "https://link.amazon/B04rN2f5B",
     videoId: "sqmnr6m_ZaA",
-    videoTitle: "Hydration Upgrade: Stanley Quencher H2.0 40oz (Rose Quartz)"
+    videoTitle: {
+      en: "Hydration Upgrade: Stanley Quencher H2.0 40oz (Rose Quartz) 🌸🥛",
+      zh: "大容量保溫升級：Stanley Quencher 40oz 玫瑰石英杯 🌸🥛",
+      jp: "水分補給のアップグレード：Stanley クエンチャー 40oz (ローズクォーツ) 🌸🥛",
+      de: "Hydratations-Upgrade: Stanley Quencher H2.0 40oz (Rose Quartz) 🌸🥛",
+      fr: "Améliorez votre hydratation : Stanley Quencher H2.0 40oz (Rose Quartz) 🌸🥛"
+    }
   },
   {
     id: "stanley-quencher-40oz-rosequartz-alt",
@@ -242,7 +380,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz",
     amazonUrl: "https://link.amazon/B05WuWGoi",
     videoId: "JiCKSuh7jCE",
-    videoTitle: "Ultimate Hydration: Stanley Quencher H2.0 40oz (Rose Quartz 2.0)"
+    videoTitle: {
+      en: "Ultimate Hydration: Stanley Quencher H2.0 40oz (Rose Quartz 2.0) 💖🥤",
+      zh: "整天冰涼不變溫：Stanley Quencher 40oz 經典巨無霸保溫杯 💖🥤",
+      jp: "究極の保冷力：Stanley クエンチャー 40oz (ローズクォーツ 2.0) 💖🥤",
+      de: "Ultimative Erfrischung: Stanley Quencher H2.0 40oz (Rose Quartz 2.0) 💖🥤",
+      fr: "L'hydratation ultime : Stanley Quencher H2.0 40oz (Rose Quartz 2.0) 💖🥤"
+    }
   },
   {
     id: "stanley-quencher-40oz-rosequartz-v3",
@@ -252,7 +396,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz",
     amazonUrl: "https://link.amazon/B07wXHHx9",
     videoId: "FNDsbmky52U",
-    videoTitle: "All-Day Hydration: Stanley Quencher H2.0 40oz (Rose Quartz 2.0)"
+    videoTitle: {
+      en: "All-Day Hydration: Stanley Quencher H2.0 40oz (Rose Quartz 2.0) 🧊✨",
+      zh: "全天候補水神隊友：Stanley Quencher 40oz 極致耐裝杯 🧊✨",
+      jp: "一日中しっかり保冷：Stanley クエンチャー 40oz 🧊✨",
+      de: "Den ganzen Tag hydriert: Stanley Quencher H2.0 40oz 🧊✨",
+      fr: "Hydraté toute la journée : Stanley Quencher H2.0 40oz 🧊✨"
+    }
   },
   {
     id: "stanley-quencher-40oz-rosequartz-v4",
@@ -262,7 +412,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz",
     amazonUrl: "https://link.amazon/B00wmIHE9",
     videoId: "VbTL98rMSVY",
-    videoTitle: "Stay Cool All Day: Stanley Quencher H2.0 40oz (Rose Quartz 2.0)"
+    videoTitle: {
+      en: "Stay Cool All Day: Stanley Quencher H2.0 40oz (Rose Quartz 2.0) 🧊🩷",
+      zh: "出門一整天都透心涼：Stanley Quencher 40oz 夢幻粉杯 🧊🩷",
+      jp: "いつでも冷え冷えキープ：Stanley クエンチャー 40oz 🧊🩷",
+      de: "Bleib den ganzen Tag kühl: Stanley Quencher H2.0 40oz 🧊🩷",
+      fr: "Restez au frais toute la journée : Stanley Quencher H2.0 40oz 🧊🩷"
+    }
   },
   {
     id: "young-washington",
@@ -272,7 +428,13 @@ const marketProducts = [
     searchTerms: "young washington movie jon erwin kelsey grammer mary louise parker william franklyn miller historical drama",
     amazonUrl: "https://link.amazon/B0dJGdQkd",
     videoId: "QHKzHzaBlPE",
-    videoTitle: "The real reason George Washington chopped down that cherry tree… 🐱🪓"
+    videoTitle: {
+      en: "The real reason George Washington chopped down that cherry tree… 🐱🪓",
+      zh: "華盛頓當年砍倒櫻桃樹的真實真相… 居然是因為貓？！🐱🪓",
+      jp: "ジョージ・ワシントンが桜の木を切り倒した本当の理由… まさかの猫？！🐱🪓",
+      de: "Der wahre Grund, warum George Washington den Kirschbaum fällte… 🐱🪓",
+      fr: "La vraie raison pour laquelle George Washington a abattu ce cerisier… 🐱🪓"
+    }
   },
   {
     id: "stanley-quencher-40oz-rosequartz-v5",
@@ -282,7 +444,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz travel cup bpa free",
     amazonUrl: "https://link.amazon/B02uRVCB4",
     videoId: "q0eutYTG-ng",
-    videoTitle: "An 18th-century surveyor, his pink cup, and a confession about his mom… Guess who? 😳"
+    videoTitle: {
+      en: "An 18th-century surveyor, his pink cup, and a confession about his mom… Guess who? 😳",
+      zh: "一位18世紀測量員、他的粉紅保溫杯、以及對媽媽的驚人告白… 猜猜他是誰？😳",
+      jp: "18世紀の測量士、ピンクのタンブラー、そして母への告白… 一体誰でしょう？😳",
+      de: "Ein Landvermesser aus dem 18. Jahrhundert, sein pinker Becher und eine Beichte… Rate mal wer? 😳",
+      fr: "Un arpenteur du 18e siècle, sa tasse rose et une confession sur sa mère… Devinez qui ? 😳"
+    }
   },
   {
     id: "stanley-quencher-30oz-ash-v2",
@@ -292,7 +460,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 30 oz cup holder compatible stainless steel ash travel cup bpa free",
     amazonUrl: "https://link.amazon/B0b5ipRIY",
     videoId: "eeFrYm8x1cU",
-    videoTitle: "Aesthetic Daily Hydration: Stanley Quencher H2.0 30oz (Ash)"
+    videoTitle: {
+      en: "Aesthetic Daily Hydration: Stanley Quencher H2.0 30oz (Ash) 🩶🥤",
+      zh: "極簡美學補水好物：Stanley Quencher H2.0 30oz 冷灰隨行杯 🩶🥤",
+      jp: "洗練された大人のデイリー給水：Stanley クエンチャー 30oz (アッシュ) 🩶🥤",
+      de: "Ästhetische Hydratation im Alltag: Stanley Quencher H2.0 30oz (Ash) 🩶🥤",
+      fr: "Hydratation esthétique au quotidien : Stanley Quencher H2.0 30oz (Ash) 🩶🥤"
+    }
   },
   {
     id: "jolisu-reading-glasses-5pack",
@@ -302,7 +476,13 @@ const marketProducts = [
     searchTerms: "jolisu 5 pack reading glasses men 2.00 blue light blocking readers lightweight thin metal frame computer reading",
     amazonUrl: "https://link.amazon/B07y5SqCN",
     videoId: "pUhCGpfgNcw",
-    videoTitle: "Work & Read in Comfort: JOLISU Blue Light Blocking Glasses 5-Pack"
+    videoTitle: {
+      en: "Work & Read in Comfort: JOLISU Blue Light Blocking Glasses 5-Pack 👓💻",
+      zh: "長時間用眼依然超舒服！JOLISU 抗藍光老花眼鏡 5入組 👓💻",
+      jp: "快適な読書とPC作業に：JOLISU ブルーライトカット眼鏡 5本セット 👓💻",
+      de: "Komfortables Arbeiten & Lesen: JOLISU Blaulichtfilter-Brillen 5er-Pack 👓💻",
+      fr: "Travaillez et lisez confortablement : Lot de 5 lunettes anti-lumière bleue JOLISU 👓💻"
+    }
   },
   {
     id: "spacex-embroidered-hat",
@@ -312,7 +492,13 @@ const marketProducts = [
     searchTerms: "spacex hat embroidered baseball cap men women black adjustable space enthusiast gear",
     amazonUrl: "https://link.amazon/B0f7IqMYv",
     videoId: "QXGeOfBkrDg",
-    videoTitle: "Wear The Mission: SpaceX Embroidered Baseball Cap (Black)"
+    videoTitle: {
+      en: "Wear The Mission: SpaceX Embroidered Baseball Cap (Black) 🧢🚀",
+      zh: "把太空夢戴在頭上：SpaceX 經典刺繡黑底老帽 🧢🚀",
+      jp: "宇宙への挑戦を身にまとう：SpaceX 刺繍ベースボールキャップ 🧢🚀",
+      de: "Trage die Mission: SpaceX Bestickte Baseballmütze (Schwarz) 🧢🚀",
+      fr: "Portez la mission : Casquette de baseball brodée SpaceX (Noir) 🧢🚀"
+    }
   },
   {
     id: "washington-a-life",
@@ -322,7 +508,13 @@ const marketProducts = [
     searchTerms: "washington a life ron chernow pulitzer prize winner biography founding fathers george washington",
     amazonUrl: "https://link.amazon/B08bTS5y0",
     videoId: "mZ6zZq_6xzA",
-    videoTitle: "The Definitive Portrait: Washington: A Life (Pulitzer Prize Winner)"
+    videoTitle: {
+      en: "The Definitive Portrait: Washington: A Life (Pulitzer Prize Winner) 📚🇺🇸",
+      zh: "普立茲獎得獎名作：華盛頓一生完整傳記（Ron Chernow 著）📚🇺🇸",
+      jp: "ピューリッツァー賞受賞作：初代大統領ワシントン決定版評伝 📚🇺🇸",
+      de: "Das maßgebliche Porträt: Washington: A Life (Pulitzer-Preisträger) 📚🇺🇸",
+      fr: "Le portrait définitif : Washington: A Life (Prix Pulitzer) 📚🇺🇸"
+    }
   },
   {
     id: "stanley-quencher-40oz-rosequartz-v6",
@@ -332,7 +524,13 @@ const marketProducts = [
     searchTerms: "stanley quencher h2 0 flow state tumbler handle straw 40 oz cup holder compatible stainless steel rose quartz travel cup bpa free",
     amazonUrl: "https://link.amazon/B04wyssOr",
     videoId: "vzr575_5XJk",
-    videoTitle: "Day 100 of the Cat Apocalypse… What did he just find?! 😱"
+    videoTitle: {
+      en: "Day 100 of the Cat Apocalypse… What did he just find?! 😱",
+      zh: "貓咪末日第100天… 他剛剛到底找到了什麼？！😱",
+      jp: "猫の終末世界100日目… 一体何を見つけてしまったのか？！😱",
+      de: "Tag 100 der Katzen-Apokalypse… Was hat er da bloß gefunden?! 😱",
+      fr: "100e jour de l'apocalypse féline… Qu'est-ce qu'il vient de trouver ?! 😱"
+    }
   }
 ];
 

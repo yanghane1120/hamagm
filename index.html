@@ -861,7 +861,7 @@
   </div>
 
   <!-- 引入獨立資料庫 -->
-  <script src="products.js?v=3"></script>
+  <script src="products.js?v=4"></script>
 
   <!-- 多語言與頁面邏輯腳本 -->
   <script>
@@ -1071,7 +1071,7 @@
       },
       en: {
         slogan: "✨ Entertainment, Tech, Wisdom & Life Hacks — Everyday Strategies for a Happier Life.",
-        bio: '🐾 "Ha! Making animals great, and the age a little better."<br>Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit\'s creative notebook series below. 👇',
+        bio: '🐾 "Ha! Making animals great, and the age a little better."<br>Welcome to HAMAGM Official Cat Hub! Explore stress-relieving life gear, hilarious animated stories, and XiaoBi Rabbit's creative notebook series below. 👇',
         catTag: "🐾 Cat Manager's Whisper (Refreshed on each visit)",
         marketTitle: "🐾 HAMAGM Story & Gear Hub",
         marketDesc: "Watch hilarious cat shorts & explore featured everyday life-hack items.",
@@ -1085,7 +1085,7 @@
         xiaobiSub: "(Special Guest Appearance & Official Flipbook Series)",
         badge: "Official IP Portal",
         bannerTitle: "lazy life. — A Low-Energy World with Xiaobi",
-        bannerDesc: "We don't talk about grand ambitions—only how to effortlessly and legitimately devolve into liquid. Discover our anti-productivity desk tools, 10-second philosophical skits, and physical notebooks.<br><em>\"If you lie flat enough, nobody can cut you down.\"</em>",
+        bannerDesc: "We don't talk about grand ambitions—only how to effortlessly and legitimately devolve into liquid. Discover our anti-productivity desk tools, 10-second philosophical skits, and physical notebooks.<br><em>"If you lie flat enough, nobody can cut you down."</em>",
         pill1: "⏰ Daily Desk Clock",
         pill2: "🍅 Anti-Burnout Pomodoro",
         pill3: "🃏 40+ Unmotivated Quotes",
@@ -1161,7 +1161,7 @@
         xiaobiSub: "(Sonderausgabe & Offizielles Daumenkino)",
         badge: "Offizielles Portal",
         bannerTitle: "lazy life. — Entspannt leben mit Hase XiaoBi",
-        bannerDesc: "Keine großen Reden über Leistung – nur die Kunst, sich friedlich in eine Pfütze zu verwandeln. Entdecke Schreibtisch-Tools, 10-Sekunden-Sketche und Notizbücher.<br><em>\"Wer flach liegt, kann von nichts umgeworfen werden.\"</em>",
+        bannerDesc: "Keine großen Reden über Leistung – nur die Kunst, sich friedlich in eine Pfütze zu verwandeln. Entdecke Schreibtisch-Tools, 10-Sekunden-Sketche und Notizbücher.<br><em>"Wer flach liegt, kann von nichts umgeworfen werden."</em>",
         pill1: "⏰ Schreibtisch-Uhr",
         pill2: "🍅 Anti-Burnout Pomodoro",
         pill3: "🃏 40+ Demotivierende Zitate",
@@ -1185,7 +1185,7 @@
       },
       fr: {
         slogan: "✨ Divertissement, Tech & Astuces de Vie — Des stratégies pour un quotidien plus doux.",
-        bio: '🐾 "Rendre les animaux formidables et l\'époque un peu plus douce."<br>Bienvenue sur le Cat Hub officiel de HAMAGM ! Découvrez nos gadgets bien-être, nos récits félins et les carnets du lapin XiaoBi. 👇',
+        bio: '🐾 "Rendre les animaux formidables et l'époque un peu plus douce."<br>Bienvenue sur le Cat Hub officiel de HAMAGM ! Découvrez nos gadgets bien-être, nos récits félins et les carnets du lapin XiaoBi. 👇',
         catTag: "🐾 Le mot du Maître Chat (Actualisé à chaque visite)",
         marketTitle: "🐾 HAMAGM Histoires & Équipements",
         marketDesc: "Découvrez des sketchs félins hilarants et les accessoires incontournables du quotidien.",
@@ -1199,7 +1199,7 @@
         xiaobiSub: "(Apparition spéciale & Carnet flipbook officiel)",
         badge: "Portail Officiel",
         bannerTitle: "lazy life. — Le monde basse consommation de XiaoBi",
-        bannerDesc: "Ici, aucune grande ambition : nous apprenons juste à nous liquéfier sereinement. Horloge de bureau, sketchs de 10 secondes et carnets originaux.<br><em>\"Restez couché par terre : impossible de tomber plus bas.\"</em>",
+        bannerDesc: "Ici, aucune grande ambition : nous apprenons juste à nous liquéfier sereinement. Horloge de bureau, sketchs de 10 secondes et carnets originaux.<br><em>"Restez couché par terre : impossible de tomber plus bas."</em>",
         pill1: "⏰ Horloge de Bureau",
         pill2: "🍅 Pomodoro Anti-Burnout",
         pill3: "🃏 40+ Citations Légères",
@@ -1229,6 +1229,13 @@
     let currentFilterCategory = 'all';
     let currentSearchQuery = '';
     let activeFilteredList = [];
+
+    // 解析影片標題的多語系支援函式（防呆支援物件與字串）
+    function getVideoTitle(videoTitle, lang) {
+      if (!videoTitle) return '';
+      if (typeof videoTitle === 'string') return videoTitle;
+      return videoTitle[lang] || videoTitle.en || Object.values(videoTitle)[0] || '';
+    }
 
     function setLang(lang) {
       if (!i18n[lang]) return;
@@ -1295,18 +1302,21 @@
       pageItems.forEach(item => {
         const hasVideo = (typeof item.videoId === 'string' && item.videoId.trim() !== '');
         
+        // 解析當前語系的影片故事標題
+        const storyTitle = getVideoTitle(item.videoTitle, currentLang);
+
         // 觀看短劇按鈕
         const storyBtnHtml = hasVideo ? `
-          <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${(item.videoTitle || 'Story Preview').replace(/'/g, "\\'")}')">
+          <button type="button" class="story-btn" onclick="openStoryModal('${item.videoId}', '${(storyTitle || 'Story Preview').replace(/'/g, "\\'")}')">
             ${d.watchStory}
           </button>
         ` : '';
 
-        // 🌟 核心主角：影片名稱（若無獨立影片名稱則以商品名稱替代）
-        const displayStoryTitle = item.videoTitle ? `🎬 ${item.videoTitle}` : item.title;
+        // 🌟 核心主角：影片名稱
+        const displayStoryTitle = storyTitle ? `🎬 ${storyTitle}` : item.title;
 
         // 📦 配角道具：推薦商品名稱（字體小、道具感）
-        const productSubHtml = item.videoTitle ? `
+        const productSubHtml = storyTitle ? `
           <div class="card-product-sub">
             <span class="sub-label">${d.featuredLabel || 'Featured Item'}:</span>
             <span class="sub-name">${item.title}</span>
@@ -1336,8 +1346,8 @@
     function applyFilterAndSearch() {
       activeFilteredList = marketProducts.filter(item => {
         const matchesCategory = (currentFilterCategory === 'all' || item.category === currentFilterCategory);
-        // 搜尋同時支援商品標題、影片故事標題與 SEO 搜尋關鍵字
-        const searchTarget = (item.title + ' ' + (item.videoTitle || '') + ' ' + (item.searchTerms || '')).toLowerCase();
+        const storyTitle = getVideoTitle(item.videoTitle, currentLang);
+        const searchTarget = (item.title + ' ' + storyTitle + ' ' + (item.searchTerms || '')).toLowerCase();
         return matchesCategory && searchTarget.includes(currentSearchQuery);
       });
       renderMarketCards(true);
