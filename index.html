@@ -460,11 +460,11 @@
       border-color: #94a3b8;
     }
 
-    /* 網頁底部：小比兔筆記本專區 */
+    /* 底部區塊容器樣式 */
     .bottom-section {
       width: 100%;
       max-width: 940px;
-      margin-top: 50px;
+      margin-top: 40px;
       background: #ffffff;
       border: 2px solid #bae6fd;
       border-radius: 24px;
@@ -489,8 +489,8 @@
       color: var(--text-sub);
     }
 
-    /* 小比兔 lazy life. 官方入口推薦橫幅 */
-    .lazylife-feature-banner {
+    /* 橫幅特色推薦共用樣式 (用於 lazy life 及 CAT & WASHINGTON) */
+    .feature-banner {
       background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
       border: 1.5px solid #bae6fd;
       border-radius: 20px;
@@ -501,13 +501,13 @@
       gap: 14px;
       box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);
     }
-    .lazylife-banner-head {
+    .feature-banner-head {
       display: flex;
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
     }
-    .lazylife-badge {
+    .feature-badge {
       background: #0284c7;
       color: #ffffff;
       font-size: 11px;
@@ -517,22 +517,25 @@
       border-radius: 9999px;
       text-transform: uppercase;
     }
-    .lazylife-banner-title {
+    .feature-badge.badge-orange {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+    .feature-banner-title {
       font-size: 17px;
       font-weight: 800;
       color: var(--text-main);
     }
-    .lazylife-banner-text {
+    .feature-banner-text {
       font-size: 13.5px;
       color: var(--text-sub);
       line-height: 1.6;
     }
-    .lazylife-features-list {
+    .feature-pills-list {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-    .lazylife-feature-pill {
+    .feature-pill {
       font-size: 12px;
       font-weight: 700;
       color: #0369a1;
@@ -540,13 +543,17 @@
       padding: 4px 10px;
       border-radius: 8px;
     }
-    .lazylife-cta-group {
+    .feature-pill.pill-orange {
+      color: #b45309;
+      background: #fef3c7;
+    }
+    .feature-cta-group {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       margin-top: 4px;
     }
-    .lazylife-btn-primary {
+    .feature-btn-primary {
       background: #0284c7;
       color: #ffffff;
       text-decoration: none;
@@ -560,27 +567,16 @@
       box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
       transition: all 0.2s ease;
     }
-    .lazylife-btn-primary:hover {
+    .feature-btn-primary:hover {
       background: #0369a1;
       transform: translateY(-1px);
     }
-    .lazylife-btn-secondary {
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid #cbd5e1;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 13px;
-      padding: 9px 16px;
-      border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s ease;
+    .feature-btn-primary.btn-orange {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      box-shadow: 0 3px 10px rgba(217, 119, 6, 0.25);
     }
-    .lazylife-btn-secondary:hover {
-      background: #f1f5f9;
-      border-color: #94a3b8;
+    .feature-btn-primary.btn-orange:hover {
+      background: linear-gradient(135deg, #d97706, #b45309);
     }
 
     /* 翻頁開箱影片展示區 (16:9 滿版修復) */
@@ -771,36 +767,66 @@
     <button id="loadMoreBtn" class="load-more-btn" onclick="loadMore()">Load More Gear 👇</button>
   </div>
 
-  <!-- 4. 網頁底部專區 1：小比兔官方筆記本專區 & lazy life 品牌介紹 -->
-  <section class="bottom-section" id="xiaobi-notebooks">
+  <!-- 4. 新增：CAT & WASHINGTON 官方原創宇宙推薦專區 (位於小比兔專區上方) -->
+  <section class="bottom-section" id="cat-and-washington" style="margin-top: 50px;">
+    <div class="section-header">
+      <h2 class="section-heading-title" id="txtCwSectionTitle">🏀 CAT & WASHINGTON Official</h2>
+      <span class="section-sub" id="txtCwSectionSub">(Street Basketball & Cat Lore)</span>
+    </div>
+
+    <div class="feature-banner" style="background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%); border-color: #fed7aa;">
+      <div class="feature-banner-head">
+        <span class="feature-badge badge-orange" id="txtCwBadge">Featured Universe</span>
+        <h3 class="feature-banner-title" id="txtCwBannerTitle">CAT & WASHINGTON — Streetball Legends & Urban Adventures</h3>
+      </div>
+      <p class="feature-banner-text" id="txtCwBannerDesc">
+        當圓滾滾的橘貓踏上街頭籃球聖地洛克公園，一場充滿熱血球技、幽默日常與城市奇遇的傳奇就此展開！探索原創世界觀、精彩短片與專屬故事。
+      </p>
+      
+      <div class="feature-pills-list">
+        <span class="feature-pill pill-orange" id="cwPill1">🏀 街頭籃球貓咪短劇</span>
+        <span class="feature-pill pill-orange" id="cwPill2">🏙️ 紐約洛克公園冒險</span>
+        <span class="feature-pill pill-orange" id="cwPill3">🔥 原創角色與世界觀</span>
+      </div>
+
+      <div class="feature-cta-group">
+        <a href="https://yanghane1120.github.io/catandwashington/" target="_blank" rel="noopener noreferrer" class="feature-btn-primary btn-orange" id="btnCwPortal">
+          🌐 探索 CAT & WASHINGTON 官方網站 ➔
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 網頁底部專區 1：小比兔官方筆記本專區 & lazy life 品牌介紹 -->
+  <section class="bottom-section" id="xiaobi-notebooks" style="margin-top: 30px;">
     <div class="section-header">
       <h2 class="section-heading-title" id="txtXiaobiSectionTitle">🐰 XiaoBi Rabbit: Little White Rabbit's Notes</h2>
       <span class="section-sub" id="txtXiaobiSectionSub">(Special Guest Appearance & Official Flipbook Series)</span>
     </div>
 
     <!-- lazy life. 官方入口與躺平時鐘介紹橫幅 -->
-    <div class="lazylife-feature-banner">
-      <div class="lazylife-banner-head">
-        <span class="lazylife-badge" id="txtBadge">Official IP Portal</span>
-        <h3 class="lazylife-banner-title" id="txtBannerTitle">lazy life. — A Low-Energy World with Xiaobi</h3>
+    <div class="feature-banner">
+      <div class="feature-banner-head">
+        <span class="feature-badge" id="txtBadge">Official IP Portal</span>
+        <h3 class="feature-banner-title" id="txtBannerTitle">lazy life. — A Low-Energy World with Xiaobi</h3>
       </div>
-      <p class="lazylife-banner-text" id="txtBannerDesc">
+      <p class="feature-banner-text" id="txtBannerDesc">
         我們不談宏大的夢想，只研究如何合情合理地退出演化。專為低耗能生存打造的品牌官方入口，集結了桌面陪伴工具、10 秒厭世哲學短劇與實體廢物小誌手帳。<br>
         <em>"No grand ambitions here—just discovering how to effortlessly devolve into liquid."</em>
       </p>
       
-      <div class="lazylife-features-list">
-        <span class="lazylife-feature-pill" id="pill1">⏰ 每日躺平時鐘 (Desk Clock)</span>
-        <span class="lazylife-feature-pill" id="pill2">🍅 防內耗番茄鐘 (Pomodoro)</span>
-        <span class="lazylife-feature-pill" id="pill3">🃏 40+ 厭世金句抽卡</span>
-        <span class="lazylife-feature-pill" id="pill4">🌏 5 國語言即時切換</span>
+      <div class="feature-pills-list">
+        <span class="feature-pill" id="pill1">⏰ 每日躺平時鐘 (Desk Clock)</span>
+        <span class="feature-pill" id="pill2">🍅 防內耗番茄鐘 (Pomodoro)</span>
+        <span class="feature-pill" id="pill3">🃏 40+ 厭世金句抽卡</span>
+        <span class="feature-pill" id="pill4">🌏 5 國語言即時切換</span>
       </div>
 
-      <div class="lazylife-cta-group">
-        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-primary" id="btnPortal">
+      <div class="feature-cta-group">
+        <a href="https://yanghane1120.github.io/lazylife/" target="_blank" rel="noopener noreferrer" class="feature-btn-primary" id="btnPortal">
           🌐 訪問 lazy life. 官方入口 ➔
         </a>
-        <a href="https://yanghane1120.github.io/xiaobi-clock/xiaobi-card/" target="_blank" rel="noopener noreferrer" class="lazylife-btn-secondary" id="btnClock">
+        <a href="https://yanghane1120.github.io/xiaobi-clock/xiaobi-card/" target="_blank" rel="noopener noreferrer" class="story-btn" style="width: auto; padding: 9px 16px; border-radius: 10px; font-weight: 700; text-decoration: none;" id="btnClock">
           ⏰ 免費體驗躺平時鐘
         </a>
       </div>
@@ -822,7 +848,7 @@
     <div class="books-grid" id="xiaobiGrid"></div>
   </section>
 
-  <!-- 5. 網頁底部專區 2：原創小說與文學著作 -->
+  <!-- 6. 網頁底部專區 2：原創小說與文學著作 -->
   <section class="author-bookshelf">
     <div class="section-header">
       <h2 class="section-heading-title" id="txtAuthorTitle">📚 Author's Bookshelf | Novels & Philosophy</h2>
@@ -1033,6 +1059,15 @@
         watchStory: "🎬 觀看貓咪短劇",
         viewAmazon: "前往 Amazon 查看 🛒",
         readKindle: "Kindle 線上閱讀 📖",
+        cwTitle: "🏀 CAT & WASHINGTON 官方專區",
+        cwSub: "(街頭籃球傳奇與城市奇遇)",
+        cwBadge: "特別推薦",
+        cwBannerTitle: "CAT & WASHINGTON — 街球傳奇與洛克公園冒險",
+        cwBannerDesc: "當圓滾滾的橘貓踏上街頭籃球聖地洛克公園，一場充滿熱血球技、幽默日常與城市奇遇的傳奇就此展開！探索原創世界觀、精彩短片與專屬故事。",
+        cwPill1: "🏀 街球貓咪短劇",
+        cwPill2: "🏙️ 洛克公園歷險",
+        cwPill3: "🔥 原創角色世界觀",
+        btnCwPortal: "🌐 探索 CAT & WASHINGTON 官網 ➔",
         xiaobiTitle: "🐰 小比兔官方專區：小白兔的廢物筆記",
         xiaobiSub: "(特別客座聯動 & 官方翻頁實體手帳)",
         badge: "官方 IP 入口",
@@ -1070,6 +1105,15 @@
         watchStory: "🎬 Watch Cat Story",
         viewAmazon: "View on Amazon 🛒",
         readKindle: "Read on Kindle 📖",
+        cwTitle: "🏀 CAT & WASHINGTON Official",
+        cwSub: "(Street Basketball & Cat Lore)",
+        cwBadge: "Featured Universe",
+        cwBannerTitle: "CAT & WASHINGTON — Streetball Legends & Urban Adventures",
+        cwBannerDesc: "When a chubby ginger cat steps onto the legendary asphalt of Rucker Park, basketball glory, street humor, and urban adventures collide! Explore original lore, animated shorts, and stories.",
+        cwPill1: "🏀 Streetball Cat Shorts",
+        cwPill2: "🏙️ Rucker Park Adventures",
+        cwPill3: "🔥 Original Character Lore",
+        btnCwPortal: "🌐 Explore CAT & WASHINGTON Official ➔",
         xiaobiTitle: "🐰 XiaoBi Rabbit: Little White Rabbit's Notes",
         xiaobiSub: "(Special Guest Appearance & Official Flipbook Series)",
         badge: "Official IP Portal",
@@ -1107,6 +1151,15 @@
         watchStory: "🎬 ショート動画を見る",
         viewAmazon: "Amazonで見る 🛒",
         readKindle: "Kindleで読む 📖",
+        cwTitle: "🏀 CAT & WASHINGTON 公式",
+        cwSub: "(ストリートバスケ猫と都会の冒険)",
+        cwBadge: "特別おすすめ",
+        cwBannerTitle: "CAT & WASHINGTON — バスケ猫の伝説とストリート冒険",
+        cwBannerDesc: "ぽっちゃり茶トラ猫がストリートバスケの聖地ラッカーパークに登場！熱いダンク、笑える日常、都会の冒険が詰まったオリジナル世界観をお届けします。",
+        cwPill1: "🏀 バスケ猫ショートアニメ",
+        cwPill2: "🏙️ ラッカーパークの冒険",
+        cwPill3: "🔥 オリジナルキャラ設定",
+        btnCwPortal: "🌐 CAT & WASHINGTON 公式へ ➔",
         xiaobiTitle: "🐰 小比（シャオビ）うさぎ公式：白うさぎの無駄遣いノート",
         xiaobiSub: "(スペシャルゲスト連動 & 公式パラパラ漫画ノート)",
         badge: "公式IPポータル",
@@ -1144,6 +1197,15 @@
         watchStory: "🎬 Katzen-Short ansehen",
         viewAmazon: "Auf Amazon ansehen 🛒",
         readKindle: "Auf Kindle lesen 📖",
+        cwTitle: "🏀 CAT & WASHINGTON Offiziell",
+        cwSub: "(Streetball & Katzen-Abenteuer)",
+        cwBadge: "Empfohlenes Universum",
+        cwBannerTitle: "CAT & WASHINGTON — Streetball-Legenden & urbane Abenteuer",
+        cwBannerDesc: "Wenn ein pummeliger Kater den Rucker Park betritt, treffen spektakuläre Dunks auf charmanten Humor und Großstadt-Abenteuer! Entdecke die originelle Welt und Kurzfilme.",
+        cwPill1: "🏀 Streetball Katzen-Shorts",
+        cwPill2: "🏙️ Abenteuer im Rucker Park",
+        cwPill3: "🔥 Originelle Charaktere",
+        btnCwPortal: "🌐 CAT & WASHINGTON besuchen ➔",
         xiaobiTitle: "🐰 Hase XiaoBi: Das nutzlose Notizbuch",
         xiaobiSub: "(Sonderausgabe & Offizielles Daumenkino)",
         badge: "Offizielles Portal",
@@ -1181,6 +1243,15 @@
         watchStory: "🎬 Voir le court-métrage",
         viewAmazon: "Voir sur Amazon 🛒",
         readKindle: "Lire sur Kindle 📖",
+        cwTitle: "🏀 CAT & WASHINGTON Officiel",
+        cwSub: "(Légendes de streetball & aventures félines)",
+        cwBadge: "Univers Recommandé",
+        cwBannerTitle: "CAT & WASHINGTON — Légendes du Streetball & Aventures Urbaines",
+        cwBannerDesc: "Quand un gros chat roux débarque sur le bitume mythique de Rucker Park, dunks spectaculaires et humour urbain se rencontrent ! Explorez l'univers original et les courts-métrages.",
+        cwPill1: "🏀 Courts métrages Basket Chat",
+        cwPill2: "🏙️ Aventures à Rucker Park",
+        cwPill3: "🔥 Histoire & Personnages",
+        btnCwPortal: "🌐 Explorer CAT & WASHINGTON ➔",
         xiaobiTitle: "🐰 Lapin XiaoBi : Le carnet inutile",
         xiaobiSub: "(Apparition spéciale & Carnet flipbook officiel)",
         badge: "Portail Officiel",
@@ -1238,6 +1309,19 @@
       document.getElementById('txtMarketDesc').textContent = d.marketDesc;
       document.getElementById('searchInput').placeholder = d.searchPlaceholder;
       document.getElementById('loadMoreBtn').textContent = d.loadMore;
+
+      // CAT & WASHINGTON 語系文字更新
+      document.getElementById('txtCwSectionTitle').textContent = d.cwTitle;
+      document.getElementById('txtCwSectionSub').textContent = d.cwSub;
+      document.getElementById('txtCwBadge').textContent = d.cwBadge;
+      document.getElementById('txtCwBannerTitle').textContent = d.cwBannerTitle;
+      document.getElementById('txtCwBannerDesc').innerHTML = d.cwBannerDesc;
+      document.getElementById('cwPill1').textContent = d.cwPill1;
+      document.getElementById('cwPill2').textContent = d.cwPill2;
+      document.getElementById('cwPill3').textContent = d.cwPill3;
+      document.getElementById('btnCwPortal').textContent = d.btnCwPortal;
+
+      // 小比兔 lazy life 語系文字更新
       document.getElementById('txtXiaobiSectionTitle').textContent = d.xiaobiTitle;
       document.getElementById('txtXiaobiSectionSub').textContent = d.xiaobiSub;
       document.getElementById('txtBadge').textContent = d.badge;
