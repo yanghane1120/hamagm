@@ -453,6 +453,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B04IU9jkq",
     videoId: "wX0SP5zbImE",
     videoTitle: "She definitely needs a new bottle of Hongdian ink now… 💀🐾"
+  },
+  {
+    id: "mini-projector-4k",
+    category: "tech",
+    tag: "Home Theater",
+    title: "Mini Projector 4K Support, Portable Projector Full HD 1080P Support with 270° Rotation & Keystone Correction",
+    searchTerms: "mini projector 4k support portable projector full hd 1080p rotation auto keystone smart home theater",
+    amazonUrl: "https://link.amazon/B0fyrfXrR",
+    videoId: "z_dxmSE81rk",
+    videoTitle: "He was lonely for 7 hours… until his human set THIS up 🥺📽️"
   }
 ];
 
