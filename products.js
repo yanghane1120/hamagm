@@ -483,6 +483,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B039uCbX7",
     videoId: "TmgJ27EGj4Y",
     videoTitle: "Never Chase a Cat with Professional Gear on… ⚡️🐱"
+  },
+  {
+    id: "nike-fury-headband",
+    category: "apparel",
+    tag: "Athletic Gear",
+    title: "Nike Fury Headband",
+    searchTerms: "nike fury headband athletic sports headband sweatband running training moisture wicking",
+    amazonUrl: "https://link.amazon/B02cQCpp1",
+    videoId: "K_eEYbnMCko",
+    videoTitle: "They said she was too small to make the jump, until she got THIS epic power-up… 🤯👟"
   }
 ];
 
