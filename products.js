@@ -473,6 +473,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B05ZFOntK",
     videoId: "5_5H2_LOs2w",
     videoTitle: "Never trust an orange cat near a toaster... wait for it 😭🐱"
+  },
+  {
+    id: "nike-dri-fit-head-tie",
+    category: "apparel",
+    tag: "Athletic Gear",
+    title: "Nike Dri-Fit Head Tie 2.0 (Black/White)",
+    searchTerms: "nike dri fit head tie 2 0 headband black white sweatband running workout training athletic gear",
+    amazonUrl: "https://link.amazon/B039uCbX7",
+    videoId: "TmgJ27EGj4Y",
+    videoTitle: "Never Chase a Cat with Professional Gear on… ⚡️🐱"
   }
 ];
 
