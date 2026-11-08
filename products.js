@@ -443,6 +443,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0bWzvmly",
     videoId: "W5WyUw3gvEk",
     videoTitle: "Is this RTX 5060 box an actual GPU or a cat's throne? 😤📦"
+  },
+  {
+    id: "gigabyte-rtx-5060-v2",
+    category: "tech",
+    tag: "Gaming Gear",
+    title: "GIGABYTE GeForce RTX 5060 WINDFORCE OC 8G Graphics Card (8GB GDDR7 / PCIe 5.0 / GV-N5060WF2OC-8GD)",
+    searchTerms: "gigabyte geforce rtx 5060 windforce oc 8g graphics card gddr7 pcie 5.0 gv n5060wf2oc 8gd video card",
+    amazonUrl: "https://link.amazon/B04IU9jkq",
+    videoId: "wX0SP5zbImE",
+    videoTitle: "She definitely needs a new bottle of Hongdian ink now… 💀🐾"
   }
 ];
 
