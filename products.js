@@ -403,6 +403,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0f6BUOpL",
     videoId: "YANtiwghEaI",
     videoTitle: "My mom’s greatest heirloom wasn’t jewelry. It was THIS."
+  },
+  {
+    id: "xiaobi-useless-notebook",
+    category: "home",
+    tag: "Novelty Notebook",
+    title: "The Little White Rabbit's Useless Notebook: A Sarcastic Gag Journal for Overwhelmed Humans, Students, and Burnout Office Workers (Funny Novelty Notebook)",
+    searchTerms: "little white rabbit useless notebook sarcastic gag journal overwhelmed humans students burnout office workers novelty gift",
+    amazonUrl: "https://link.amazon/B0j2pgrp5",
+    videoId: "JsvfqyxTWsc",
+    videoTitle: "What your cat shows Mom right after you leave for college 🐱😭"
   }
 ];
 
