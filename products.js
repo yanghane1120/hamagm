@@ -172,7 +172,7 @@ const marketProducts = [
     searchTerms: "aussie total miracle shampoo conditioner 3 minute deep treatment apricot macadamia oil damaged hair bundle",
     amazonUrl: "https://link.amazon/B03LPJYi3",
     videoId: "A3RDqr8fYdQ",
-    videoTitle: "Miracle Hair Fix in 3 Minutes"
+    videoTitle: "Miracle Hair Fix in 3 biological minutes"
   },
   {
     id: "bissell-cleanview",
@@ -388,7 +388,7 @@ const marketProducts = [
     id: "catstages-tower-of-tracks",
     category: "cat",
     tag: "Cat Toys",
-    title: "Catstages Tower of Tracks Interactive Cat Toy (3 Tiers / 6 Spinning Balls)",
+    title: "Catstages Tower of Tracks Interactive Cat Toy (3 Tiers / 6 spinning Balls)",
     searchTerms: "catstages tower of tracks interactive cat toy 3 tiers 6 spinning balls chase swat hunting instinct indoor cats kittens",
     amazonUrl: "https://link.amazon/B0bD6tyhv",
     videoId: "cLiYgk0qVAY",
@@ -413,6 +413,26 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0j2pgrp5",
     videoId: "JsvfqyxTWsc",
     videoTitle: "What your cat shows Mom right after you leave for college 🐱😭"
+  },
+  {
+    id: "gigabyte-rtx-3050",
+    category: "tech",
+    tag: "Gaming Gear",
+    title: "GIGABYTE GeForce RTX 3050 WINDFORCE OC V2 6G Graphics Card",
+    searchTerms: "gigabyte geforce rtx 3050 windforce oc v2 6g graphics card 2x fans 6gb gddr6",
+    amazonUrl: "https://link.amazon/B00Kc8CW6",
+    videoId: "4fJuUs0t7W8",
+    videoTitle: "Bro got inside the RTX 3060 box and violated his brother 💀😭"
+  },
+  {
+    id: "folding-step-stool",
+    category: "home",
+    tag: "Home Essentials",
+    title: "Handy Laundry Folding Step Stool 9 Inch (Non-Slip / Holds 300 lbs / Black)",
+    searchTerms: "handy laundry folding step stool 9 inch black non slip lightweight foldable 300 lbs",
+    amazonUrl: "https://link.amazon/B0eTvKGxS",
+    videoId: "wftdoYAqCAw",
+    videoTitle: "She visits this hot dog cart every week, but today the cat noticed something... 🥺💔"
   }
 ];
 
@@ -461,6 +481,20 @@ const xiaobiNotebooks = [
     tag: "Taschenbuch",
     title: "Der Notizblock des kleinen Hasen (Deutsch)",
     amazonUrl: "https://link.amazon/B029TO94d"
+  },
+  {
+    cover: "usb3.jpg",
+    fallbackCover: "book_en.png",
+    tag: "Paperback",
+    title: "The Little White Rabbit's Useless Notebook: A Sarcastic Gag Journal for Overwhelmed Humans, Students, and Burnout Office Workers (Funny Novelty Notebook) (I held up the national flag)",
+    amazonUrl: "https://link.amazon/B02qBgJPT"
+  },
+  {
+    cover: "JRB3.jpg",
+    fallbackCover: "book_jp.png",
+    tag: "ペーパーバック",
+    title: "小比うさぎのダメダメノート: ……ちゃんとノート書けるのか？ (皮肉たっぷりなブラックユーモア手帳・ギャグギフト)",
+    amazonUrl: "https://link.amazon/B0gyvJcOW"
   }
 ];
 
