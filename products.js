@@ -463,6 +463,16 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0fyrfXrR",
     videoId: "z_dxmSE81rk",
     videoTitle: "He was lonely for 7 hours… until his human set THIS up 🥺📽️"
+  },
+  {
+    id: "bella-slim-toaster",
+    category: "home",
+    tag: "Kitchen Appliances",
+    title: "bella Fits-Anywhere™ 2-Slice Slim Toaster, Long Slot & Extra Wide, Oatmilk",
+    searchTerms: "bella fits anywhere 2 slice slim toaster long slot extra wide oatmilk compact kitchen appliances",
+    amazonUrl: "https://link.amazon/B05ZFOntK",
+    videoId: "5_5H2_LOs2w",
+    videoTitle: "Never trust an orange cat near a toaster... wait for it 😭🐱"
   }
 ];
 
