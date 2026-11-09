@@ -533,6 +533,46 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B0fTzUpdQ",
     videoId: "hSctgQ2eKC4",
     videoTitle: "5 kittens vs. 1 exhausted cat… watch his GENIUS defense move! 🤯💤"
+  },
+  {
+    id: "xiaobi-useless-notebook-flag-v2",
+    category: "home",
+    tag: "Novelty Notebook",
+    title: "The Little White Rabbit's Useless Notebook: A Sarcastic Gag Journal for Overwhelmed Humans, Students, and Burnout Office Workers (Funny Novelty Notebook) (I held up the national flag)",
+    searchTerms: "little white rabbit useless notebook sarcastic gag journal overwhelmed humans students burnout office workers i held up the national flag novelty gift",
+    amazonUrl: "https://link.amazon/B04Bv8Z4t",
+    videoId: "lCl3U5zq704",
+    videoTitle: "FRAMED AGAIN?! Watch Who Actually Did It! 💀🐾"
+  },
+  {
+    id: "artificial-xmas-tree-4ft",
+    category: "holiday",
+    tag: "Christmas Decor",
+    title: "4ft Green Artificial Christmas Tree, Arbol de Navidad Small Fake Xmas Tree",
+    searchTerms: "4ft green artificial christmas tree arbol de navidad small fake xmas tree holiday home decor",
+    amazonUrl: "https://link.amazon/B03xsQsgI",
+    videoId: "u_USQY-grAY",
+    videoTitle: "I came clean, no mad!"
+  },
+  {
+    id: "washington-a-life-v2",
+    category: "entertainment",
+    tag: "Pulitzer Winner",
+    title: "Washington: A Life (Pulitzer Prize Winner by Ron Chernow)",
+    searchTerms: "washington a life ron chernow pulitzer prize winner biography founding fathers george washington",
+    amazonUrl: "https://link.amazon/B0d7muyNW",
+    videoId: "u_USQY-grAY",
+    videoTitle: "I came clean, no mad!"
+  },
+  {
+    id: "cap-hex-dumbbell",
+    category: "home",
+    tag: "Strength Training",
+    title: "CAP Rubber Coated Hex Dumbbells with Chrome Grip Handles",
+    searchTerms: "cap rubber coated hex dumbbell weights anti roll chrome grip home gym strength training free weights",
+    amazonUrl: "https://link.amazon/B04ilcZxz",
+    videoId: "ytBrhdZxbr0",
+    videoTitle: "He Thought He Was Him Until the Package Arrived 💀📦"
   }
 ];
 
