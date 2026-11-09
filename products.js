@@ -493,6 +493,46 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B02cQCpp1",
     videoId: "K_eEYbnMCko",
     videoTitle: "They said she was too small to make the jump, until she got THIS epic power-up… 🤯👟"
+  },
+  {
+    id: "xiaobi-useless-notebook-flag",
+    category: "home",
+    tag: "Novelty Notebook",
+    title: "The Little White Rabbit's Useless Notebook: A Sarcastic Gag Journal for Overwhelmed Humans, Students, and Burnout Office Workers (Funny Novelty Notebook) (I held up the national flag)",
+    searchTerms: "little white rabbit useless notebook sarcastic gag journal overwhelmed humans students burnout office workers i held up the national flag novelty gift",
+    amazonUrl: "https://link.amazon/B08N69vZL",
+    videoId: "rxhLZj2t6KM",
+    videoTitle: "He tore up my Little Rabbit notebook… so he did THIS to apologize 😭"
+  },
+  {
+    id: "hoyhoy-trap-a-roach",
+    category: "home",
+    tag: "Pest Control",
+    title: "HOY HOY Trap A Roach - 10 Traps [2 Pack] Baited Glue Traps, Sticky Pest Control Trap, Roach Killer (Made in Japan)",
+    searchTerms: "hoy hoy trap a roach baited glue traps sticky pest control trap indoor kids pets roach killer made in japan",
+    amazonUrl: "https://link.amazon/B032b23VR",
+    videoId: "9edkqrUM4NQ",
+    videoTitle: "What my orange cat threw off the table ended the couch standoff instantly 😭"
+  },
+  {
+    id: "ai-smart-glasses",
+    category: "tech",
+    tag: "Smart Wearables",
+    title: "AI Smart Glasses with Camera, 1080P Photo, Voice Assistant, Open-Ear Speaker",
+    searchTerms: "ai smart glasses camera 1080p photo voice assistant open ear speaker audio bluetooth wearable tech",
+    amazonUrl: "https://link.amazon/B0itBxl6u",
+    videoId: "3aHMp2vXJCY",
+    videoTitle: "Your cat could NEVER pull this off."
+  },
+  {
+    id: "mzoo-sleep-mask",
+    category: "care",
+    tag: "Sleep Gear",
+    title: "MZOO Luxury Sleep Mask for Women Men (Patented 3D Contoured Light Blocking Design)",
+    searchTerms: "mzoo luxury sleep eye mask 3d contoured light blocking blindfold comfortable memory foam sleep mask",
+    amazonUrl: "https://link.amazon/B0fTzUpdQ",
+    videoId: "hSctgQ2eKC4",
+    videoTitle: "5 kittens vs. 1 exhausted cat… watch his GENIUS defense move! 🤯💤"
   }
 ];
 
