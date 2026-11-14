@@ -613,6 +613,26 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B013tg6A4",
     videoId: "I74fgpjkpE8",
     videoTitle: "How did an orange cat hit a 450-foot bomb?! Watch till the end 💀⚾ #shorts"
+  },
+  {
+    id: "tessan-power-strip",
+    category: "tech",
+    tag: "Power & Charging",
+    title: "TESSAN Surge Protector Power Strip with 900J Surge Protection, 5 Ft, Grey",
+    searchTerms: "tessan surge protector power strip 900j 5 ft grey flat plug usb outlets desk charging station",
+    amazonUrl: "https://link.amazon/B0aoWYl1v",
+    videoId: "BnDIEc9euFg",
+    videoTitle: "Watch how one orange cat fixed the ultimate desk nightmare 👀⚡ #shorts"
+  },
+  {
+    id: "eheyciga-cat-scratcher",
+    category: "cat",
+    tag: "Cat Scratchers",
+    title: "EHEYCIGA Cardboard Cat Scratcher for Indoor Cats, 26.8 Inch, Brown",
+    searchTerms: "eheyciga cardboard cat scratcher indoor cats 26.8 inch brown cat scratching pad lounge bed sofa protector",
+    amazonUrl: "https://link.amazon/B07dYJLpb",
+    videoId: "yczQ2l2SHac",
+    videoTitle: "How to stop your cats from fighting AND save your sofa 👀🐾 #shorts"
   }
 ];
 
