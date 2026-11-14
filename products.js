@@ -573,6 +573,46 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B04ilcZxz",
     videoId: "ytBrhdZxbr0",
     videoTitle: "He Thought He Was Him Until the Package Arrived 💀📦"
+  },
+  {
+    id: "bella-waffle-maker",
+    category: "home",
+    tag: "Kitchen Appliances",
+    title: "bella Fits-Anywhere™ Flip-n-Store Non-Toxic, Belgian Waffle Maker, Oatmilk",
+    searchTerms: "bella fits anywhere flip n store non toxic belgian waffle maker oatmilk compact kitchen appliances",
+    amazonUrl: "https://link.amazon/B050T816i",
+    videoId: "oaDIVIfSr_0",
+    videoTitle: "He came home for Mom, but the cat had ONE strict rule first... 🧇🐱👀"
+  },
+  {
+    id: "roborock-q7-m5-plus",
+    category: "home",
+    tag: "Smart Cleaning",
+    title: "roborock Q7 M5+ Robot Vacuum and Mop, Up to 7-9 Weeks Self-Empty, 10000Pa",
+    searchTerms: "roborock q7 m5 plus robot vacuum and mop self empty 10000pa suction smart home cleaning pet hair",
+    amazonUrl: "https://link.amazon/B03qmZ6Vs",
+    videoId: "KqptdHDSwlk",
+    videoTitle: "Wait till the end to see what my cat gave me after work... 😭👑 #shorts"
+  },
+  {
+    id: "waterman-expert-fountain-pen",
+    category: "home",
+    tag: "Fine Writing",
+    title: "Waterman Expert Fountain Pen, Gloss Black with Gold Trim, Medium Nib",
+    searchTerms: "waterman expert fountain pen gloss black with gold trim medium nib luxury executive writing gift",
+    amazonUrl: "https://link.amazon/B0djyOxmV",
+    videoId: "_CDE4e0XBQM",
+    videoTitle: "They were seconds away from signing divorce papers… until their cat did THIS 😭🐾 #shorts"
+  },
+  {
+    id: "apex-baseball-swing-trainer",
+    category: "home",
+    tag: "Sports & Training",
+    title: "Apex Sports Baseball Swing Trainer – Adjustable Batting Practice Trainer",
+    searchTerms: "apex sports baseball swing trainer adjustable batting practice trainer hitting aid youth adult",
+    amazonUrl: "https://link.amazon/B013tg6A4",
+    videoId: "I74fgpjkpE8",
+    videoTitle: "How did an orange cat hit a 450-foot bomb?! Watch till the end 💀⚾ #shorts"
   }
 ];
 
