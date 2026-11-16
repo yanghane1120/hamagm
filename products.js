@@ -449,7 +449,7 @@ const marketProducts = [
     category: "tech",
     tag: "Gaming Gear",
     title: "GIGABYTE GeForce RTX 5060 WINDFORCE OC 8G Graphics Card (8GB GDDR7 / PCIe 5.0 / GV-N5060WF2OC-8GD)",
-    searchTerms: "gigabyte geforce rtx 5060 windforce oc 8g graphics card gddr7 pcie 5.0 gv n5060wf2oc 8gd video card",
+    searchTerms: "gigabyte geforce rtx 5060 windforce oc 8g graphics card gddr7 pcie 5 0 gv n5060wf2oc 8gd video card",
     amazonUrl: "https://link.amazon/B04IU9jkq",
     videoId: "wX0SP5zbImE",
     videoTitle: "She definitely needs a new bottle of Hongdian ink now… 💀🐾"
@@ -695,6 +695,20 @@ const xiaobiNotebooks = [
     tag: "ペーパーバック",
     title: "小比うさぎのダメダメノート: ……ちゃんとノート書けるのか？ (皮肉たっぷりなブラックユーモア手帳・ギャグギフト)",
     amazonUrl: "https://link.amazon/B0gyvJcOW"
+  },
+  {
+    cover: "ENHARD.jpg",
+    fallbackCover: "book_en.png",
+    tag: "Hardcover",
+    title: "The Little White Rabbit's Useless Notebook: A Sarcastic Gag Journal for Overwhelmed Humans, Students, and Burnout Office Workers (Funny Novelty Notebook) (I held up the national flag)",
+    amazonUrl: "https://link.amazon/B0fkJ5d50"
+  },
+  {
+    cover: "JPHARD.jpg",
+    fallbackCover: "book_jp.png",
+    tag: "ハードカバー",
+    title: "小比うさぎのダメダメノート: ……ちゃんとノート書けるのか？ (皮肉たっぷりなブラックユーモア手帳・ギャグギフト) (Japanese Edition)",
+    amazonUrl: "https://link.amazon/B0eXQ9ejP"
   }
 ];
 
