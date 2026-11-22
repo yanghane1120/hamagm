@@ -633,6 +633,56 @@ const marketProducts = [
     amazonUrl: "https://link.amazon/B07dYJLpb",
     videoId: "yczQ2l2SHac",
     videoTitle: "How to stop your cats from fighting AND save your sofa 👀🐾 #shorts"
+  },
+  {
+    id: "tens-bath-towels-4pc",
+    category: "home",
+    tag: "Bath & Linens",
+    title: "Tens Towels 4 Piece Extra Large Bath Towels 30 x 60 Inches, Dark Grey",
+    searchTerms: "tens towels 4 piece extra large bath towels 30 x 60 inches dark grey absorbent hotel spa linens",
+    amazonUrl: "https://link.amazon/B0cCxErqU",
+    videoId: "ZJ2S5IKku4k",
+    videoTitle: "She went outside for 10 seconds, and came back with the universe's softest secret... ❄️🥺 #shorts"
+  },
+  {
+    id: "dell-chromebook-11-3100",
+    category: "tech",
+    tag: "Laptops & Computing",
+    title: "Dell Chromebook 11 3100 11.6\" Chromebook - 1366 x 768 - Celeron N4020-4 GB RAM - 16 GB Flash Memory - Chrome OS - Intel HD Graphics - English (US) Keyboard - Bluetooth (Renewed)",
+    searchTerms: "dell chromebook 11 3100 11.6 celeron n4020 4gb ram 16gb chrome os renewed laptop",
+    amazonUrl: "https://link.amazon/B06AVPF8O",
+    videoId: "ZCD7gtkkEPk",
+    videoTitle: "She went outside for 10 seconds, and came back with the universe's softest secret... ❄️🥺 #shorts"
+  },
+  {
+    id: "veken-cat-fountain-108oz",
+    category: "cat",
+    tag: "Cat Hydration",
+    title: "Veken Innovation Award Winner Stainless Steel Cat Water Fountain, 108oz, C1",
+    searchTerms: "veken stainless steel cat water fountain 108oz c1 pet drinking dispenser quiet hydration",
+    amazonUrl: "https://link.amazon/B06v7s1oz",
+    videoId: "mbeU_GGkwrE",
+    videoTitle: "Her kitten kisses were SO sweet… until Dad ruined the moment with ONE sentence 😭🚽🐱 #shorts"
+  },
+  {
+    id: "self-warming-cat-bed-15x19",
+    category: "cat",
+    tag: "Cat Bedding",
+    title: "Self Warming Cat Bed, 2.0 Upgraded Thermal Mat for Indoor Cats, 15 x 19 In",
+    searchTerms: "self warming cat bed 2.0 thermal mat indoor cats 15 x 19 heated pet pad",
+    amazonUrl: "https://link.amazon/B09ZmSoBg",
+    videoId: "2NlpcMUnKu0",
+    videoTitle: "She refused to leave Mom’s lap ALL morning… until Dad pulled THIS secret weapon out 😭🔥🐱 #shorts"
+  },
+  {
+    id: "apex-baseball-swing-trainer-v2",
+    category: "home",
+    tag: "Sports & Training",
+    title: "Apex Sports Baseball Swing Trainer – Adjustable Batting Practice Trainer",
+    searchTerms: "apex sports baseball swing trainer adjustable batting practice trainer hitting aid youth adult",
+    amazonUrl: "https://link.amazon/B013tg6A4",
+    videoId: "I74fgpjkpE8",
+    videoTitle: "How do cats practice playing baseball?s"
   }
 ];
 
